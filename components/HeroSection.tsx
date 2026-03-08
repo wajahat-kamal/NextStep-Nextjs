@@ -34,10 +34,10 @@ function HeroSection() {
                     </p>
 
                     <div className="flex items-center gap-4">
-                        <button className="bg-primary hover:bg-primary/80 text-black cursor-pointer font-semibold px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
+                        <button className="bg-primary hover:bg-primary/70 text-white cursor-pointer font-semibold px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
                             Shop Now
                         </button>
-                        <button className="border border-white/40 hover:border-white cursor-pointer text-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
+                        <button className="border border-white/40 hover:border-primary hover:text-primary cursor-pointer text-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
                             Explore Collection
                         </button>
                     </div>
