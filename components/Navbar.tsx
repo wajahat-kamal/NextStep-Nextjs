@@ -18,7 +18,7 @@ const navLinks: NavLink[] = [
 
 function Navbar() {
     return (
-        <nav className='absolute top-1 right-0 w-full h-20 z-3 flex flex-row justify-between items-center px-24'>
+        <nav className='absolute top-1 right-0 w-full h-20 z-3 flex flex-row justify-between items-center px-16 md:px-24'>
             <Link
                 href="/"
                 aria-label="Homepage"
@@ -27,7 +27,7 @@ function Navbar() {
                 <Image width={10} height={10} src={logo} alt="Shoeify logo" className="w-10 h-10" />
                 <span>NextStep</span>
             </Link>
-            <div className='flex flex-row justify-center items-center gap-4'>
+            <div className='hidden md:flex flex-row justify-center items-center gap-4'>
                 <ul className='flex gap-8'>
                     {navLinks.map(({ name, href }) => (
                         <Link
@@ -41,7 +41,7 @@ function Navbar() {
                     ))}
                 </ul>
                 <button className='border-l border-zinc-500/60'>
-                    <Image className='ml-4' width={30} height={30} alt='Cart Icon' src={cartImage}/>
+                    <Image className='ml-4 cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage}/>
                 </button>
             </div>
         </nav>
