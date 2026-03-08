@@ -27,8 +27,8 @@ function Navbar() {
                 <Image width={10} height={10} src={logo} alt="Shoeify logo" className="w-10 h-10" />
                 <span>NextStep</span>
             </Link>
-            <div className='flex'>
-                <ul className='flex gap-10'>
+            <div className='flex flex-row justify-center items-center gap-4'>
+                <ul className='flex gap-8'>
                     {navLinks.map(({ name, href }) => (
                         <Link
                             key={name}
@@ -40,8 +40,8 @@ function Navbar() {
                         </Link>
                     ))}
                 </ul>
-                <button>
-                    <Image width={40} height={40} alt='Cart Icon' src={cartImage}/>
+                <button className='border-l border-zinc-500/60'>
+                    <Image className='ml-4' width={30} height={30} alt='Cart Icon' src={cartImage}/>
                 </button>
             </div>
         </nav>
