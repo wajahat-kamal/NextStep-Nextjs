@@ -34,15 +34,15 @@ function HeroSection() {
                     </p>
 
                     <div className="flex items-center gap-4">
-                        <button className="bg-primary hover:bg-primary/80 text-black font-semibold px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
+                        <button className="bg-primary hover:bg-primary/80 text-black cursor-pointer font-semibold px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
                             Shop Now
                         </button>
-                        <button className="border border-white/40 hover:border-white text-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
+                        <button className="border border-white/40 hover:border-white cursor-pointer text-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
                             Explore Collection
                         </button>
                     </div>
 
-                    <div className="flex gap-10 mt-16 pt-10 border-t border-white/10">
+                    {/* <div className="flex gap-10 mt-16 pt-10 border-t border-white/10">
                         {[
                             { value: "500+", label: "Styles" },
                             { value: "50+", label: "Brands" },
@@ -53,7 +53,7 @@ function HeroSection() {
                                 <p className="text-xs text-white/50 uppercase tracking-widest mt-1">{stat.label}</p>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
