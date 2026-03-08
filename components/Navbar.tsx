@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import logo from "@/assets/logo.png"
 import cartImage from "@/assets/cart-image.png"
+import { Menu, X } from 'lucide-react'
 
 interface NavLink {
     name: string;
@@ -17,7 +18,7 @@ const navLinks: NavLink[] = [
 ];
 
 function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
     return (
         <nav className='absolute top-1 right-0 w-full h-20 z-3 flex flex-row justify-between items-center px-16 md:px-24'>
             <Link
@@ -42,7 +43,18 @@ function Navbar() {
                     ))}
                 </ul>
                 <button className='border-l border-zinc-500/60'>
-                    <Image className='ml-4 cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage}/>
+                    <Image className='ml-4 cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage} />
+                </button>
+            </div>
+            <div className='md:hidden block'>
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle navigation menu"
+                    aria-expanded={isOpen}
+                    aria-controls="mobile-menu"
+                    className="md:hidden text-gray-200 hover:text-white transition-colors"
+                >
+                    {isOpen ? <X size={26} /> : <Menu size={26} />}
                 </button>
             </div>
         </nav>
