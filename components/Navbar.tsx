@@ -5,6 +5,7 @@ import Image from 'next/image'
 import logo from "@/assets/logo.png"
 import cartImage from "@/assets/cart-image.png"
 import { Menu, X } from 'lucide-react'
+import { motion } from "motion/react"
 
 interface NavLink {
     name: string;
@@ -59,9 +60,9 @@ function Navbar() {
                 </button>
             </div>
             {isOpen && (
-                <aside
+                <motion.aside
                     id="mobile-menu"
-                    className="fixed top-20 right-4 z-45 w-52 rounded-xl bg-black/80 border border-white/10 backdrop-blur-xl shadow-xl md:hidden"
+                    className="z-45 h-screen w-52  md:hidden"
                 >
                     <div className="flex flex-col gap-2 p-4">
                         {navLinks.map(({ name, href }) => (
@@ -75,7 +76,7 @@ function Navbar() {
                             </a>
                         ))}
                     </div>
-                </aside>
+                </motion.aside>
             )}
         </nav>
     )
