@@ -22,7 +22,7 @@ function HeroSection() {
                         New Collection — Spring 2026
                     </span>
 
-                    <h1 className="text-4xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
+                    <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
                         Step Into the <br />
                         <span className="italic font-light text-primary">Next Version</span>{" "}
                         of You

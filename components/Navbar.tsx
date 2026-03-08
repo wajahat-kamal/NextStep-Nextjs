@@ -22,7 +22,7 @@ const navLinks: NavLink[] = [
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     return (
-        <nav className='absolute top-1 right-0 w-full h-20 z-3 flex flex-row justify-between items-center px-4 md:px-24'>
+        <nav className='absolute top-1 right-0 w-full h-20 z-30 flex flex-row justify-between items-center px-4 md:px-24'>
             <Link
                 href="/"
                 aria-label="Homepage"
@@ -34,23 +34,27 @@ function Navbar() {
             <div className='hidden md:flex flex-row justify-center items-center gap-4'>
                 <ul className='flex gap-8'>
                     {navLinks.map(({ name, href }) => (
-                        <Link
-                            key={name}
-                            href={href}
-                            className="relative font-mono text-md font-medium text-white transition-colors group"
-                        >
-                            {name}
-                            <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full" />
-                        </Link>
+                        <li key={name}>
+                            <Link
+                                href={href}
+                                className="relative font-mono text-md font-medium text-white transition-colors group"
+                            >
+                                {name}
+                                <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full" />
+                            </Link>
+                        </li>
                     ))}
                 </ul>
                 <button className='border-l border-zinc-500/60'>
                     <Image className='ml-4 cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage} />
                 </button>
             </div>
-            <div className='md:hidden block'>
+            <div className='md:hidden flex justify-center items-center flex-row gap-2'>
+                <button>
+                    <Image className='cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage} />
+                </button>
                 <button
-                    onClick={() => setIsOpen(!isOpen)}
+                    onClick={() => setIsOpen(true)}
                     aria-label="Toggle navigation menu"
                     aria-expanded={isOpen}
                     aria-controls="mobile-menu"
@@ -79,7 +83,13 @@ function Navbar() {
                         id="mobile-menu"
                         className="fixed top-0 right-0 z-50 h-screen bg-primary w-48 md:hidden"
                     >
-                        <div className="flex flex-col gap-2 px-4 py-10">
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className="self-end text-white mb-4 w-full absolute top-7 left-37"
+                        >
+                            <X size={30} />
+                        </button>
+                        <div className="flex flex-col gap-2 px-4 pt-16">
                             {navLinks.map(({ name, href }) => (
                                 <Link
                                     key={name}
