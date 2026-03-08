@@ -18,7 +18,7 @@ function HeroSection() {
             {/* Content */}
             <div className="relative z-2 h-full flex flex-col justify-center px-4 md:px-24">
                 <div className="max-w-2xl">
-                    <span className="text-xs md:text-sm uppercase md:tracking-[0.3em] text-primary font-medium mb-4 block">
+                    <span className="text-xs md:text-sm uppercase md:tracking-[0.3em] text-primary font-medium mb-2 block">
                         New Collection — Spring 2026
                     </span>
 
