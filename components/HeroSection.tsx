@@ -18,7 +18,7 @@ function HeroSection() {
             {/* Content */}
             <div className="relative z-2 h-full flex flex-col justify-center px-4 md:px-24">
                 <div className="max-w-2xl">
-                    <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-primary font-medium mb-6 block">
+                    <span className="text-xs md:text-sm uppercase md:tracking-[0.3em] text-primary font-medium mb-4 block">
                         New Collection — Spring 2026
                     </span>
 
@@ -28,7 +28,7 @@ function HeroSection() {
                         of You
                     </h1>
 
-                    <p className="text-xs md:text-lg text-white/70 max-w-[290px] md:max-w-xl leading-relaxed mb-10">
+                    <p className="text-xs md:text-lg text-white/70 max-w-[290px] md:max-w-xl leading-relaxed mb-4">
                         Crafted for those who move with purpose. Explore footwear that blends
                         performance, style, and comfort — built for wherever life takes you next.
                     </p>
@@ -42,7 +42,7 @@ function HeroSection() {
                         </button>
                     </div>
 
-                    {/* <div className="flex gap-10 mt-16 pt-10 border-t border-white/10">
+                    <div className="flex gap-10 mt-4 pt-2 border-t border-white/10">
                         {[
                             { value: "500+", label: "Styles" },
                             { value: "50+", label: "Brands" },
@@ -53,7 +53,7 @@ function HeroSection() {
                                 <p className="text-xs text-white/50 uppercase tracking-widest mt-1">{stat.label}</p>
                             </div>
                         ))}
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </section>
