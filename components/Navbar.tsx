@@ -5,7 +5,7 @@ import Image from 'next/image'
 import logo from "@/assets/logo.png"
 import cartImage from "@/assets/cart-image.png"
 import { Menu, X } from 'lucide-react'
-import { motion } from "motion/react"
+import { AnimatePresence, motion } from "motion/react"
 
 interface NavLink {
     name: string;
@@ -54,30 +54,46 @@ function Navbar() {
                     aria-label="Toggle navigation menu"
                     aria-expanded={isOpen}
                     aria-controls="mobile-menu"
-                    className="md:hidden text-gray-200 hover:text-white transition-colors"
+                    className="text-gray-200 hover:text-white transition-colors"
                 >
-                    {isOpen ? <X size={26} /> : <Menu size={26} />}
+                    {isOpen ? <X size={30} /> : <Menu size={30} />}
                 </button>
             </div>
+
+            {/* Backdrop */}
             {isOpen && (
-                <motion.aside
-                    id="mobile-menu"
-                    className="z-45 h-screen w-52  md:hidden"
-                >
-                    <div className="flex flex-col gap-2 p-4">
-                        {navLinks.map(({ name, href }) => (
-                            <a
-                                key={name}
-                                href={href}
-                                onClick={() => setIsOpen(false)}
-                                className="rounded-md px-3 py-2 text-sm font-medium text-gray-200 hover:text-white hover:bg-white/10 transition"
-                            >
-                                {name}
-                            </a>
-                        ))}
-                    </div>
-                </motion.aside>
+                <div
+                    className="fixed inset-0 bg-black/40 z-40 md:hidden"
+                    onClick={() => setIsOpen(false)}
+                />
             )}
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.aside
+                        initial={{ opacity: 0, x: 200 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 200 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        id="mobile-menu"
+                        className="fixed top-0 right-0 z-50 h-screen bg-primary w-52 md:hidden"
+                    >
+                        <div className="flex flex-col gap-2 p-4">
+                            {navLinks.map(({ name, href }) => (
+                                <Link
+                                    key={name}
+                                    href={href}
+                                    onClick={() => setIsOpen(false)}
+                                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-200 hover:text-white hover:bg-white/10 transition"
+                                >
+                                    {name}
+                                </Link>
+                            ))}
+                        </div>
+                    </motion.aside>
+                )}
+            </AnimatePresence>
         </nav>
     )
 }
