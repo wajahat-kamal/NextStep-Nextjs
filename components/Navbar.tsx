@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from "@/assets/logo.png"
@@ -17,6 +17,7 @@ const navLinks: NavLink[] = [
 ];
 
 function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false)
     return (
         <nav className='absolute top-1 right-0 w-full h-20 z-3 flex flex-row justify-between items-center px-16 md:px-24'>
             <Link
