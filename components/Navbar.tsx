@@ -1,7 +1,8 @@
 import React from 'react'
-import logo from "@/assets/logo.png"
 import Link from 'next/link'
 import Image from 'next/image'
+import logo from "@/assets/logo.png"
+import cartImage from "@/assets/cart-image.png"
 
 interface NavLink {
     name: string;
@@ -26,18 +27,23 @@ function Navbar() {
                 <Image width={10} height={10} src={logo} alt="Shoeify logo" className="w-10 h-10" />
                 <span>NextStep</span>
             </Link>
-            <ul>
-                {navLinks.map(({ name, href }) => (
-                    <Link
-                        key={name}
-                        href={href}
-                        className="relative font-mono text-md font-medium text-white transition-colors group"
-                    >
-                        {name}
-                        <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full" />
-                    </Link>
-                ))}
-            </ul>
+            <div className='flex'>
+                <ul className='flex gap-10'>
+                    {navLinks.map(({ name, href }) => (
+                        <Link
+                            key={name}
+                            href={href}
+                            className="relative font-mono text-md font-medium text-white transition-colors group"
+                        >
+                            {name}
+                            <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full" />
+                        </Link>
+                    ))}
+                </ul>
+                <button>
+                    <Image width={40} height={40} alt='Cart Icon' src={cartImage}/>
+                </button>
+            </div>
         </nav>
     )
 }
