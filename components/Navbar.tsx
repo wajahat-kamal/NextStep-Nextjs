@@ -58,6 +58,25 @@ function Navbar() {
                     {isOpen ? <X size={26} /> : <Menu size={26} />}
                 </button>
             </div>
+            {isOpen && (
+                <aside
+                    id="mobile-menu"
+                    className="fixed top-20 right-4 z-45 w-52 rounded-xl bg-black/80 border border-white/10 backdrop-blur-xl shadow-xl md:hidden"
+                >
+                    <div className="flex flex-col gap-2 p-4">
+                        {navLinks.map(({ name, href }) => (
+                            <a
+                                key={name}
+                                href={href}
+                                onClick={() => setIsOpen(false)}
+                                className="rounded-md px-3 py-2 text-sm font-medium text-gray-200 hover:text-white hover:bg-white/10 transition"
+                            >
+                                {name}
+                            </a>
+                        ))}
+                    </div>
+                </aside>
+            )}
         </nav>
     )
 }
