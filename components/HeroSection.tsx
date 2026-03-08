@@ -20,7 +20,7 @@ function HeroSection() {
                 {/* Main Heading */}
                 <h1 className="text-7xl md:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-6">
                     Step Into the <br />
-                    <span className="italic font-light text-amber-400">Next Version</span>{" "}
+                    <span className="italic font-light text-primary">Next Version</span>{" "}
                     of You
                 </h1>
 
@@ -32,7 +32,7 @@ function HeroSection() {
 
                 {/* CTA Buttons */}
                 <div className="flex items-center gap-4">
-                    <button className="bg-amber-400 hover:bg-amber-300 text-black font-semibold px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
+                    <button className="bg-primary hover:bg-primary/80 text-black font-semibold px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
                         Shop Now
                     </button>
                     <button className="border border-white/40 hover:border-white text-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300">
