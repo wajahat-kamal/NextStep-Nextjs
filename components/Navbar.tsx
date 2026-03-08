@@ -56,7 +56,7 @@ function Navbar() {
                     aria-controls="mobile-menu"
                     className="text-gray-200 hover:text-white transition-colors"
                 >
-                    {isOpen ? <X size={30} /> : <Menu size={30} />}
+                    <Menu size={30} />
                 </button>
             </div>
 
@@ -77,15 +77,15 @@ function Navbar() {
                         exit={{ opacity: 0, x: 200 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         id="mobile-menu"
-                        className="fixed top-0 right-0 z-50 h-screen bg-primary w-52 md:hidden"
+                        className="fixed top-0 right-0 z-50 h-screen bg-primary w-48 md:hidden"
                     >
-                        <div className="flex flex-col gap-2 p-4">
+                        <div className="flex flex-col gap-2 px-4 py-10">
                             {navLinks.map(({ name, href }) => (
                                 <Link
                                     key={name}
                                     href={href}
                                     onClick={() => setIsOpen(false)}
-                                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-200 hover:text-white hover:bg-white/10 transition"
+                                    className="rounded-md px-3 py-2 text-md font-medium text-gray-200 hover:text-white hover:bg-white/10 transition"
                                 >
                                     {name}
                                 </Link>
