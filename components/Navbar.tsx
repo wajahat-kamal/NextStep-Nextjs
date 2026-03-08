@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -20,7 +21,7 @@ const navLinks: NavLink[] = [
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     return (
-        <nav className='absolute top-1 right-0 w-full h-20 z-3 flex flex-row justify-between items-center px-16 md:px-24'>
+        <nav className='absolute top-1 right-0 w-full h-20 z-3 flex flex-row justify-between items-center px-4 md:px-24'>
             <Link
                 href="/"
                 aria-label="Homepage"

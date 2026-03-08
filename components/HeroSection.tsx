@@ -16,19 +16,19 @@ function HeroSection() {
             <div className="absolute inset-0 bg-black/50 z-1" />
 
             {/* Content */}
-            <div className="relative z-2 h-full flex flex-col justify-center px-16 md:px-24">
+            <div className="relative z-2 h-full flex flex-col justify-center px-4 md:px-24">
                 <div className="max-w-2xl">
-                    <span className="text-sm uppercase tracking-[0.3em] text-primary font-medium mb-6 block">
+                    <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-primary font-medium mb-6 block">
                         New Collection — Spring 2026
                     </span>
 
-                    <h1 className="text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
                         Step Into the <br />
                         <span className="italic font-light text-primary">Next Version</span>{" "}
                         of You
                     </h1>
 
-                    <p className="text-lg text-white/70 max-w-xl leading-relaxed mb-10">
+                    <p className="text-xs md:text-lg text-white/70 max-w-[290px] md:max-w-xl leading-relaxed mb-10">
                         Crafted for those who move with purpose. Explore footwear that blends
                         performance, style, and comfort — built for wherever life takes you next.
                     </p>
