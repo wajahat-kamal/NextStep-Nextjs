@@ -1,49 +1,36 @@
-# Shoeify — Modern Shoes Store (React)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Shoeify is a modern, responsive shoes e-commerce frontend built with **React** and **TypeScript**, focused on smooth user experience, clean UI, and scalable state management.  
-The project demonstrates best practices in frontend development, animations, and cart logic.
+## Getting Started
 
----
+First, run the development server:
 
-## 🚀 Live Preview
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-👉 https://shoeify-wk.vercel.app/
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 🛠 Tech Stack
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **React** — Component-based UI development
-- **TypeScript** — Type-safe, scalable codebase
-- **JavaScript (ES6+)** — Core logic and interactions
-- **Redux Toolkit** — Global state management (Cart system)
-- **Tailwind CSS** — Utility-first modern styling
-- **Framer Motion** — Smooth animations & transitions
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-## ✨ Features
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- 🛒 Fully functional shopping cart (Redux)
-- 🔄 Cart persistence using **localStorage**
-- ➕ Increase / decrease product quantity
-- ❌ Remove items from cart
-- 🧾 Checkout functionality
-- 🎨 Modern UI with Tailwind CSS
-- 🎥 Smooth animations using Framer Motion
-- 📱 Fully responsive design
-- ⚡ Optimized and clean code structure
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
----
+## Deploy on Vercel
 
-## 📂 Project Structure
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-src/
-├── assets/ # Images & data
-├── components/ # Reusable UI components
-├── pages/ # Application pages
-├── redux/
-│ ├── slices/ # Redux slices (cart)
-│ └── store.ts # Redux store
-├── App.tsx
-└── main.tsx
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
