@@ -13,7 +13,7 @@ const SECONDARY = "#FFD33C";
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen font-sans" style={{ backgroundColor: PRIMARY, color: "#fff" }}>
+        <main className="min-h-screen font-sans bg-primary text-white">
 
             {/* Hero */}
             <section className="relative px-6 md:px-24 pt-40 pb-24 overflow-hidden">
@@ -24,7 +24,7 @@ export default function AboutPage() {
                     NEXTSTEP
                 </span>
 
-                <p className="text-xs uppercase tracking-[0.4em] mb-6 font-semibold" style={{ color: SECONDARY }}>
+                <p className="text-xs uppercase tracking-[0.4em] mb-6 font-semibold">
                     Our Story
                 </p>
                 <h1 className="text-6xl md:text-8xl font-black leading-[0.95] tracking-tight text-white max-w-4xl">
@@ -63,7 +63,7 @@ export default function AboutPage() {
                         className="py-10 px-6 text-center"
                         style={{ borderRight: i !== stats.length - 1 ? "1px solid rgba(255,211,60,0.15)" : "none" }}
                     >
-                        <p className="text-5xl md:text-6xl font-black" style={{ color: SECONDARY }}>{stat.number}</p>
+                        <p className="text-5xl md:text-6xl font-black text-secondary">{stat.number}</p>
                         <p className="text-xs uppercase tracking-widest mt-2" style={{ color: "rgba(255,255,255,0.4)" }}>
                             {stat.label}
                         </p>
@@ -74,7 +74,7 @@ export default function AboutPage() {
             {/* Mission */}
             <section className="px-6 md:px-24 py-28 grid md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <p className="text-xs uppercase tracking-[0.4em] mb-4 font-semibold" style={{ color: SECONDARY }}>
+                    <p className="text-xs uppercase tracking-[0.4em] mb-4 font-semibold text-secondary">
                         Our Mission
                     </p>
                     <h2 className="text-4xl md:text-5xl font-black leading-tight text-white">
@@ -98,7 +98,7 @@ export default function AboutPage() {
                 className="px-6 md:px-24 py-20"
                 style={{ borderTop: "1px solid rgba(255,211,60,0.15)" }}
             >
-                <p className="text-xs uppercase tracking-[0.4em] mb-16 font-semibold" style={{ color: SECONDARY }}>
+                <p className="text-xs uppercase tracking-[0.4em] mb-16 font-semibold text-secondary">
                     What We Stand For
                 </p>
                 <div className="grid md:grid-cols-2 gap-px" style={{ backgroundColor: "rgba(255,211,60,0.12)" }}>
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 className="px-6 md:px-24 py-28"
                 style={{ borderTop: "1px solid rgba(255,211,60,0.15)" }}
             >
-                <p className="text-xs uppercase tracking-[0.4em] mb-4 font-semibold" style={{ color: SECONDARY }}>
+                <p className="text-xs uppercase tracking-[0.4em] mb-4 font-semibold text-secondary">
                     The People
                 </p>
                 <h2 className="text-4xl md:text-5xl font-black mb-16 text-white">Behind NextStep.</h2>
@@ -140,12 +140,11 @@ export default function AboutPage() {
                             key={member.name}
                             className="p-8 group transition-all duration-300 cursor-default"
                             style={{ border: "1px solid rgba(255,211,60,0.2)" }}
-                            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(255,211,60,0.6)")}
-                            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,211,60,0.2)")}
+                        // onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(255,211,60,0.6)")}
+                        // onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,211,60,0.2)")}
                         >
                             <div
-                                className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform duration-300"
-                                style={{ backgroundColor: SECONDARY, color: PRIMARY }}
+                                className="text-primary bg-secondary w-16 h-16 rounded-full flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform duration-300"
                             >
                                 {member.initial}
                             </div>
@@ -160,11 +159,11 @@ export default function AboutPage() {
 
             {/* CTA Banner */}
             <section
-                className="mx-6 md:mx-24 mb-24 p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8"
+                className="mx-6 md:mx-24 mb-24 p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 bg-secondary"
                 style={{ backgroundColor: SECONDARY }}
             >
                 <div>
-                    <h2 className="text-3xl md:text-4xl font-black leading-tight" style={{ color: PRIMARY }}>
+                    <h2 className="text-3xl md:text-4xl font-black leading-tight text-primary" style={{ color: PRIMARY }}>
                         Ready to Take Your <br />Next Step?
                     </h2>
                     <p className="mt-2 text-sm" style={{ color: "rgba(2,27,65,0.6)" }}>
@@ -173,10 +172,10 @@ export default function AboutPage() {
                 </div>
                 <a
                     href="/shopping"
-                    className="px-10 py-4 text-sm uppercase tracking-widest font-semibold transition-colors duration-300 whitespace-nowrap"
+                    className="bg-primary text-secondary px-10 py-4 text-sm uppercase tracking-widest font-semibold transition-colors duration-300 whitespace-nowrap"
                     style={{ backgroundColor: PRIMARY, color: SECONDARY }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#032460")}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = PRIMARY)}
+                // onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#032460")}
+                // onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = PRIMARY)}
                 >
                     Shop Now
                 </a>
