@@ -36,7 +36,7 @@ function Footer() {
                                 key={label}
                                 href={href}
                                 aria-label={label}
-                                className="w-9 h-9 border border-zinc-700 flex items-center justify-center text-zinc-400 hover:border-amber-400 hover:text-amber-400 transition-colors duration-300"
+                                className="w-9 h-9 border border-zinc-700 flex items-center justify-center text-zinc-400 hover:border-secondary hover:text-secondary transition-colors duration-300"
                             >
                                 {icon}
                             </a>
@@ -54,9 +54,9 @@ function Footer() {
                             <li key={href}>
                                 <Link
                                     href={href}
-                                    className="group flex items-center gap-1 text-sm text-zinc-400 hover:text-amber-400 transition-colors duration-200"
+                                    className="group flex items-center gap-1 text-sm text-zinc-400 hover:text-secondary transition-colors duration-200"
                                 >
-                                    <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-amber-400">—</span>
+                                    <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-secondary">—</span>
                                     {name}
                                 </Link>
                             </li>
@@ -76,9 +76,9 @@ function Footer() {
                         <input
                             type="email"
                             placeholder="your@email.com"
-                            className="flex-1 bg-zinc-900 border border-zinc-700 px-4 py-2.5 text-sm text-white placeholder:text-zinc-600 outline-none focus:border-amber-400 transition-colors"
+                            className="flex-1 bg-zinc-900 border border-zinc-700 px-4 py-2.5 text-sm text-white placeholder:text-zinc-600 outline-none focus:border-secondary transition-colors"
                         />
-                        <button className="bg-amber-400 hover:bg-amber-300 text-black px-4 py-2.5 transition-colors duration-200">
+                        <button className="bg-secondary hover:bg-secondary/70 text-black px-4 py-2.5 transition-colors duration-200">
                             <ArrowUpRight size={18} />
                         </button>
                     </div>
@@ -95,7 +95,7 @@ function Footer() {
                         href="https://wajahat-kamal.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-zinc-400 hover:text-amber-400 transition-colors"
+                        className="text-zinc-400 hover:text-secondary transition-colors"
                     >
                         Wajahat Kamal
                     </a>
