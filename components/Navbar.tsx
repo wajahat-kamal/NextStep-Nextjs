@@ -12,7 +12,7 @@ interface NavLink {
     href: string;
 }
 
-const navLinks: NavLink[] = [
+export const navLinks: NavLink[] = [
     { name: "Home", href: "/#hero" },
     { name: "Shopping", href: "/shopping" },
     { name: "About", href: "/#about-us" },
