@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import bgImage from "@/assets/main-bg-image.jpg"
 
-function HeroSection() {
+function HomeHeroSection() {
     return (
         <section id="hero" className="relative h-screen w-full">
             <Image
@@ -13,7 +13,7 @@ function HeroSection() {
             />
 
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/50 z-1" />
+            <div className="absolute inset-0 bg-black/40 z-1" />
 
             {/* Content */}
             <div className="relative z-2 h-full flex flex-col justify-center px-4 md:px-24">
@@ -22,7 +22,7 @@ function HeroSection() {
                         New Collection — Spring 2026
                     </span>
 
-                    <h1 className="text-4xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
+                    <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
                         Step Into the <br />
                         <span className="italic font-light text-primary">Next Version</span>{" "}
                         of You
@@ -60,4 +60,4 @@ function HeroSection() {
     )
 }
 
-export default HeroSection
+export default HomeHeroSection
