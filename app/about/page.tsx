@@ -14,8 +14,7 @@ export default function AboutPage() {
             {/* Hero */}
             <section className="relative px-6 md:px-24 pt-40 pb-24 overflow-hidden">
                 <span
-                    className="absolute top-20 right-0 text-[20vw] font-black select-none leading-none pointer-events-none"
-                    style={{ color: "rgba(255,211,60,0.05)" }}
+                    className="absolute top-20 right-0 text-[20vw] font-black select-none leading-none pointer-events-none text-secondary/10"
                 >
                     NEXTSTEP
                 </span>
@@ -39,19 +38,12 @@ export default function AboutPage() {
                     So we built the store we always wanted to shop at.
                 </p>
 
-                <div
-                    className="absolute bottom-0 left-0 w-full h-px"
-                    style={{ background: `linear-gradient(to right, transparent, rgba(255,211,60,0.3), transparent)` }}
-                />
+                <div className="absolute bottom-0 left-0 w-full h-px bg-secondary/20" />
             </section>
 
             {/* Stats */}
             <section
-                className="px-6 md:px-24 py-20 grid grid-cols-2 md:grid-cols-4"
-                style={{
-                    borderTop: "1px solid rgba(255,211,60,0.15)",
-                    borderBottom: "1px solid rgba(255,211,60,0.15)",
-                }}
+                className="px-6 md:px-24 py-20 grid grid-cols-2 md:grid-cols-4 border-y border-secondary/20"
             >
                 {stats.map((stat, i) => (
                     <div
@@ -60,7 +52,7 @@ export default function AboutPage() {
                         style={{ borderRight: i !== stats.length - 1 ? "1px solid rgba(255,211,60,0.15)" : "none" }}
                     >
                         <p className="text-5xl md:text-6xl font-black text-secondary">{stat.number}</p>
-                        <p className="text-xs uppercase tracking-widest mt-2" style={{ color: "rgba(255,255,255,0.4)" }}>
+                        <p className="text-xs uppercase tracking-widest mt-2 text-white/40">
                             {stat.label}
                         </p>
                     </div>
@@ -77,7 +69,7 @@ export default function AboutPage() {
                         Every Step Should Feel Like Yours.
                     </h2>
                 </div>
-                <div className="space-y-6 text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
+                <div className="space-y-6 text-lg leading-relaxed text-white/40" style={{ color: "rgba(255,255,255,0.6)" }}>
                     <p>
                         We started NextStep in 2012 with a single rack of shoes and a belief that the right pair
                         can change how you feel about your day. That belief hasn't changed — it's only grown stronger.
@@ -91,28 +83,24 @@ export default function AboutPage() {
 
             {/* Values */}
             <section
-                className="px-6 md:px-24 py-20"
-                style={{ borderTop: "1px solid rgba(255,211,60,0.15)" }}
+                className="px-6 md:px-24 py-20 border-t border-secondary/20"
             >
                 <p className="text-xs uppercase tracking-[0.4em] mb-16 font-semibold text-secondary">
                     What We Stand For
                 </p>
-                <div className="grid md:grid-cols-2 gap-px" style={{ backgroundColor: "rgba(255,211,60,0.12)" }}>
+                <div className="grid md:grid-cols-2 gap-px bg-secondary/20">
                     {values.map((value) => (
                         <div
                             key={value.number}
-                            className="p-10 group transition-colors duration-300 cursor-default bg-primary"
-                        // onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#032460")}
-                        // onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = PRIMARY)}
+                            className="p-10 group cursor-pointer transition-colors duration-300 bg-primary hover:bg-[#032460]"
                         >
                             <span
-                                className="text-6xl font-black block mb-6"
-                                style={{ color: "rgba(255,211,60,0.12)" }}
+                                className="text-6xl font-black block mb-6 text-secondary/30"
                             >
                                 {value.number}
                             </span>
                             <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                            <p className="leading-relaxed text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
+                            <p className="leading-relaxed text-sm text-white/40">
                                 {value.description}
                             </p>
                         </div>
