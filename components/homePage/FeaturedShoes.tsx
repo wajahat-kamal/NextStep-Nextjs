@@ -12,10 +12,10 @@ async function FeaturedShoes() {
     const featuredShoes = data.slice(0, 6)
 
     return (
-        <section className="px-6 md:px-24 py-24 bg-bgColor">
+        <section className="px-6 md:px-24 py-18 bg-bgColor">
 
             {/* Section Header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
                 <div>
                     <p className="text-xs uppercase tracking-[0.4em] font-semibold mb-0 inline-block px-3 py-1 text-primary bg-secondary">
                         New Arrivals

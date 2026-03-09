@@ -6,7 +6,7 @@ import { navLinks } from "@/data/linksData";
 
 function Footer() {
     return (
-        <footer className="bg-primary border-t border-secondary/30">
+        <footer className="bg-bgColor border-t border-secondary/30">
 
             {/* Main Footer Content */}
             <div className="px-6 lg:px-24 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
