@@ -30,16 +30,7 @@ async function FeaturedShoes() {
                 </div>
                 <Link
                     href="/shopping"
-                    className="flex items-center gap-2 text-xs uppercase tracking-widest font-semibold px-6 py-3 transition-all duration-300 self-start md:self-auto"
-                    style={{ border: "2px solid rgba(255,211,60,0.4)", color: "#FFD33C" }}
-                    // onMouseEnter={e => {
-                    //     e.currentTarget.style.backgroundColor = "#FFD33C"
-                    //     e.currentTarget.style.color = "#021B41"
-                    // }}
-                    // onMouseLeave={e => {
-                    //     e.currentTarget.style.backgroundColor = "transparent"
-                    //     e.currentTarget.style.color = "#FFD33C"
-                    // }}
+                    className="flex items-center gap-2 text-xs uppercase tracking-widest font-semibold px-6 py-3 transition-all duration-300 self-start md:self-auto border-2 border-secondary/50 text-secondary hover:bg-secondary hover:text-primary"
                 >
                     View All
                     <ArrowUpRight size={14} />
