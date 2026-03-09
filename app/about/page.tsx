@@ -110,8 +110,7 @@ export default function AboutPage() {
 
             {/* Team */}
             <section
-                className="px-6 md:px-24 py-28"
-                style={{ borderTop: "1px solid rgba(255,211,60,0.15)" }}
+                className="px-6 md:px-24 py-28 border-t border-secondary/30"
             >
                 <p className="text-xs uppercase tracking-[0.4em] mb-4 font-semibold text-secondary">
                     The People
@@ -121,10 +120,7 @@ export default function AboutPage() {
                     {team.map((member) => (
                         <div
                             key={member.name}
-                            className="p-8 group transition-all duration-300 cursor-default"
-                            style={{ border: "1px solid rgba(255,211,60,0.2)" }}
-                        // onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(255,211,60,0.6)")}
-                        // onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,211,60,0.2)")}
+                            className="p-8 group transition-all duration-300 cursor-default border border-secondary/20 hover:border-secondary/40"
                         >
                             <div
                                 className="text-primary bg-secondary w-16 h-16 rounded-full flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform duration-300"
@@ -132,7 +128,7 @@ export default function AboutPage() {
                                 {member.initial}
                             </div>
                             <h3 className="text-lg font-bold text-white">{member.name}</h3>
-                            <p className="text-sm mt-1 uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>
+                            <p className="text-sm mt-1 uppercase tracking-widest text-white/40">
                                 {member.role}
                             </p>
                         </div>
@@ -148,15 +144,13 @@ export default function AboutPage() {
                     <h2 className="text-3xl md:text-4xl font-black leading-tight text-primary">
                         Ready to Take Your <br />Next Step?
                     </h2>
-                    <p className="mt-2 text-sm" style={{ color: "rgba(2,27,65,0.6)" }}>
+                    <p className="mt-2 text-sm text-black/60" >
                         Browse our full collection and find your perfect pair.
                     </p>
                 </div>
                 <a
                     href="/shopping"
-                    className="bg-primary text-secondary px-10 py-4 text-sm uppercase tracking-widest font-semibold transition-colors duration-300 whitespace-nowrap"
-                // onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#032460")}
-                // onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = PRIMARY)}
+                    className="bg-primary hover:bg-[#032460] text-secondary px-10 py-4 text-sm uppercase tracking-widest font-semibold transition-colors duration-300 whitespace-nowrap"
                 >
                     Shop Now
                 </a>
