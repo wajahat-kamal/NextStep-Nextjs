@@ -49,8 +49,7 @@ function ShoeCard({ shoe }: ShoeCardProps) {
 
                     {/* Brand */}
                     <span
-                        className="text-[10px] uppercase tracking-[0.35em] font-bold"
-                        style={{ color: "#FFD33C" }}
+                        className="text-[10px] uppercase tracking-[0.35em] font-bold text-secondary"
                     >
                         {shoe.brand}
                     </span>
@@ -68,7 +67,7 @@ function ShoeCard({ shoe }: ShoeCardProps) {
                         </div>
 
                         <button
-                            className="w-10 h-10 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                            className="bg-secondary text-primary w-10 h-10 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
                             style={{ backgroundColor: "#FFD33C", color: "#021B41" }}
                             aria-label={`Add ${shoe.name} to cart`}
                         >
@@ -80,16 +79,7 @@ function ShoeCard({ shoe }: ShoeCardProps) {
                     <div className="overflow-hidden transition-all duration-500 max-h-0 group-hover:max-h-16">
                         <Link
                             href={`/shopping/${slug}`}
-                            className="flex items-center justify-center gap-2 w-full py-2.5 text-xs uppercase tracking-widest font-semibold transition-colors duration-200 mt-1"
-                            style={{ border: "1px solid rgba(255,211,60,0.4)", color: "#FFD33C" }}
-                            onMouseEnter={e => {
-                                e.currentTarget.style.backgroundColor = "#FFD33C"
-                                e.currentTarget.style.color = "#021B41"
-                            }}
-                            onMouseLeave={e => {
-                                e.currentTarget.style.backgroundColor = "transparent"
-                                e.currentTarget.style.color = "#FFD33C"
-                            }}
+                            className="flex items-center justify-center gap-2 w-full py-2.5 text-xs uppercase tracking-widest text-secondary border border-secondary/30 hover:bg-secondary hover:text-primary font-semibold transition-colors duration-200 mt-1"
                         >
                             View Details
                             <ArrowUpRight size={13} />
@@ -98,12 +88,6 @@ function ShoeCard({ shoe }: ShoeCardProps) {
                 </div>
             </div>
 
-            {/* Gold border on hover */}
-            <div
-                className="absolute inset-0 border-2 border-transparent group-hover:border-secondary transition-all duration-500 pointer-events-none z-20"
-                style={{ borderColor: "transparent" }}
-                // onMouseEnter={e => (e.currentTarget.style.borderColor = "rgba(255,211,60,0.5)")}
-            />
         </div>
     );
 }
