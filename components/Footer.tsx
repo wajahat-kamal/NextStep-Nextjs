@@ -1,0 +1,110 @@
+import { Facebook, Twitter, Instagram } from "lucide-react";
+import logo from "@/assets/logo.png";
+
+function Footer() {
+    return (
+        <footer className="bg-(--secondary) shadow-xl py-8 px-6 lg:px-30">
+            <div className="flex justify-between flex-col md:flex-row gap-10">
+                {/* Logo & About */}
+                <div>
+                    <a
+                        href="/"
+                        aria-label="Homepage"
+                        className="flex items-center gap-2 text-2xl font-mono font-semibold tracking-widest hover:opacity-90 transition-opacity"
+                    >
+                        <img src={logo} alt="Shoeify logo" className="w-10 h-10" />
+                        <span>SHOEIFY</span>
+                    </a>
+                    <p className="mt-4 text-sm text-white/60 leading-relaxed max-w-sm">
+                        Shoeify delivers premium quality footwear designed for comfort,
+                        durability, and modern style. Step confidently, every day.
+                    </p>
+                </div>
+
+                {/* Quick Links */}
+                <div>
+                    <h3 className="text-lg font-semibold text-(--primary) mb-2">
+                        Quick Links
+                    </h3>
+                    <ul className="space-y-2 text-sm text-left md:text-right text-white/60">
+                        <li>
+                            <a
+                                href="/#hero"
+                                className="inline-block hover:text-(--primary) hover:underline underline-offset-4 transition-colors"
+                            >
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/Shopping"
+                                className="inline-block hover:text-(--primary) hover:underline underline-offset-4 transition-colors"
+                            >
+                                Shopping
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/#about"
+                                className="inline-block hover:text-(--primary) hover:underline underline-offset-4 transition-colors"
+                            >
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/#testimonials"
+                                className="inline-block hover:text-(--primary) hover:underline underline-offset-4 transition-colors"
+                            >
+                                Testimonials
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* Divider Section */}
+            <div className="border-t border-gray-300 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-white/90">
+                {/* Left Side */}
+                <p>© {new Date().getFullYear()} SHOEIFY. All rights reserved.</p>
+
+                {/* Creator Credit */}
+                <p className="mt-4 md:mt-0 text-white/60">
+                    Made with <span className="text-red-500">❤</span> by{" "}
+                    <a
+                        href="https://wajahat-kamal.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-white/60 hover:text-(--primary) transition"
+                    >
+                        Wajahat Kamal
+                    </a>
+                </p>
+
+                {/* Social Icons */}
+                <div className="flex space-x-5 mt-4 md:mt-0">
+                    <a
+                        href="#"
+                        className="p-2 rounded-full hover:bg-white/60 hover:text-(--primary) transition-colors"
+                    >
+                        <Facebook size={20} />
+                    </a>
+                    <a
+                        href="#"
+                        className="p-2 rounded-full hover:bg-white/60 hover:text-(--primary) transition-colors"
+                    >
+                        <Twitter size={20} />
+                    </a>
+                    <a
+                        href="#"
+                        className="p-2 rounded-full hover:bg-white/60 hover:text-(--primary) transition-colors"
+                    >
+                        <Instagram size={20} />
+                    </a>
+                </div>
+            </div>
+        </footer>
+    );
+}
+
+export default Footer;
