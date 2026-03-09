@@ -2,7 +2,7 @@ import { Facebook, Twitter, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { navLinks } from "./Navbar";
+import { navLinks } from "@/data/linksData";
 
 function Footer() {
     return (

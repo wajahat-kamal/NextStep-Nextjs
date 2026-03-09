@@ -6,18 +6,7 @@ import logo from "@/assets/logo.png"
 import cartImage from "@/assets/cart-image.png"
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from "motion/react"
-
-interface NavLink {
-    name: string;
-    href: string;
-}
-
-export const navLinks: NavLink[] = [
-    { name: "Home", href: "/#hero" },
-    { name: "Shopping", href: "/shopping" },
-    { name: "About", href: "/#about-us" },
-    { name: "Testimonials", href: "/#testimonials" },
-];
+import { navLinks } from '@/data/linksData'
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
