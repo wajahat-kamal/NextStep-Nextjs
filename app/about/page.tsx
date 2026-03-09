@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen font-sans bg-primary text-white">
+        <main className="min-h-screen font-sans bg-primary text-white pb-16">
 
             {/* Hero */}
             <section className="relative px-6 md:px-24 pt-40 pb-24 overflow-hidden">
@@ -138,7 +138,7 @@ export default function AboutPage() {
 
             {/* CTA Banner */}
             <section
-                className="mx-6 md:mx-24 mb-24 p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 bg-secondary"
+                className="mx-6 md:mx-24 p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 bg-secondary"
             >
                 <div>
                     <h2 className="text-3xl md:text-4xl font-black leading-tight text-primary">

@@ -33,7 +33,7 @@ export const values = [
 ];
 
 export const team = [
-    { name: "Hamza Raza", role: "Founder & CEO", initial: "H" },
+    { name: "Wajahat Kamal", role: "Founder & CEO", initial: "W" },
     { name: "Sara Khan", role: "Head of Curation", initial: "S" },
     { name: "Ali Noor", role: "Brand Partnerships", initial: "A" },
 ];
