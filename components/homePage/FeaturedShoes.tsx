@@ -11,10 +11,15 @@ async function FeaturedShoes() {
     const data = JSON.parse(rawData)
     const featuredShoes = data.slice(0, 6)
     return (
-        <section className="flex justify-center items-center flex-wrap gap-6">
-            {featuredShoes.map((shoe: Shoe) => (
-                <ShoeCard key={shoe.id} shoe={shoe} />
-            ))}
+        <section>
+            <div>
+                <h1>Featured Shoes</h1>
+            </div>
+            <div className="flex justify-center items-center flex-wrap gap-6">
+                {featuredShoes.map((shoe: Shoe) => (
+                    <ShoeCard key={shoe.id} shoe={shoe} />
+                ))}
+            </div>
         </section>
     )
 }

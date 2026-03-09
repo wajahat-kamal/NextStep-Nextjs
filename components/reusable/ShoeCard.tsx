@@ -15,7 +15,7 @@ function ShoeCard({ shoe }: ShoeCardProps) {
 
             {/* Image Container */}
             <div
-                className="relative w-70 h-40 overflow-hidden bg-[#F5F5F0]"
+                className="relative w-80 h-50 overflow-hidden bg-[#F5F5F0]"
             >
                 {/* Category Badge */}
                 <span
@@ -36,8 +36,6 @@ function ShoeCard({ shoe }: ShoeCardProps) {
                     src={shoe.imageUrl}
                     alt={shoe.name}
                     fill
-                    // width={100}
-                    // height={100}
                     className="object-contain p-6 transition-transform duration-700 group-hover:scale-110"
                     // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
