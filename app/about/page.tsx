@@ -7,10 +7,6 @@ export const metadata: Metadata = {
 };
 
 
-
-const PRIMARY = "#021B41";
-const SECONDARY = "#FFD33C";
-
 export default function AboutPage() {
     return (
         <main className="min-h-screen font-sans bg-primary text-white">
@@ -105,8 +101,7 @@ export default function AboutPage() {
                     {values.map((value) => (
                         <div
                             key={value.number}
-                            className="p-10 group transition-colors duration-300 cursor-default"
-                            style={{ backgroundColor: PRIMARY }}
+                            className="p-10 group transition-colors duration-300 cursor-default bg-primary"
                         // onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#032460")}
                         // onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = PRIMARY)}
                         >
@@ -160,10 +155,9 @@ export default function AboutPage() {
             {/* CTA Banner */}
             <section
                 className="mx-6 md:mx-24 mb-24 p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 bg-secondary"
-                style={{ backgroundColor: SECONDARY }}
             >
                 <div>
-                    <h2 className="text-3xl md:text-4xl font-black leading-tight text-primary" style={{ color: PRIMARY }}>
+                    <h2 className="text-3xl md:text-4xl font-black leading-tight text-primary">
                         Ready to Take Your <br />Next Step?
                     </h2>
                     <p className="mt-2 text-sm" style={{ color: "rgba(2,27,65,0.6)" }}>
@@ -173,7 +167,6 @@ export default function AboutPage() {
                 <a
                     href="/shopping"
                     className="bg-primary text-secondary px-10 py-4 text-sm uppercase tracking-widest font-semibold transition-colors duration-300 whitespace-nowrap"
-                    style={{ backgroundColor: PRIMARY, color: SECONDARY }}
                 // onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#032460")}
                 // onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = PRIMARY)}
                 >
