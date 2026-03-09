@@ -1,17 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart, ArrowUpRight } from "lucide-react";
-
-export interface Shoe {
-    id: number;
-    name: string;
-    price: number;
-    imageUrl: string;
-    brand: string;
-    category: string;
-    gender: string;
-    slug?: string;
-}
+import { Shoe } from "@/types/Shoe";
 
 interface ShoeCardProps {
     shoe: Shoe;
