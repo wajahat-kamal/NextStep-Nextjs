@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import bgImage from "@/assets/main-bg-image.jpg"
 
-function HeroSection() {
+function HomeHeroSection() {
     return (
         <section id="hero" className="relative h-screen w-full">
             <Image
@@ -60,4 +60,4 @@ function HeroSection() {
     )
 }
 
-export default HeroSection
+export default HomeHeroSection
