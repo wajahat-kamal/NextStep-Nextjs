@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart, ArrowUpRight } from "lucide-react";
@@ -11,83 +12,97 @@ function ShoeCard({ shoe }: ShoeCardProps) {
     const slug = shoe.slug ?? shoe.name.toLowerCase().replace(/\s+/g, "-");
 
     return (
-        <div className="group relative flex flex-col bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+        <div className="group relative w-full aspect-3/4 overflow-hidden cursor-pointer">
 
-            {/* Image Container */}
-            <div
-                className="relative w-80 h-60 overflow-hidden bg-[#F5F5F0]"
-            >
-                {/* Category Badge */}
+            <div className="absolute inset-0 bg-[#F6F6F6]" />
+
+            <Image
+                src={shoe.imageUrl}
+                alt={shoe.name}
+                fill
+                className="object-contain p-8 transition-transform duration-700 ease-out group-hover:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+
+            <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
                 <span
-                    className="absolute top-3 left-3 z-10 text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1 bg-primary text-secondary"
+                    className="text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 bg-secondary text-primary"
                 >
                     {shoe.category}
                 </span>
-
-                {/* Gender Badge */}
                 <span
-                    className="absolute top-3 right-3 z-10 text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1 bg-white/80 text-zinc-500"
+                    className="text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1"
+                    style={{ backgroundColor: "rgba(2,27,65,0.7)", color: "rgba(255,255,255,0.8)" }}
                 >
                     {shoe.gender}
                 </span>
-
-                {/* Shoe Image */}
-                <Image
-                    src={shoe.imageUrl}
-                    alt={shoe.name}
-                    fill
-                    className="object-contain p-6 transition-transform duration-700 group-hover:scale-110"
-                    // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-
-                {/* Hover Overlay with Quick Actions */}
-                <div className="absolute inset-0 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Link
-                        href={`/shopping/${slug}`}
-                        className="flex items-center gap-2 text-xs uppercase tracking-widest font-semibold px-5 py-2.5 transition-colors duration-200  bg-primary text-secondary"
-                    >
-                        View Details
-                        <ArrowUpRight size={14} />
-                    </Link>
-                </div>
             </div>
 
-            {/* Card Body */}
-            <div className="flex flex-col flex-1 px-4 py-1 gap-1">
+            {/* Bottom Overlay — always visible, expands on hover */}
+            <div
+                className="absolute bottom-0 left-0 right-0 z-10 transition-all duration-500 ease-out pt-16"
+                style={{
+                    background: "linear-gradient(to top, rgba(2,27,65,0.98) 0%, rgba(2,27,65,0.85) 60%, transparent 100%)",
+                }}
+            >
+                <div className="px-5 pb-5 flex flex-col gap-3">
 
-                {/* Brand */}
-                <span
-                    className="text-[10px] uppercase tracking-[0.3em] font-bold text-primary"
-                >
-                    {shoe.brand}
-                </span>
+                    {/* Brand */}
+                    <span
+                        className="text-[10px] uppercase tracking-[0.35em] font-bold"
+                        style={{ color: "#FFD33C" }}
+                    >
+                        {shoe.brand}
+                    </span>
 
-                {/* Name */}
-                <h3 className="text-sm font-semibold text-zinc-800 leading-snug line-clamp-2 group-hover:text-primary transition-colors">
-                    {shoe.name}
-                </h3>
+                    {/* Name */}
+                    <h3 className="text-base font-bold text-white leading-snug line-clamp-2">
+                        {shoe.name}
+                    </h3>
 
-                {/* Price + Cart */}
-                <div className="flex items-center justify-between pt-1 border-t border-[#e9e9e9]">
-                    <div>
-                        <span className="text-xl font-black text-primary">
-                            ${shoe.price}
-                        </span>
-                        <span className="text-xs text-zinc-400 ml-1">USD</span>
+                    {/* Price Row */}
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-2xl font-black text-white">${shoe.price}</span>
+                            <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>USD</span>
+                        </div>
+
+                        <button
+                            className="w-10 h-10 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                            style={{ backgroundColor: "#FFD33C", color: "#021B41" }}
+                            aria-label={`Add ${shoe.name} to cart`}
+                        >
+                            <ShoppingCart size={16} />
+                        </button>
                     </div>
 
-                    <button
-                        className=" bg-secondary text-primary w-9 h-9 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
-                        aria-label={`Add ${shoe.name} to cart`}
-                    >
-                        <ShoppingCart size={16} />
-                    </button>
+                    {/* View Details — slides in on hover */}
+                    <div className="overflow-hidden transition-all duration-500 max-h-0 group-hover:max-h-16">
+                        <Link
+                            href={`/shopping/${slug}`}
+                            className="flex items-center justify-center gap-2 w-full py-2.5 text-xs uppercase tracking-widest font-semibold transition-colors duration-200 mt-1"
+                            style={{ border: "1px solid rgba(255,211,60,0.4)", color: "#FFD33C" }}
+                            onMouseEnter={e => {
+                                e.currentTarget.style.backgroundColor = "#FFD33C"
+                                e.currentTarget.style.color = "#021B41"
+                            }}
+                            onMouseLeave={e => {
+                                e.currentTarget.style.backgroundColor = "transparent"
+                                e.currentTarget.style.color = "#FFD33C"
+                            }}
+                        >
+                            View Details
+                            <ArrowUpRight size={13} />
+                        </Link>
+                    </div>
                 </div>
             </div>
 
-            {/* Bottom accent line */}
+            {/* Gold border on hover */}
             <div
-                className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-secondary"
+                className="absolute inset-0 border-2 border-transparent group-hover:border-secondary transition-all duration-500 pointer-events-none z-20"
+                style={{ borderColor: "transparent" }}
+                // onMouseEnter={e => (e.currentTarget.style.borderColor = "rgba(255,211,60,0.5)")}
             />
         </div>
     );
