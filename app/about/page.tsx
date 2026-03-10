@@ -3,7 +3,7 @@ import AboutOurMission from "@/components/aboutPage/AboutOurMission";
 import AboutStats from "@/components/aboutPage/AboutStats";
 import AboutTeam from "@/components/aboutPage/AboutTeam";
 import AboutValues from "@/components/aboutPage/AboutValues";
-import CTABanner from "@/components/CTABanner";
+import CTABanner from "@/components/reusable/CTABanner";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
