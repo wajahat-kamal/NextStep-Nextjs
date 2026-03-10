@@ -44,6 +44,7 @@ async function Categories() {
                     const count = allShoes.filter((shoe) => (
                         shoe.category === category.value
                     )).length
+                    const Icon = category.icon
                     return (
                         <Link
                             key={category.name}
@@ -64,7 +65,10 @@ async function Categories() {
                             </span>
 
                             <div className="relative z-10 flex justify-between items-start">
-                                <span className="text-3xl">{category.emoji}</span>
+                                {/* <span className="text-3xl">{category.emoji}</span> */}
+                                <span className={i % 2 === 0 ? "text-secondary" : "text-primary"}>
+                                    <Icon size={28} />
+                                </span>
                                 <span className={`text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-primary/15 text-primary ${i % 2 === 0
                                     ? "bg-secondary/15 text-secondary"
                                     : "bg-primary/15 text-primary"
