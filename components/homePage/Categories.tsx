@@ -106,13 +106,19 @@ async function Categories() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {categories.map((category) => (
-                    <Link key={category.name} href={category.href}>
-
-                    </Link>
-                ))}
+                {categories.map((category) => {
+                    const count = allShoes.filter((shoe) => (
+                        shoe.category === category.value
+                    )).length
+                    return (
+                        <Link key={category.name} href={`/shopping?category=${category.value.toLowerCase()}`
+                        }>
+                            {count}
+                        </Link>
+                    )
+                })}
             </div>
-        </section>
+        </section >
     )
 }
 
