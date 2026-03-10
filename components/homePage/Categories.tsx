@@ -106,14 +106,35 @@ async function Categories() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {categories.map((category) => {
+                {categories.map((category, i) => {
                     const count = allShoes.filter((shoe) => (
                         shoe.category === category.value
                     )).length
                     return (
-                        <Link key={category.name} href={`/shopping?category=${category.value.toLowerCase()}`
-                        }>
-                            {count}
+                        <Link
+                            key={category.name}
+                            href={`/shopping?category=${category.value.toLowerCase()}`}
+                            className="group relative overflow-hidden flex flex-col justify-between min-h-56 p-6 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl"
+                        >
+                            <div className={`absolute inset-0 transition-all duration-500 ${i % 2 === 0
+                                ? "bg-primary group-hover:bg-primary/90"
+                                : "bg-secondary group-hover:bg-secondary/90"
+                                }`}
+                            />
+                            
+                            <span className={`absolute -bottom-4 -right-2 text-[7rem] font-black leading-none select-none pointer-events-none transition-all duration-500 group-hover:scale-110 group-hover:-bottom-2 ${i % 2 === 0
+                                ? "text-white/5"
+                                : "text-primary/10"
+                                }`}>
+                                {String(i + 1).padStart(2, "0")}
+                            </span>
+                            
+                            <div className="relative z-10 flex justify-between items-start">
+                                <span className="text-3xl">{category.emoji}</span>
+                                <span className="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-primary/15 text-primary" >
+                                    {count} Styles
+                                </span>
+                            </div>
                         </Link>
                     )
                 })}
