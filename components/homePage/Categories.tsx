@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react"
 import { Shoe } from "@/types/Shoe"
 import fs from "node:fs/promises"
 import path from "node:path"
+import { categories } from "@/data/categoriesData"
 
 
 async function Categories() {
