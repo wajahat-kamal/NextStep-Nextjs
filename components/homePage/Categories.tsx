@@ -121,19 +121,40 @@ async function Categories() {
                                 : "bg-secondary group-hover:bg-secondary/90"
                                 }`}
                             />
-                            
+
                             <span className={`absolute -bottom-4 -right-2 text-[7rem] font-black leading-none select-none pointer-events-none transition-all duration-500 group-hover:scale-110 group-hover:-bottom-2 ${i % 2 === 0
                                 ? "text-white/5"
                                 : "text-primary/10"
                                 }`}>
-                                {String(i + 1).padStart(2, "0")}
+                                0{String(i + 1)}
                             </span>
-                            
+
                             <div className="relative z-10 flex justify-between items-start">
                                 <span className="text-3xl">{category.emoji}</span>
-                                <span className="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-primary/15 text-primary" >
+                                <span className={`text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-primary/15 text-primary ${i % 2 === 0
+                                    ? "bg-secondary/15 text-secondary"
+                                    : "bg-primary/15 text-primary"
+                                    }`} >
                                     {count} Styles
                                 </span>
+                            </div>
+
+                            <div className="relative z-10 flex flex-col gap-1.5">
+                                <h3 className={`text-2xl font-black tracking-tight ${i % 2 === 0 ? "text-white" : "text-primary"
+                                    }`}>
+                                    {category.name}
+                                </h3>
+                                <p className={`text-xs leading-relaxed line-clamp-2 ${i % 2 === 0
+                                    ? "text-white/55"
+                                    : "text-primary/60"
+                                    }`}>
+                                    {category.description}
+                                </p>
+                                <div className={`flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold mt-2 w-fit transition-all duration-300 group-hover:gap-2 ${i % 2 === 0 ? "text-secondary" : "text-primary"
+                                    }`}>
+                                    Shop Now
+                                    <ArrowUpRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                </div>
                             </div>
                         </Link>
                     )
