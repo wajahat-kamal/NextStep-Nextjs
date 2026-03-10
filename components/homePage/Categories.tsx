@@ -104,6 +104,14 @@ async function Categories() {
                     )
                 })}
             </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {categories.map((category) => (
+                    <Link key={category.name} href={category.href}>
+
+                    </Link>
+                ))}
+            </div>
         </section>
     )
 }
