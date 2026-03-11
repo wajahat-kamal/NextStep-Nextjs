@@ -25,7 +25,7 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
 
-            <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
+            <div className="absolute md:top-4 md:left-4 md:right-4 top-1 left-1 right-1 flex justify-between items-start z-10">
                 <span
                     className="text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 bg-secondary text-primary"
                 >
@@ -46,35 +46,35 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                     background: "linear-gradient(to top, rgba(2,27,65,0.98) 0%, rgba(2,27,65,0.85) 60%, transparent 100%)",
                 }}
             >
-                <div className="px-5 pb-2 flex flex-col gap-1">
+                <div className="px-2 md:px-5 pb-2 flex flex-col gap-1">
 
                     {/* Brand */}
                     <div
-                        className="text-[10px] uppercase tracking-[0.35em] font-bold text-secondary"
+                        className="text-[7px] md:text-[10px] uppercase tracking-[0.35em] font-bold text-secondary"
                     >
-                        <span className="bg-primary/80 py-1 px-2">
+                        <span className="bg-primary/80 py-0.5 px-1 md:py-1 md:px-2">
                             {shoe.brand}
                         </span>
                     </div>
 
                     {/* Name */}
-                    <h3 className="text-base font-bold text-white leading-snug line-clamp-1">
+                    <h3 className="text-sm md:text-base font-bold text-white leading-snug line-clamp-1">
                         {shoe.name}
                     </h3>
 
                     {/* Price Row */}
                     <div className="flex items-center justify-between">
                         <div className="flex items-baseline gap-1">
-                            <span className="text-2xl font-black text-white">${shoe.price}</span>
-                            <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>USD</span>
+                            <span className="text-xl md:text-2xl font-black text-white">${shoe.price}</span>
+                            <span className="text-[10px] md:text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>USD</span>
                         </div>
 
                         <button
-                            className="bg-secondary text-primary w-10 h-10 cursor-pointer flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                            className="bg-secondary text-primary w-6 h-6 md:w-10 md:h-10 cursor-pointer flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
                             style={{ backgroundColor: "#FFD33C", color: "#021B41" }}
                             aria-label={`Add ${shoe.name} to cart`}
                         >
-                            <ShoppingCart size={16} />
+                            <ShoppingCart className="md:w-7 md:h-7 h-4 w-4" />
                         </button>
                     </div>
 
