@@ -12,6 +12,17 @@ function FilterdData({ allShoes }: FilterdDataProps) {
     const [gender, setGender] = useState("All")
     const [category, setCategory] = useState("All")
 
+    function filteredData() {
+        let filteredData: Shoe[] = []
+        for (const shoe of allShoes) {
+            shoe.category === "All"
+            ? filteredData.push(shoe)
+            : filteredData.push(shoe)
+        }
+
+        return filteredData
+    }
+
     return (
         <div>
             <section className='w-full h-25 px-6 md:px-16 flex md:flex-row flex-col items-center justify-between gap-4'>
@@ -35,7 +46,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
             </section>
 
             <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 p-6 md:p-16 md:pt-4'>
-                {allShoes.map((shoe) => (
+                {filteredData.map((shoe) => (
                     <ShoeCard key={shoe.id} shoe={shoe} height={true} />
                 ))}
             </main>
