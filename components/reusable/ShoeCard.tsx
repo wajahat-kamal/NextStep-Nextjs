@@ -13,7 +13,7 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
     const slug = shoe.slug ?? shoe.name.toLowerCase().replace(/\s+/g, "-");
 
     return (
-        <div className={`group relative w-full ${height ? "h-80" : "h-110"} aspect-3/4 overflow-hidden cursor-pointer`}>
+        <div className={`group relative w-full ${height ? "h-60 md:h-80" : "h-100"} aspect-3/4 overflow-hidden cursor-pointer`}>
 
             <div className="absolute inset-0 bg-[#F6F6F6]" />
 

@@ -27,7 +27,7 @@ export default async function ShoppingPage() {
 
             </div>
 
-            <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-16'>
+            <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 p-6 md:p-16'>
                 {allShoes.map((shoe) => (
                     <ShoeCard key={shoe.id} shoe={shoe} height={true}/>
                 ))}
