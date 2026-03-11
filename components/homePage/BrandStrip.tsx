@@ -1,11 +1,11 @@
-// "use client"
+"use client"
 import { motion } from "motion/react"
 
 const brands = ["Nike", "Adidas", "Vans", "Reebok", "Hush Puppies", "Nike", "Adidas", "Vans", "Reebok", "Hush Puppies"]
 
 function BrandStrip() {
     return (
-        <section className="w-full bg-primary py-14 overflow-hidden">
+        <section className="w-full py-14 overflow-hidden">
 
             {/* Heading */}
             <p className="text-center text-[10px] uppercase tracking-[0.4em] text-secondary/60 font-semibold mb-10">
