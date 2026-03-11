@@ -6,13 +6,14 @@ import { Shoe } from "@/types/Shoe";
 
 interface ShoeCardProps {
     shoe: Shoe;
+    height: boolean
 }
 
-function ShoeCard({ shoe }: ShoeCardProps) {
+function ShoeCard({ shoe, height }: ShoeCardProps) {
     const slug = shoe.slug ?? shoe.name.toLowerCase().replace(/\s+/g, "-");
 
     return (
-        <div className="group relative w-full h-110 aspect-3/4 overflow-hidden cursor-pointer">
+        <div className={`group relative w-full ${height ? "h-80" : "h-110"} aspect-3/4 overflow-hidden cursor-pointer`}>
 
             <div className="absolute inset-0 bg-[#F6F6F6]" />
 
@@ -40,12 +41,12 @@ function ShoeCard({ shoe }: ShoeCardProps) {
 
             {/* Bottom Overlay — always visible, expands on hover */}
             <div
-                className="absolute bottom-0 left-0 right-0 z-10 transition-all duration-500 ease-out pt-16"
+                className={`absolute bottom-0 left-0 right-0 z-10 transition-all duration-500 ease-out ${height ? "pt-4" : "pt-16"}`}
                 style={{
                     background: "linear-gradient(to top, rgba(2,27,65,0.98) 0%, rgba(2,27,65,0.85) 60%, transparent 100%)",
                 }}
             >
-                <div className="px-5 pb-5 flex flex-col gap-3">
+                <div className="px-5 pb-2 flex flex-col gap-1">
 
                     {/* Brand */}
                     <span
@@ -55,7 +56,7 @@ function ShoeCard({ shoe }: ShoeCardProps) {
                     </span>
 
                     {/* Name */}
-                    <h3 className="text-base font-bold text-white leading-snug line-clamp-2">
+                    <h3 className="text-base font-bold text-white leading-snug line-clamp-1">
                         {shoe.name}
                     </h3>
 

@@ -1,3 +1,5 @@
+import ShoeCard from '@/components/reusable/ShoeCard';
+import { Shoe } from '@/types/Shoe';
 import { Metadata } from 'next';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -12,7 +14,7 @@ export default async function ShoppingPage() {
 
     const filePath = path.join(process.cwd(), "data", "ShoeData.json") 
     const rawData = await fs.readFile(filePath, "utf8")
-    const allShoes = JSON.parse(rawData)
+    const allShoes: Shoe[] = JSON.parse(rawData)
 
     return (
         <div className='min-h-screen'>
@@ -20,12 +22,15 @@ export default async function ShoppingPage() {
                 <h1 className='text-white text-7xl'>Shopping</h1>
             </header>
 
+            {/* filters */}
             <div>
 
             </div>
 
-            <main>
-                
+            <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-16'>
+                {allShoes.map((shoe) => (
+                    <ShoeCard key={shoe.id} shoe={shoe} height={true}/>
+                ))}
             </main>
         </div>
     )
