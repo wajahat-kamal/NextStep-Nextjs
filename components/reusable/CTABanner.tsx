@@ -16,7 +16,7 @@ function CTABanner() {
                     <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-primary/50 mb-3">
                         Limited Time
                     </p>
-                    <h2 className="text-3xl md:text-4xl font-black leading-tight text-primary">
+                    <h2 className="text-2xl md:text-4xl font-black leading-tight text-primary">
                         Ready to Take Your <br />Next Step?
                     </h2>
                     <p className="mt-2 text-sm text-primary/60">
