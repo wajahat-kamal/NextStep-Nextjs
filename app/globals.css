@@ -6,3 +6,7 @@
     --color-secondary: #FFD33C;
     --color-bgColor: #011228;
 }
+
+body {
+    background-color: #011228;
+}

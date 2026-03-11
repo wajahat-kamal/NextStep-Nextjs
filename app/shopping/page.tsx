@@ -1,9 +1,16 @@
+import { Metadata } from 'next';
 import React from 'react'
 
-function Shopping() {
-  return (
-    <div>page</div>
-  )
+export const metadata: Metadata = {
+    title: "Shopping | NextStep",
+    description: "",
+};
+
+export default function ShoppingPage() {
+    return (
+        <div className='min-h-screen'>
+
+        </div>
+    )
 }
 
-export default Shopping
