@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import ShoeCard from '@/components/reusable/ShoeCard';
 import { Shoe } from '@/types/Shoe';
 
@@ -7,21 +7,21 @@ interface FilterdDataProps {
     allShoes: Shoe[]
 }
 
-async function FilterdData({ allShoes }: FilterdDataProps) {
-
+function FilterdData({ allShoes }: FilterdDataProps) {
+    const [gender, setGender] = useState("All")
     return (
         <div>
             <section className='w-full h-25 px-6 md:px-16 flex md:flex-row flex-col items-center justify-between gap-4'>
-                <input className='placeholder-gray-600 w-[43%] rounded bg-amber-50 py-2 px-4' type="text" placeholder='Search your favrit shoe' />
+                <input className='placeholder-gray-600 w-[40%] rounded bg-amber-50 py-2 px-4' type="text" placeholder='Search your favrit shoe' />
                 <div className='flex justify-center items-center flex-row gap-2'>
-                    {["Mens", "Womens", "Kids"].map((button, i) => (
+                    {["All", "Mens", "Womens", "Kids"].map((button, i) => (
                         <button key={button + i}
                             className='bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer'
                         >{button}</button>
                     ))}
                 </div>
                 <div className='flex justify-center items-center flex-row gap-2'>
-                    {["Formal", "Casual", "Football", "Running"].map((button, i) => (
+                    {["All", "Formal", "Casual", "Football", "Running"].map((button, i) => (
                         <button key={button + i}
                             className='bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer'
                         >{button}</button>
