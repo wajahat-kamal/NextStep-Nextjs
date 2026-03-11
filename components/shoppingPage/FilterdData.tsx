@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import ShoeCard from '@/components/reusable/ShoeCard';
 import { Shoe } from '@/types/Shoe';
