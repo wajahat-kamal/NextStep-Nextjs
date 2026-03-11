@@ -4,7 +4,7 @@ import { ArrowDownRight } from "lucide-react"
 
 function AboutHero() {
   return (
-    <section className="relative min-h-screen bg-primary overflow-hidden flex flex-col justify-center px-6 md:px-24 pt-32 pb-20">
+    <section className="relative min-h-screen bg-primary overflow-hidden flex flex-col justify-center px-6 md:px-24 pt-18">
 
       {/* Giant ghost background text */}
       <motion.span
@@ -35,7 +35,7 @@ function AboutHero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl sm:text-7xl md:text-8xl font-black leading-[0.92] tracking-tight text-white mb-8"
+          className="text-5xl md:text-7xl font-black leading-[0.92] tracking-tight text-white mb-8"
         >
           We Live
           <br />
@@ -54,14 +54,14 @@ function AboutHero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col md:flex-row gap-10 md:gap-20 items-start"
         >
-          <p className="text-base md:text-lg text-white/55 max-w-lg leading-relaxed">
+          <p className="text-base md:text-md text-white/55 max-w-lg leading-relaxed">
             NextStep was born from a simple frustration — finding great shoes
             shouldn't be this hard. So we built the store we always wanted to
             shop at. No compromises. Just great footwear.
           </p>
 
           {/* Side pill stats */}
-          <div className="flex flex-row md:flex-col gap-4 shrink-0">
+          <div className="flex flex-row gap-4 shrink-0">
             {[
               { value: "2012", label: "Founded" },
               { value: "50K+", label: "Customers" },
@@ -90,7 +90,7 @@ function AboutHero() {
       </motion.div>
 
       {/* Bottom divider */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-secondary/20 to-transparent" />
     </section>
   )
 }
