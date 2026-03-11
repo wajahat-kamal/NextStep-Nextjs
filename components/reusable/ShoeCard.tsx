@@ -16,23 +16,22 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
         <div className={`group relative w-full ${height ? "h-60 md:h-80" : "h-100"} aspect-3/4 overflow-hidden cursor-pointer`}>
 
             <div className="absolute inset-0 bg-[#F6F6F6]" />
-
-            <Image
-                src={shoe.imageUrl}
-                alt={shoe.name}
-                fill
-                className="object-contain p-8 transition-transform duration-700 ease-out group-hover:scale-110"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
+            
+                <Image
+                    src={shoe.imageUrl}
+                    alt={shoe.name}
+                    fill
+                    className="object-contain p-8 transition-transform duration-700 ease-out group-hover:scale-110"
+                />
 
             <div className="absolute md:top-4 md:left-4 md:right-4 top-2 left-2 right-2 flex justify-between items-start z-10">
                 <span
-                    className="text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 bg-secondary text-primary"
+                    className="text-[8px] md:text-[10px] uppercase tracking-widest font-bold px-1 py-0.5 md:px-2.5 md:py-1 bg-secondary text-primary"
                 >
                     {shoe.category}
                 </span>
                 <span
-                    className="text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1"
+                    className="text-[8px] md:text-[10px] uppercase tracking-widest font-semibold px-1 py-0.5 md:px-2.5 md:py-1"
                     style={{ backgroundColor: "rgba(2,27,65,0.7)", color: "rgba(255,255,255,0.8)" }}
                 >
                     {shoe.gender}
