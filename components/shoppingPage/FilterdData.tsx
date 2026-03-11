@@ -12,7 +12,11 @@ function FilterdData({ allShoes }: FilterdDataProps) {
     const [gender, setGender] = useState("All")
     const [category, setCategory] = useState("All")
 
-    const filteredData = allShoes.filter((shoe) => gender === "All" || shoe.gender === gender) || allShoes.filter((shoe) => category === "All" || shoe.category === category)
+    const filteredData = allShoes.filter((shoe) => {
+        const genderMatch = gender === "All" || shoe.gender === gender
+        const categoryMatch = category === "All" || shoe.category === category
+        return genderMatch && categoryMatch
+    })
 
     return (
         <div>
@@ -27,7 +31,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                     ))}
                 </div>
                 <div className='flex justify-center items-center flex-row gap-2'>
-                    {["All", "Formal", "Casual", "Football", "Running"].map((value, i) => (
+                    {["All", "FORMAL", "CASUAL", "FOOTBALL", "RUNNING"].map((value, i) => (
                         <button key={value + i}
                             onClick={(): void => setCategory(value)}
                             className='bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer'
