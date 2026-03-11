@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import ShoeCard from '@/components/reusable/ShoeCard';
 import { Shoe } from '@/types/Shoe';
+import { X } from 'lucide-react';
 
 interface FilterdDataProps {
     allShoes: Shoe[]
@@ -26,7 +27,12 @@ function FilterdData({ allShoes }: FilterdDataProps) {
     return (
         <div>
             <section className='w-full h-25 px-6 md:px-16 flex md:flex-row flex-col items-center justify-between gap-4'>
-                <input onChange={(e) => setSearch(e.target.value)} className='placeholder-gray-600 w-[40%] rounded bg-amber-50 py-2 px-4' type="text" placeholder='Search your favrit shoe' />
+                <div className='relative w-[40%]'>
+                    <input onChange={(e) => setSearch(e.target.value)} className='placeholder-gray-600 w-full rounded bg-amber-50 py-2 px-4' type="text" placeholder='Search your favrit shoe' />
+                    <button onClick={() => setSearch("")} className='absolute right-1 top-2'>
+                        <X/>
+                    </button>
+                </div>
                 <div className='flex justify-center items-center flex-row gap-2'>
                     {["All", "MEN", "WOMEN", "KIDS"].map((value, i) => (
                         <button key={value + i}
