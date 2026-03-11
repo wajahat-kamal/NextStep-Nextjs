@@ -8,7 +8,7 @@ function BrandStrip() {
         <section className="w-full py-14 overflow-hidden">
 
             {/* Heading */}
-            <p className="text-center text-[10px] uppercase tracking-[0.4em] text-secondary/60 font-semibold mb-10">
+            <p className="text-center text-xs uppercase tracking-[0.4em] text-secondary/60 font-semibold mb-10">
                 Trusted Brands
             </p>
 
@@ -32,7 +32,7 @@ function BrandStrip() {
                     {brands.map((brand, i) => (
                         <div
                             key={`${brand}-${i}`}
-                            className={`shrink-0 px-10 py-4 text-xl font-black tracking-tight cursor-default transition-opacity duration-300 hover:opacity-70 ${
+                            className={`shrink-0 px-14 py-6 text-2xl font-black tracking-tight cursor-default transition-opacity duration-300 hover:opacity-70 ${
                                 i % 2 === 0
                                     ? "bg-secondary text-primary"
                                     : "border border-secondary/30 text-secondary"
