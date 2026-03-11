@@ -17,18 +17,19 @@ function FilterdData({ allShoes }: FilterdDataProps) {
             <section className='w-full h-25 px-6 md:px-16 flex md:flex-row flex-col items-center justify-between gap-4'>
                 <input className='placeholder-gray-600 w-[40%] rounded bg-amber-50 py-2 px-4' type="text" placeholder='Search your favrit shoe' />
                 <div className='flex justify-center items-center flex-row gap-2'>
-                    {["All", "Mens", "Womens", "Kids"].map((button, i) => (
-                        <button key={button + i}
-                            onClick={(): void => setGender(button)}
+                    {["All", "Mens", "Womens", "Kids"].map((value, i) => (
+                        <button key={value + i}
+                            onClick={(): void => setGender(value)}
                             className='bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer'
-                        >{button}</button>
+                        >{value}</button>
                     ))}
                 </div>
                 <div className='flex justify-center items-center flex-row gap-2'>
-                    {["All", "Formal", "Casual", "Football", "Running"].map((button, i) => (
-                        <button key={button + i}
+                    {["All", "Formal", "Casual", "Football", "Running"].map((value, i) => (
+                        <button key={value + i}
+                            onClick={(): void => setCategory(value)}
                             className='bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer'
-                        >{button}</button>
+                        >{value}</button>
                     ))}
                 </div>
             </section>
