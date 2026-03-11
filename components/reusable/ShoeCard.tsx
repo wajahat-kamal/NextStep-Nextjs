@@ -25,7 +25,7 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
 
-            <div className="absolute md:top-4 md:left-4 md:right-4 top-1 left-1 right-1 flex justify-between items-start z-10">
+            <div className="absolute md:top-4 md:left-4 md:right-4 top-2 left-2 right-2 flex justify-between items-start z-10">
                 <span
                     className="text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 bg-secondary text-primary"
                 >
@@ -79,10 +79,10 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                     </div>
 
                     {/* View Details — slides in on hover */}
-                    <div className="overflow-hidden transition-all duration-500 max-h-0 group-hover:max-h-16">
+                    <div className="overflow-hidden transition-all duration-500 md:max-h-0 md:group-hover:max-h-16">
                         <Link
                             href={`/shopping/${slug}`}
-                            className="flex items-center justify-center gap-2 w-full py-2.5 text-xs uppercase tracking-widest text-secondary border border-secondary/30 hover:bg-secondary hover:text-primary font-semibold transition-colors duration-200 mt-1"
+                            className="flex items-center justify-center gap-1 md:gap-2 w-full py-1.5 md:py-2.5 text-[10px] md:text-xs uppercase tracking-widest text-secondary border border-secondary/30 hover:bg-secondary hover:text-primary font-semibold transition-colors duration-200 md:mt-1"
                         >
                             View Details
                             <ArrowUpRight size={13} />
