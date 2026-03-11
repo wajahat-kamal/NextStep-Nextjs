@@ -12,16 +12,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
     const [gender, setGender] = useState("All")
     const [category, setCategory] = useState("All")
 
-    function filteredData() {
-        let filteredData: Shoe[] = []
-        for (const shoe of allShoes) {
-            shoe.category === "All"
-            ? filteredData.push(shoe)
-            : filteredData.push(shoe)
-        }
-
-        return filteredData
-    }
+    const filteredData = allShoes.filter((shoe) => gender === "All" || shoe.gender === gender)
 
     return (
         <div>
