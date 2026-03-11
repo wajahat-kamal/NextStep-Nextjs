@@ -23,9 +23,22 @@ export default async function ShoppingPage() {
             </header>
 
             {/* filters */}
-            <div>
-
-            </div>
+            <section>
+                <div>
+                   <input type="text" /> 
+                </div>
+                <div>
+                    <button>Mens</button>
+                    <button>Womens</button>
+                    <button>Kids</button>
+                </div>
+                <div>
+                    <button>Formal</button>
+                    <button>Casual</button>
+                    <button>Running</button>
+                    <button>Football</button>
+                </div>
+            </section>
 
             <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 p-6 md:p-16'>
                 {allShoes.map((shoe) => (
