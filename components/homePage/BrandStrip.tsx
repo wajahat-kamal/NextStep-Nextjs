@@ -2,7 +2,9 @@ import React from 'react'
 
 function BrandStrip() {
   return (
-    <div>BrandStrip</div>
+    <section>
+        
+    </section>
   )
 }
 
