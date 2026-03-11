@@ -12,16 +12,12 @@ function FilterdData({ allShoes }: FilterdDataProps) {
     const [gender, setGender] = useState("All")
     const [category, setCategory] = useState("All")
 
-    const searchData = allShoes.filter((shoe) => {
-      if (search === "") {
-        return shoe;
-      }  
+    const searchData = () => {
+        if (search === "") return allShoes;
+        return allShoes.filter((shoe) => shoe.name.toLowerCase().includes(search.toLowerCase()))
+    }
 
-      const searchMatch = shoe.name.toLowerCase().includes(search.toLowerCase())
-      return searchMatch
-    })
-
-    const filteredData = searchData().filter((shoe) => {
+    const visibleShoeCards = searchData().filter((shoe) => {
         const genderMatch = gender === "All" || shoe.gender === gender
         const categoryMatch = category === "All" || shoe.category === category
         return genderMatch && categoryMatch
@@ -50,8 +46,8 @@ function FilterdData({ allShoes }: FilterdDataProps) {
             </section>
 
             <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 p-6 md:p-16 md:pt-4'>
-                {filteredData.length > 0 ? (
-                    filteredData.map((shoe) => (
+                {visibleShoeCards.length > 0 ? (
+                    visibleShoeCards.map((shoe) => (
                         <ShoeCard key={shoe.id} shoe={shoe} height={true} />
                     ))
                 ) : (
