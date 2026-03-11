@@ -8,7 +8,10 @@ interface FilterdDataProps {
 }
 
 function FilterdData({ allShoes }: FilterdDataProps) {
+    const [search, setSearch] = useState("")
     const [gender, setGender] = useState("All")
+    const [category, setCategory] = useState("All")
+
     return (
         <div>
             <section className='w-full h-25 px-6 md:px-16 flex md:flex-row flex-col items-center justify-between gap-4'>
