@@ -6,7 +6,7 @@ import CTABanner from "@/components/reusable/CTABanner";
 
 export default function Home() {
   return (
-    <div className="bg-bgColor">
+    <div>
       <HeroSection/>
       <FeaturedShoes/>
       <Categories/>
