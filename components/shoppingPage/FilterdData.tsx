@@ -13,31 +13,33 @@ function FilterdData({ allShoes }: FilterdDataProps) {
     const [gender, setGender] = useState("All")
     const [category, setCategory] = useState("All")
 
-    const searchData = () => {
-        if (search === "") return allShoes;
-        return allShoes.filter((shoe) => shoe.name.toLowerCase().includes(search.toLowerCase()))
-    }
-
-    const visibleShoeCards = searchData().filter((shoe) => {
+    const visibleShoeCards = allShoes.filter((shoe) => {
+        const searchMatch = search === "" || shoe.name.toLowerCase().includes(search.toLowerCase())
         const genderMatch = gender === "All" || shoe.gender === gender
         const categoryMatch = category === "All" || shoe.category === category
-        return genderMatch && categoryMatch
+        return searchMatch && genderMatch && categoryMatch
     })
+
+    const clearAll = () => {
+        setSearch("")
+        setGender("All")
+        setCategory("All")
+    }
 
     return (
         <div>
             <section className='w-full h-25 px-6 md:px-16 flex md:flex-row flex-col items-center justify-between gap-4'>
                 <div className='relative w-[40%]'>
-                    <input  value={search} onChange={(e) => setSearch(e.target.value)} className='placeholder-gray-600 w-full rounded bg-amber-50 py-2 px-4' type="text" placeholder='Search your favrit shoe' />
+                    <input value={search} onChange={(e) => setSearch(e.target.value)} className='placeholder-gray-600 w-full rounded bg-amber-50 py-2 px-4' type="text" placeholder='Search your favrit shoe' />
                     <button onClick={() => setSearch("")} className='absolute right-1 top-2'>
-                        <X/>
+                        <X />
                     </button>
                 </div>
                 <div className='flex justify-center items-center flex-row gap-2'>
                     {["All", "MEN", "WOMEN", "KIDS"].map((value, i) => (
                         <button key={value + i}
                             onClick={(): void => setGender(value)}
-                            className='bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer'
+                            className={`bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer ${value === gender && "bg-secondary"}`}
                         >{value}</button>
                     ))}
                 </div>
@@ -57,7 +59,17 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                         <ShoeCard key={shoe.id} shoe={shoe} height={true} />
                     ))
                 ) : (
-                    <div>No Shoe Avalible in this Category</div>
+                    <div className="col-span-full flex flex-col items-center justify-center py-32 gap-4">
+                        <p className="text-5xl">👟</p>
+                        <p className="text-white font-bold text-xl">No shoes found</p>
+                        <p className="text-white/40 text-sm">Try a different search or filter</p>
+                        <button
+                            onClick={clearAll}
+                            className="mt-2 text-[10px] uppercase tracking-widest text-secondary border border-secondary/30 px-6 py-2.5 hover:bg-secondary hover:text-primary transition-colors"
+                        >
+                            Clear Filters
+                        </button>
+                    </div>
                 )}
             </main>
         </div>
