@@ -19,6 +19,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                 <div className='flex justify-center items-center flex-row gap-2'>
                     {["All", "Mens", "Womens", "Kids"].map((button, i) => (
                         <button key={button + i}
+                            onClick={(): void => setGender(button)}
                             className='bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer'
                         >{button}</button>
                     ))}
