@@ -1,21 +1,49 @@
-import React from 'react'
-import { motion } from 'motion/react'
+// "use client"
+import { motion } from "motion/react"
+
+const brands = ["Nike", "Adidas", "Vans", "Reebok", "Hush Puppies", "Nike", "Adidas", "Vans", "Reebok", "Hush Puppies"]
 
 function BrandStrip() {
-    const brands = ["Nike", "Adidas", "Vans", "Reebok", "Hush Puppies"]
     return (
-        <section className='w-full h-40 flex justify-center items-center pt-12 pb-32'>
-            <div className='flex justify-center items-center flex-row gap-8 w-[85%]'>
-                {brands.map((brand, i) => (
-                    <div key={brand}
-                        className={`p-10 text-3xl font-black tracking-tight ${i % 2 === 0 
-                            ? "bg-primary hover:bg-primary/90 text-white"
-                            : "bg-secondary hover:bg-secondary/90 text-black"}`}
-                    >
-                        {brand}
-                    </div>
-                ))}
+        <section className="w-full bg-primary py-14 overflow-hidden">
+
+            {/* Heading */}
+            <p className="text-center text-[10px] uppercase tracking-[0.4em] text-secondary/60 font-semibold mb-10">
+                Trusted Brands
+            </p>
+
+            {/* Sliding Track */}
+            <div className="relative flex overflow-hidden">
+
+                {/* Gradient fade left */}
+                <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-linear-to-r from-primary to-transparent pointer-events-none" />
+                {/* Gradient fade right */}
+                <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-linear-to-l from-primary to-transparent pointer-events-none" />
+
+                <motion.div
+                    className="flex gap-6 shrink-0"
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{
+                        duration: 18,
+                        repeat: Infinity,
+                        ease: "linear",
+                    }}
+                >
+                    {brands.map((brand, i) => (
+                        <div
+                            key={`${brand}-${i}`}
+                            className={`shrink-0 px-10 py-4 text-xl font-black tracking-tight cursor-default transition-opacity duration-300 hover:opacity-70 ${
+                                i % 2 === 0
+                                    ? "bg-secondary text-primary"
+                                    : "border border-secondary/30 text-secondary"
+                            }`}
+                        >
+                            {brand}
+                        </div>
+                    ))}
+                </motion.div>
             </div>
+
         </section>
     )
 }
