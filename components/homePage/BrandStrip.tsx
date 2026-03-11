@@ -5,7 +5,7 @@ const brands = ["Nike", "Adidas", "Vans", "Reebok", "Hush Puppies", "Nike", "Adi
 
 function BrandStrip() {
     return (
-        <section className="w-full py-14 overflow-hidden">
+        <section className="w-full pb-14 pt-8 overflow-hidden">
 
             {/* Heading */}
             <p className="text-center text-xs uppercase tracking-[0.4em] text-secondary/60 font-semibold mb-10">
