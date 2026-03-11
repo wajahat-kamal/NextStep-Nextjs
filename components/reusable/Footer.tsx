@@ -18,7 +18,7 @@ function Footer() {
                         aria-label="Homepage"
                         className="flex items-center gap-2 text-xl text-white font-mono font-bold tracking-widest hover:opacity-80 transition-opacity"
                     >
-                        <Image src={logo} width={36} height={36} alt="NextStep logo" className="w-9 h-9" />
+                        <Image src={logo} width={36} height={36} alt="NextStep logo" className="w-9 h-9 rounded-full" />
                         <span>NextStep</span>
                     </Link>
                     <p className="mt-5 text-sm text-white/50 leading-relaxed max-w-xs">

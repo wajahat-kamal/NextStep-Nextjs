@@ -17,7 +17,7 @@ function Navbar() {
                 aria-label="Homepage"
                 className="flex items-center gap-2 text-2xl font-mono font-semibold tracking-widest hover:opacity-90 transition-opacity text-white"
             >
-                <Image width={10} height={10} src={logo} alt="Shoeify logo" className="w-10 h-10" />
+                <Image width={10} height={10} src={logo} alt="Shoeify logo" className="w-10 h-10 rounded-full" />
                 <span>NextStep</span>
             </Link>
             <div className='hidden md:flex flex-row justify-center items-center gap-4'>
