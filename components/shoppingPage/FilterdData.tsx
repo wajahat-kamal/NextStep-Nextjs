@@ -2,13 +2,13 @@
 import React from 'react'
 import ShoeCard from '@/components/reusable/ShoeCard';
 import { Shoe } from '@/types/Shoe';
-import fs from 'node:fs/promises';
-import path from 'node:path';
 
-async function FilterdData() {
-    const filePath = path.join(process.cwd(), "data", "ShoeData.json")
-    const rawData = await fs.readFile(filePath, "utf8")
-    const allShoes: Shoe[] = JSON.parse(rawData)
+interface FilterdDataProps {
+    allShoes: Shoe[]
+}
+
+async function FilterdData({ allShoes }: FilterdDataProps) {
+
     return (
         <div>
             <section className='w-full h-25 px-6 md:px-16 flex md:flex-row flex-col items-center justify-between gap-4'>
