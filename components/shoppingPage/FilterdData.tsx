@@ -12,7 +12,16 @@ function FilterdData({ allShoes }: FilterdDataProps) {
     const [gender, setGender] = useState("All")
     const [category, setCategory] = useState("All")
 
-    const filteredData = allShoes.filter((shoe) => {
+    const searchData = allShoes.filter((shoe) => {
+      if (search === "") {
+        return shoe;
+      }  
+
+      const searchMatch = shoe.name.toLowerCase().includes(search.toLowerCase())
+      return searchMatch
+    })
+
+    const filteredData = searchData().filter((shoe) => {
         const genderMatch = gender === "All" || shoe.gender === gender
         const categoryMatch = category === "All" || shoe.category === category
         return genderMatch && categoryMatch
@@ -46,7 +55,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                         <ShoeCard key={shoe.id} shoe={shoe} height={true} />
                     ))
                 ) : (
-                    <div>No Shoe Avalible</div>
+                    <div>No Shoe Avalible in this Category</div>
                 )}
             </main>
         </div>
