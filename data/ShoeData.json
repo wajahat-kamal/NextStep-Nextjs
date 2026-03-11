@@ -286,14 +286,5 @@
         "brand": "VANS",
         "category": "CASUAL",
         "gender": "MEN"
-    },
-    {
-        "id": 34,
-        "name": "Michael Feburary SK8-Hi",
-        "price": 72,
-        "imageUrl": "https://images.vans.com/is/image/Vans/MV122M-HERO?$583x583$",
-        "brand": "VANS",
-        "category": "CASUAL",
-        "gender": "MEN"
     }
 ]
