@@ -49,11 +49,13 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                 <div className="px-5 pb-2 flex flex-col gap-1">
 
                     {/* Brand */}
-                    <span
+                    <div
                         className="text-[10px] uppercase tracking-[0.35em] font-bold text-secondary"
                     >
-                        {shoe.brand}
-                    </span>
+                        <span className="bg-primary/80 py-1 px-2">
+                            {shoe.brand}
+                        </span>
+                    </div>
 
                     {/* Name */}
                     <h3 className="text-base font-bold text-white leading-snug line-clamp-1">
