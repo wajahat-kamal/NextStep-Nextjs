@@ -28,7 +28,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
         <div>
             <section className='w-full h-25 px-6 md:px-16 flex md:flex-row flex-col items-center justify-between gap-4'>
                 <div className='relative w-[40%]'>
-                    <input onChange={(e) => setSearch(e.target.value)} className='placeholder-gray-600 w-full rounded bg-amber-50 py-2 px-4' type="text" placeholder='Search your favrit shoe' />
+                    <input  value={search} onChange={(e) => setSearch(e.target.value)} className='placeholder-gray-600 w-full rounded bg-amber-50 py-2 px-4' type="text" placeholder='Search your favrit shoe' />
                     <button onClick={() => setSearch("")} className='absolute right-1 top-2'>
                         <X/>
                     </button>
