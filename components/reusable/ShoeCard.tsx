@@ -16,13 +16,17 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
         <div className={`group relative w-full ${height ? "h-60 md:h-80" : "h-100"} aspect-3/4 overflow-hidden cursor-pointer`}>
 
             <div className="absolute inset-0 bg-[#F6F6F6]" />
-            
+
+            <div className="absolute inset-0 bottom-[35%]">
                 <Image
                     src={shoe.imageUrl}
                     alt={shoe.name}
                     fill
-                    className="object-contain p-8 transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
+            </div>
+
 
             <div className="absolute md:top-4 md:left-4 md:right-4 top-2 left-2 right-2 flex justify-between items-start z-10">
                 <span
