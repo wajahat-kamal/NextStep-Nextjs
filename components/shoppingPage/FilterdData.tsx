@@ -47,7 +47,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                     {["All", "FORMAL", "CASUAL", "FOOTBALL", "RUNNING"].map((value, i) => (
                         <button key={value + i}
                             onClick={(): void => setCategory(value)}
-                            className='bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer'
+                            className={`bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer ${value === category && "bg-secondary"}`}
                         >{value}</button>
                     ))}
                 </div>
