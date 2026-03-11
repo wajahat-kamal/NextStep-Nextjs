@@ -41,12 +41,13 @@ function FilterdData({ allShoes }: FilterdDataProps) {
             </section>
 
             <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 p-6 md:p-16 md:pt-4'>
-                {filteredData.length === 0 ? (
-                    <div>No Shoe Avalible</div>
-                ) : (
+                {filteredData.length > 0 ? (
                     filteredData.map((shoe) => (
                         <ShoeCard key={shoe.id} shoe={shoe} height={true} />
-                    )))}
+                    ))
+                ) : (
+                    <div>No Shoe Avalible</div>
+                )}
             </main>
         </div>
     )
