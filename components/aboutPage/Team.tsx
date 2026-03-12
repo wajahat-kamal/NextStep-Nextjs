@@ -4,12 +4,12 @@ import React from 'react'
 function AboutTeam() {
     return (
         <section
-            className="px-6 md:px-24 py-28 border-t border-secondary/30"
+            className="px-6 md:px-24 py-15 border-y border-secondary/30"
         >
             <p className="text-xs uppercase tracking-[0.4em] mb-4 font-semibold text-secondary">
                 The People
             </p>
-            <h2 className="text-4xl md:text-5xl font-black mb-16 text-white">Behind NextStep.</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-10 text-white">Behind NextStep.</h2>
             <div className="grid md:grid-cols-3 gap-6">
                 {team.map((member) => (
                     <div
