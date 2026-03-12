@@ -13,7 +13,7 @@ function AboutValues() {
                 {values.map((value) => (
                     <div
                         key={value.number}
-                        className="p-10 group cursor-pointer transition-colors duration-300 bg-primary hover:bg-[#032460]"
+                        className="p-10 group cursor-pointer transition-colors duration-300 bg-bgColor hover:bg-[#032460]"
                     >
                         <span
                             className="text-6xl font-black block mb-6 text-secondary/30"
