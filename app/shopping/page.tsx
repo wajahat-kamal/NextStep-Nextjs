@@ -13,7 +13,7 @@ export default async function ShoppingPage() {
     const allShoes: Shoe[] = await getData()
 
     return (
-        <div className="min-h-screen bg-primary">
+        <div className="min-h-screen">
             <ShoppingHeroSection allShoes={allShoes}/>
             <FilterdData allShoes={allShoes} />
         </div>
