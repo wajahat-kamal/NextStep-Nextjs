@@ -36,7 +36,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
 
             {/* Filter Bar — single line */}
             <section className="sticky top-0 z-30 bg-primary border-b border-secondary/10 px-4 md:px-16 py-4">
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap justify-between items-center gap-2 md:gap-6">
 
                     {/* Search */}
                     <div className="relative">
@@ -44,7 +44,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                         <input
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs py-2 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-36 md:w-48"
+                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs py-2 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-36 md:w-100"
                             type="text"
                             placeholder="Search shoes..."
                         />
@@ -59,35 +59,41 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                     <div className="h-6 w-px bg-secondary/15" />
 
                     {/* Gender */}
-                    {genders.map((value) => (
-                        <button
-                            key={value}
-                            onClick={() => setGender(value)}
-                            className={`text-[10px] uppercase tracking-wider font-semibold px-3 py-2 transition-all duration-200 cursor-pointer ${gender === value
+                    <div>
+                        {genders.map((value) => (
+                            <button
+                                key={value}
+                                onClick={() => setGender(value)}
+                                className={`text-[10px] uppercase tracking-wider font-semibold px-3 py-2 transition-all duration-200 cursor-pointer ${gender === value
                                     ? "bg-secondary text-primary"
                                     : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
-                                }`}
-                        >
-                            {value}
-                        </button>
-                    ))}
+                                    }`}
+                            >
+                                {value}
+                            </button>
+                        ))}
+                    </div>
 
                     {/* Divider */}
                     <div className="h-6 w-px bg-secondary/15" />
 
                     {/* Category */}
-                    {categories.map((value) => (
-                        <button
-                            key={value}
-                            onClick={() => setCategory(value)}
-                            className={`text-[10px] uppercase tracking-wider font-semibold px-3 py-2 transition-all duration-200 cursor-pointer ${category === value
+                    <div>
+                        {categories.map((value) => (
+                            <button
+                                key={value}
+                                onClick={() => setCategory(value)}
+                                className={`text-[10px] uppercase tracking-wider font-semibold px-3 py-2 transition-all duration-200 cursor-pointer ${category === value
                                     ? "bg-secondary text-primary"
                                     : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
-                                }`}
-                        >
-                            {value}
-                        </button>
-                    ))}
+                                    }`}
+                            >
+                                {value}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="h-6 w-px bg-secondary/15" />
 
                     {/* Result count + Clear */}
                     <div className="flex items-center gap-2 ml-auto">
