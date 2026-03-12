@@ -1,9 +1,8 @@
 import FilterdData from '@/components/shoppingPage/FilterdData';
 import { Metadata } from 'next';
 import { Shoe } from '@/types/Shoe';
-import fs from 'node:fs/promises';
-import path from 'node:path';
 import ShoppingHeroSection from '@/components/shoppingPage/ShoppingHeroSection';
+import getData from '@/lib/getData';
 
 export const metadata: Metadata = {
     title: "Shopping | NextStep",
@@ -11,9 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ShoppingPage() {
-    const filePath = path.join(process.cwd(), "data", "ShoeData.json")
-    const rawData = await fs.readFile(filePath, "utf8")
-    const allShoes: Shoe[] = JSON.parse(rawData)
+    const allShoes: Shoe[] = await getData()
 
     return (
         <div className="min-h-screen bg-primary">
