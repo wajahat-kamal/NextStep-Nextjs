@@ -2,7 +2,8 @@
 import React, { useState } from 'react'
 import ShoeCard from '@/components/reusable/ShoeCard';
 import { Shoe } from '@/types/Shoe';
-import { X } from 'lucide-react';
+import { Search, X } from 'lucide-react';
+import { categories, genders } from '@/data/shoppinPageData';
 
 interface FilterdDataProps {
     allShoes: Shoe[]
@@ -26,34 +27,91 @@ function FilterdData({ allShoes }: FilterdDataProps) {
         setCategory("All")
     }
 
+    const hasActiveFilters = search !== "" || gender !== "All" || category !== "All"
+
     return (
-        <div>
-            <section className='w-full h-25 px-6 md:px-16 flex md:flex-row flex-col items-center justify-between gap-4'>
-                <div className='relative w-[40%]'>
-                    <input value={search} onChange={(e) => setSearch(e.target.value)} className='placeholder-gray-600 w-full rounded bg-amber-50 py-2 px-4' type="text" placeholder='Search your favrit shoe' />
-                    <button onClick={() => setSearch("")} className='absolute right-1 top-2'>
-                        <X />
-                    </button>
-                </div>
-                <div className='flex justify-center items-center flex-row gap-2'>
-                    {["All", "MEN", "WOMEN", "KIDS"].map((value, i) => (
-                        <button key={value + i}
-                            onClick={(): void => setGender(value)}
-                            className={`bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer ${value === gender && "bg-secondary"}`}
-                        >{value}</button>
-                    ))}
-                </div>
-                <div className='flex justify-center items-center flex-row gap-2'>
-                    {["All", "FORMAL", "CASUAL", "FOOTBALL", "RUNNING"].map((value, i) => (
-                        <button key={value + i}
-                            onClick={(): void => setCategory(value)}
-                            className={`bg-amber-50 px-4 py-2 rounded text-gray-600 cursor-pointer ${value === category && "bg-secondary"}`}
-                        >{value}</button>
-                    ))}
+        <div className="min-h-screen bg-primary">
+
+            {/* Filter Bar — single line */}
+            <section className="sticky top-0 z-30 bg-primary border-b border-secondary/10 px-4 md:px-16 py-4">
+                <div className="flex flex-wrap justify-between items-center gap-2">
+
+                    {/* Search */}
+                    <div className="relative">
+                        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none" />
+                        <input
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs md:text-sm py-2 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-71 md:w-100"
+                            type="text"
+                            placeholder="Search shoes..."
+                        />
+                        {search && (
+                            <button onClick={() => setSearch("")} className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors">
+                                <X size={20} />
+                            </button>
+                        )}
+                    </div>
+
+                    {/* Divider */}
+                    <div className="h-6 w-px bg-secondary/15 md:block hidden" />
+
+                    {/* Gender */}
+                    <div>
+                        {genders.map((value) => (
+                            <button
+                                key={value}
+                                onClick={() => setGender(value)}
+                                className={`text-[10px] uppercase tracking-wider font-semibold md:text-sm px-3 py-2 transition-all duration-200 cursor-pointer ${gender === value
+                                    ? "bg-secondary text-primary"
+                                    : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
+                                    }`}
+                            >
+                                {value}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Divider */}
+                    <div className="h-6 w-px bg-secondary/15  md:block hidden" />
+
+                    {/* Category */}
+                    <div>
+                        {categories.map((value) => (
+                            <button
+                                key={value}
+                                onClick={() => setCategory(value)}
+                                className={`text-[10px] uppercase tracking-wider font-semibold md:text-xs p-1.5 md:px-3 md:py-2 transition-all duration-200 cursor-pointer ${category === value
+                                    ? "bg-secondary text-primary"
+                                    : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
+                                    }`}
+                            >
+                                {value}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="h-6 w-px bg-secondary/15  md:block hidden" />
+
+                    {/* Result count + Clear */}
+                    <div className="flex items-center gap-2">
+                        <span className="text-white/30 text-[10px]">
+                            {visibleShoeCards.length} results
+                        </span>
+                        {hasActiveFilters && (
+                            <button
+                                onClick={clearAll}
+                                className="flex items-center gap-1 text-[10px] uppercase tracking-widest text-secondary/60 hover:text-secondary transition-colors cursor-pointer"
+                            >
+                                <X size={11} /> Clear
+                            </button>
+                        )}
+                    </div>
                 </div>
             </section>
 
-            <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 p-6 md:p-16 md:pt-4'>
+            {/* Grid */}
+            <main className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 p-4 md:p-16 md:pt-6">
                 {visibleShoeCards.length > 0 ? (
                     visibleShoeCards.map((shoe) => (
                         <ShoeCard key={shoe.id} shoe={shoe} height={true} />
@@ -65,7 +123,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                         <p className="text-white/40 text-sm">Try a different search or filter</p>
                         <button
                             onClick={clearAll}
-                            className="mt-2 text-[10px] uppercase tracking-widest text-secondary border border-secondary/30 px-6 py-2.5 hover:bg-secondary hover:text-primary transition-colors"
+                            className="mt-2 text-[10px] uppercase tracking-widest text-secondary border border-secondary/30 px-6 py-2.5 hover:bg-secondary hover:text-primary transition-colors cursor-pointer"
                         >
                             Clear Filters
                         </button>

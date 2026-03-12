@@ -6,5 +6,5 @@ export interface Shoe {
     brand: string;
     category: string;
     gender: string;
-    slug?: string;
+    slug: string;
 }
