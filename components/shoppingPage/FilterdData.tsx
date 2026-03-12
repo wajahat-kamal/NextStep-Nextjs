@@ -42,7 +42,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                         <input
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs md:text-sm py-2 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-36 md:w-100"
+                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs md:text-sm py-2 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-71 md:w-100"
                             type="text"
                             placeholder="Search shoes..."
                         />
@@ -54,7 +54,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                     </div>
 
                     {/* Divider */}
-                    <div className="h-6 w-px bg-secondary/15" />
+                    <div className="h-6 w-px bg-secondary/15 md:block hidden" />
 
                     {/* Gender */}
                     <div>
@@ -73,7 +73,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                     </div>
 
                     {/* Divider */}
-                    <div className="h-6 w-px bg-secondary/15" />
+                    <div className="h-6 w-px bg-secondary/15  md:block hidden" />
 
                     {/* Category */}
                     <div>
@@ -81,7 +81,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                             <button
                                 key={value}
                                 onClick={() => setCategory(value)}
-                                className={`text-[10px] uppercase tracking-wider font-semibold md:text-xs px-3 py-2 transition-all duration-200 cursor-pointer ${category === value
+                                className={`text-[10px] uppercase tracking-wider font-semibold md:text-xs p-1.5 md:px-3 md:py-2 transition-all duration-200 cursor-pointer ${category === value
                                     ? "bg-secondary text-primary"
                                     : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
                                     }`}
@@ -91,7 +91,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                         ))}
                     </div>
 
-                    <div className="h-6 w-px bg-secondary/15" />
+                    <div className="h-6 w-px bg-secondary/15  md:block hidden" />
 
                     {/* Result count + Clear */}
                     <div className="flex items-center gap-2">
