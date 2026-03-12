@@ -17,7 +17,6 @@ export default async function ShoppingPage() {
 
     return (
         <div className="min-h-screen bg-primary">
-
             <ShoppingHeroSection allShoes={allShoes}/>
             <FilterdData allShoes={allShoes} />
         </div>
