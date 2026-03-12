@@ -3,13 +3,12 @@ import React, { useState } from 'react'
 import ShoeCard from '@/components/reusable/ShoeCard';
 import { Shoe } from '@/types/Shoe';
 import { Search, X } from 'lucide-react';
+import { genders } from '@/data/shoppinPageData';
+import { categories } from '@/data/categoriesData';
 
 interface FilterdDataProps {
     allShoes: Shoe[]
 }
-
-const genders = ["All", "MEN", "WOMEN", "KIDS"]
-const categories = ["All", "FORMAL", "CASUAL", "FOOTBALL", "RUNNING"]
 
 function FilterdData({ allShoes }: FilterdDataProps) {
     const [search, setSearch] = useState("")
