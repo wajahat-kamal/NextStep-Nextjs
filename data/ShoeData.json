@@ -178,23 +178,5 @@
         "brand": "ADIDAS",
         "category": "CASUAL",
         "gender": "WOMEN"
-    },
-    {
-        "id": 32,
-        "name": "Club C Revenge Mens",
-        "price": 70,
-        "imageUrl": "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/7599294868804d78a1b1ab6f01718a5e_9366/Club_C_Revenge_Men's_Shoes_White_FV9877_01_standard.jpg",
-        "brand": "REEBOK",
-        "category": "CASUAL",
-        "gender": "MEN"
-    },
-    {
-        "id": 33,
-        "name": "SK80-Low",
-        "price": 60,
-        "imageUrl": "https://images.vans.com/is/image/Vans/UUK24I-HERO?$583x583$",
-        "brand": "VANS",
-        "category": "CASUAL",
-        "gender": "MEN"
     }
 ]

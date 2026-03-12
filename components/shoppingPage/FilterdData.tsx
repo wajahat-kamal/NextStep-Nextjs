@@ -44,7 +44,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                         <input
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs md:text-sm py-3 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-36 md:w-100"
+                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs md:text-sm py-2 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-36 md:w-100"
                             type="text"
                             placeholder="Search shoes..."
                         />
