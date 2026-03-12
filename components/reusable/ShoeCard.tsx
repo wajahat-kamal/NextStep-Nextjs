@@ -9,7 +9,7 @@ interface ShoeCardProps {
 }
 
 function ShoeCard({ shoe, height }: ShoeCardProps) {
-    const slug = shoe.slug ?? shoe.name.toLowerCase().replace(/\s+/g, "-");
+    const slug = shoe.name.toLowerCase().replace(/\s+/g, "-")
 
     return (
         <div className={`group relative w-full ${height ? "h-60 md:h-80" : "h-90"} aspect-3/4 overflow-hidden cursor-pointer`}>
