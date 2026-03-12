@@ -4,9 +4,9 @@ import React from 'react'
 function AboutValues() {
     return (
         <section
-            className="px-6 md:px-24 py-20 border-t border-secondary/20"
+            className="px-6 md:px-24 py-15 border-t border-secondary/20"
         >
-            <p className="text-xs uppercase tracking-[0.4em] mb-16 font-semibold text-secondary">
+            <p className="text-xs uppercase tracking-[0.4em] mb-6 font-semibold text-secondary">
                 What We Stand For
             </p>
             <div className="grid md:grid-cols-2 gap-px bg-secondary/20">
