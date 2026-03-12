@@ -1,2 +1,2 @@
-export const genders = ["All", "MEN", "WOMEN", "KIDS"]
-export const categories = ["All", "FORMAL", "CASUAL", "FOOTBALL", "RUNNING"]
+export const genders: string[] = ["All", "MEN", "WOMEN", "KIDS"]
+export const categories: string[] = ["All", "FORMAL", "CASUAL", "FOOTBALL", "RUNNING"]
