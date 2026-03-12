@@ -1,11 +1,10 @@
 import { Shoe } from '@/types/Shoe';
-import fs from 'node:fs/promises';
-import path from 'node:path';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ShoppingCart, Tag, Users } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import getData from '@/lib/getData';
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -13,9 +12,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const filePath = path.join(process.cwd(), "data", "ShoeData.json")
-  const raw = await fs.readFile(filePath, "utf8")
-  const allShoes: Shoe[] = JSON.parse(raw)
+  const allShoes: Shoe[] = await getData()
   const shoe = allShoes.find((s) => s.slug === slug)
 
   return {
@@ -25,10 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function CardDetailPage({ params }: Props) {
   const { slug } = await params
-
-  const filePath = path.join(process.cwd(), "data", "ShoeData.json")
-  const rawData = await fs.readFile(filePath, "utf8")
-  const allShoes: Shoe[] = JSON.parse(rawData)
+  const allShoes: Shoe[] = await getData()
   const shoe = allShoes.find((s) => s.slug === slug)
 
   if (!shoe) return notFound()
