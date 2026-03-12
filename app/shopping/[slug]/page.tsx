@@ -16,12 +16,18 @@ async function CardDetailPage({ params }: { params: Promise<{ slug: string }> })
   return (
     <div className='min-h-screen'>
       {shoe ? (
-        <div className='min-h-screen'>
-          <div>
-            <Image src={shoe.imageUrl} alt='Shoe Image' width={100} height={100} />
+        <div className='min-h-screen flex justify-center items-center flex-col md:flex-row'>
+          <div className=''>
+            <Image src={shoe.imageUrl} alt='Shoe Image' width={400} height={400} />
           </div>
-          <div>
-
+          <div className='flex justify-center items-start flex-col p-6 h-full w-[40%]'>
+            <span className='text-white text-xl px-2  bg-secondary/60'>{shoe.brand}</span>
+            <h1 className='text-3xl text-white'>{shoe.name}</h1>
+            <div>
+              <p>{shoe.category}</p>
+              <p>{shoe.gender}</p>
+            </div>
+            <h1>{shoe.price}</h1>
           </div>
         </div>
       ) : (
