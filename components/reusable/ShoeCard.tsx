@@ -9,7 +9,6 @@ interface ShoeCardProps {
 }
 
 function ShoeCard({ shoe, height }: ShoeCardProps) {
-    const slug = shoe.name.toLowerCase().replace(/\s+/g, "-")
 
     return (
         <div className={`group relative w-full ${height ? "h-60 md:h-80" : "h-90"} aspect-3/4 overflow-hidden cursor-pointer`}>
@@ -86,7 +85,7 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                     {/* View Details — slides in on hover */}
                     <div className="overflow-hidden transition-all duration-500 md:max-h-0 md:group-hover:max-h-16">
                         <Link
-                            href={`/shopping/${slug}`}
+                            href={`/shopping/${shoe.slug}`}
                             className="flex items-center justify-center gap-1 md:gap-2 w-full py-1.5 md:py-2.5 text-[10px] md:text-xs uppercase tracking-widest text-secondary border border-secondary/30 hover:bg-secondary hover:text-primary font-semibold transition-colors duration-200 md:mt-1"
                         >
                             View Details
