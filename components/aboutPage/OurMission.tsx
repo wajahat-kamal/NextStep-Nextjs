@@ -2,7 +2,7 @@ import React from 'react'
 
 function AboutOurMission() {
     return (
-        <section className="px-6 md:px-24 py-28 grid md:grid-cols-2 gap-16 items-center">
+        <section className="px-6 md:px-24 py-12 grid md:grid-cols-2 gap-6 items-center">
             <div>
                 <p className="text-xs uppercase tracking-[0.4em] mb-4 font-semibold text-secondary">
                     Our Mission
@@ -11,7 +11,7 @@ function AboutOurMission() {
                     Every Step Should Feel Like Yours.
                 </h2>
             </div>
-            <div className="space-y-6 text-lg leading-relaxed text-white/40" style={{ color: "rgba(255,255,255,0.6)" }}>
+            <div className="space-y-6 text-md leading-relaxed text-white/40" style={{ color: "rgba(255,255,255,0.6)" }}>
                 <p>
                     We started NextStep in 2012 with a single rack of shoes and a belief that the right pair
                     can change how you feel about your day. That belief hasn't changed — it's only grown stronger.

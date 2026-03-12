@@ -5,7 +5,7 @@ import Stats from '../reusable/Stats'
 
 function ShoppingHeroSection({ allShoes }: { allShoes: Shoe[] }) {
     return (
-        <header className="relative bg-primary overflow-hidden px-6 md:px-24 pt-36 pb-16">
+        <header className="relative bg-bgColor overflow-hidden px-6 md:px-24 pt-36 pb-16">
 
             {/* Ghost background text */}
             <motion.span

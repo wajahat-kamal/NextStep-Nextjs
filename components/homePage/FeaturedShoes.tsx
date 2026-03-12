@@ -1,15 +1,10 @@
 import { Shoe } from '@/types/Shoe'
-import fs from 'node:fs/promises'
-import path from 'node:path'
 import ShoeCard from '../reusable/ShoeCard'
-import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
 import Header from '../reusable/Header'
+import getData from '@/lib/getData'
 
 async function FeaturedShoes() {
-    const filePath = path.join(process.cwd(), "data", "ShoeData.json")
-    const rawData = await fs.readFile(filePath, "utf8")
-    const data: Shoe[] = JSON.parse(rawData)
+    const data: Shoe[] = await getData()
     const featuredShoes = data.slice(0, 6)
 
     return (

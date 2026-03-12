@@ -4,7 +4,7 @@ import { ArrowDownRight } from "lucide-react"
 
 function AboutHero() {
   return (
-    <section className="relative min-h-screen bg-primary overflow-hidden flex flex-col justify-center px-6 md:px-24 pt-18">
+    <section className="relative min-h-screen bg-bgColor overflow-hidden flex flex-col justify-center px-6 md:px-24 pt-18">
 
       {/* Giant ghost background text */}
       <motion.span
