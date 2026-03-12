@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 import ShoeCard from '@/components/reusable/ShoeCard';
 import { Shoe } from '@/types/Shoe';
 import { Search, X } from 'lucide-react';
-import { genders } from '@/data/shoppinPageData';
-import { categories } from '@/data/categoriesData';
+import { categories, genders } from '@/data/shoppinPageData';
 
 interface FilterdDataProps {
     allShoes: Shoe[]
