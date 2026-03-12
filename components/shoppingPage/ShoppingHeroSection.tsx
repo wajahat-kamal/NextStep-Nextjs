@@ -1,6 +1,7 @@
 "use client"
 import { Shoe } from '@/types/Shoe'
 import { motion } from 'motion/react'
+import Stats from '../reusable/Stats'
 
 function ShoppingHeroSection({ allShoes }: { allShoes: Shoe[] }) {
     return (
@@ -53,24 +54,7 @@ function ShoppingHeroSection({ allShoes }: { allShoes: Shoe[] }) {
                     built for performance, comfort, and everyday style.
                 </p>
 
-                <div className="flex gap-6">
-                    {[
-                        { value: `${allShoes.length}+`, label: "Styles" },
-                        { value: "5+", label: "Brands" },
-                        { value: "4", label: "Categories" },
-                    ].map((stat, i) => (
-                        <motion.div
-                            key={stat.label}
-                            initial={{ opacity: 0, y: 15 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: 0.3 + i * 0.08 }}
-                            className="border-l border-secondary/20 pl-4"
-                        >
-                            <p className="text-xl font-black text-secondary">{stat.value}</p>
-                            <p className="text-[10px] uppercase tracking-widest text-white/30 mt-0.5">{stat.label}</p>
-                        </motion.div>
-                    ))}
-                </div>
+            <Stats/>
             </motion.div>
 
             {/* Bottom divider */}
