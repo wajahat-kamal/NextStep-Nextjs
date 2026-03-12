@@ -36,7 +36,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
 
             {/* Filter Bar — single line */}
             <section className="sticky top-0 z-30 bg-primary border-b border-secondary/10 px-4 md:px-16 py-4">
-                <div className="flex flex-wrap justify-between items-center gap-2 md:gap-6">
+                <div className="flex flex-wrap justify-between items-center gap-2 md:gap-4">
 
                     {/* Search */}
                     <div className="relative">
@@ -44,7 +44,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                         <input
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs py-2 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-36 md:w-100"
+                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs py-3 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-36 md:w-100"
                             type="text"
                             placeholder="Search shoes..."
                         />
@@ -96,7 +96,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                     <div className="h-6 w-px bg-secondary/15" />
 
                     {/* Result count + Clear */}
-                    <div className="flex items-center gap-2 ml-auto">
+                    <div className="flex items-center gap-2">
                         <span className="text-white/30 text-[10px]">
                             {visibleShoeCards.length} results
                         </span>
