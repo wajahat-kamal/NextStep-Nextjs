@@ -1,6 +1,6 @@
 export const stats = [
     { number: "12+", label: "Years in Business" },
-    { number: "500+", label: "Styles Available" },
+    { number: "20+", label: "Styles Available" },
     { number: "50K+", label: "Happy Customers" },
     { number: "15+", label: "Premium Brands" },
 ];
