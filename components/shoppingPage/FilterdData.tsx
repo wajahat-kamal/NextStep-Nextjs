@@ -36,7 +36,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
 
             {/* Filter Bar — single line */}
             <section className="sticky top-0 z-30 bg-primary border-b border-secondary/10 px-4 md:px-16 py-4">
-                <div className="flex flex-wrap justify-between items-center gap-2 md:gap-4">
+                <div className="flex flex-wrap justify-between items-center gap-2">
 
                     {/* Search */}
                     <div className="relative">
@@ -64,7 +64,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                             <button
                                 key={value}
                                 onClick={() => setGender(value)}
-                                className={`text-[10px] uppercase tracking-wider font-semibold px-3 py-2 transition-all duration-200 cursor-pointer ${gender === value
+                                className={`text-[10px] uppercase tracking-wider font-semibold md:text-sm px-3 py-2 transition-all duration-200 cursor-pointer ${gender === value
                                     ? "bg-secondary text-primary"
                                     : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
                                     }`}
@@ -83,7 +83,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                             <button
                                 key={value}
                                 onClick={() => setCategory(value)}
-                                className={`text-[10px] uppercase tracking-wider font-semibold px-3 py-2 transition-all duration-200 cursor-pointer ${category === value
+                                className={`text-[10px] uppercase tracking-wider font-semibold md:text-xs px-3 py-2 transition-all duration-200 cursor-pointer ${category === value
                                     ? "bg-secondary text-primary"
                                     : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
                                     }`}
