@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen font-sans pb-16">
+        <main className="min-h-screen font-sans">
 
             <AboutHeroSection />
             <AboutStats />
