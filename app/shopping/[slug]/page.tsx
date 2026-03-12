@@ -34,10 +34,10 @@ async function CardDetailPage({ params }: Props) {
   if (!shoe) return notFound()
 
   return (
-    <div className="min-h-screen bg-primary">
+    <div className="min-h-screen bg-bgColor">
 
       {/* Back button */}
-      <div className="px-6 md:px-24 pt-28 pb-4">
+      <div className="px-6 md:px-22 pt-24 pb-2">
         <Link
           href="/shopping"
           className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/40 hover:text-secondary transition-colors duration-200"
@@ -48,20 +48,18 @@ async function CardDetailPage({ params }: Props) {
       </div>
 
       {/* Main Content */}
-      <section className="px-6 md:px-24 py-8 grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
+      <section className="px-6 md:px-24 py-4 grid md:grid-cols-2 gap-12 lg:gap-0 items-center">
 
         {/* Image Side */}
         <div className="relative">
           {/* Image container */}
-          <div className="relative w-full aspect-square bg-white/5 border border-secondary/10 overflow-hidden">
+          <div className="h-120 relative w-[85%] aspect-square bg-white/5 border border-secondary/10 overflow-hidden">
 
-            {/* Category badge */}
-            <span className="absolute top-4 left-4 z-10 text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 bg-secondary text-primary">
+            <span className="absolute top-4 left-4.5 z-10 text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 bg-secondary text-primary">
               {shoe.category}
             </span>
 
-            {/* Gender badge */}
-            <span className="absolute top-4 right-4 z-10 text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1 bg-primary/60 text-white/70 border border-white/10">
+            <span className="absolute top-4 right-4.5 z-10 text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1 bg-primary/60 text-white/70 border border-white/10">
               {shoe.gender}
             </span>
 
@@ -69,18 +67,15 @@ async function CardDetailPage({ params }: Props) {
               src={shoe.imageUrl}
               alt={shoe.name}
               fill
-              className="object-contain p-10"
+              className="object-contain p-4"
               priority
             />
           </div>
 
-          {/* Decorative corner accents */}
-          <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-secondary/40" />
-          <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-secondary/40" />
         </div>
 
         {/* Info Side */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
 
           {/* Brand */}
           <div>
