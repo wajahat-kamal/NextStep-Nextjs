@@ -7,7 +7,8 @@
         "brand": "NIKE",
         "category": "RUNNING",
         "gender": "MEN",
-        "stars": 4.9
+        "stars": 4.9,
+        "slug": "nike-react-infinity-run-flyknit"
     },
     {
         "id": 2,
@@ -17,7 +18,8 @@
         "brand": "NIKE",
         "category": "RUNNING",
         "gender": "MEN",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nike-react-miler"
     },
     {
         "id": 3,
@@ -27,7 +29,8 @@
         "brand": "NIKE",
         "category": "RUNNING",
         "gender": "WOMEN",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nike-air-zoom-pegasus-37"
     },
     {
         "id": 4,
@@ -37,7 +40,8 @@
         "brand": "NIKE",
         "category": "RUNNING",
         "gender": "WOMEN",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nike-joyride-run-flyknit"
     },
     {
         "id": 5,
@@ -47,7 +51,8 @@
         "brand": "NIKE",
         "category": "FOOTBALL",
         "gender": "WOMEN",
-        "stars": 5
+        "stars": 5,
+        "slug": "nike-mercurial-vapor-13-elite-fg"
     },
     {
         "id": 6,
@@ -57,7 +62,8 @@
         "brand": "NIKE",
         "category": "FOOTBALL",
         "gender": "WOMEN",
-        "stars": 4.9
+        "stars": 4.9,
+        "slug": "nike-phantom-vision-elite-dynamic-fit-fg"
     },
     {
         "id": 7,
@@ -67,7 +73,8 @@
         "brand": "NIKE",
         "category": "FOOTBALL",
         "gender": "WOMEN",
-        "stars": 4
+        "stars": 4,
+        "slug": "nike-phantom-venom-academy-fg"
     },
     {
         "id": 8,
@@ -77,7 +84,8 @@
         "brand": "NIKE",
         "category": "FOOTBALL",
         "gender": "MEN",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nike-mercurial-vapor-13-elite-tech-craft-fg"
     },
     {
         "id": 9,
@@ -87,7 +95,8 @@
         "brand": "NIKE",
         "category": "FOOTBALL",
         "gender": "MEN",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nike-mercurial-superfly-7-pro-mds-fg"
     },
     {
         "id": 10,
@@ -97,7 +106,8 @@
         "brand": "NIKE",
         "category": "CASUAL",
         "gender": "KIDS",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nike-air-force-1"
     },
     {
         "id": 11,
@@ -107,7 +117,8 @@
         "brand": "NIKE",
         "category": "CASUAL",
         "gender": "KIDS",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nike-air-max-90"
     },
     {
         "id": 12,
@@ -117,7 +128,8 @@
         "brand": "NIKE",
         "category": "CASUAL",
         "gender": "KIDS",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nike-air-max-90-ltr"
     },
     {
         "id": 13,
@@ -127,7 +139,8 @@
         "brand": "NIKE",
         "category": "RUNNING",
         "gender": "KIDS",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nike-joyride-dual-run"
     },
     {
         "id": 14,
@@ -137,7 +150,8 @@
         "brand": "NIKE",
         "category": "RUNNING",
         "gender": "KIDS",
-        "stars": 4
+        "stars": 4,
+        "slug": "nike-renew-run"
     },
     {
         "id": 15,
@@ -147,7 +161,8 @@
         "brand": "ADIDAS",
         "category": "CASUAL",
         "gender": "KIDS",
-        "stars": 4
+        "stars": 4,
+        "slug": "nizza-x-disney"
     },
     {
         "id": 16,
@@ -157,7 +172,8 @@
         "brand": "ADIDAS",
         "category": "CASUAL",
         "gender": "KIDS",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "x_plr"
     },
     {
         "id": 17,
@@ -167,7 +183,8 @@
         "brand": "ADIDAS",
         "category": "CASUAL",
         "gender": "KIDS",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "stan-smith"
     },
     {
         "id": 18,
@@ -177,7 +194,8 @@
         "brand": "ADIDAS",
         "category": "RUNNING",
         "gender": "KIDS",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nmd_r1"
     },
     {
         "id": 19,
@@ -187,7 +205,8 @@
         "brand": "ADIDAS",
         "category": "CASUAL",
         "gender": "WOMEN",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "nmd_r1-flash-red"
     },
     {
         "id": 20,
@@ -197,6 +216,7 @@
         "brand": "ADIDAS",
         "category": "CASUAL",
         "gender": "WOMEN",
-        "stars": 4.5
+        "stars": 4.5,
+        "slug": "superstar"
     }
 ]
