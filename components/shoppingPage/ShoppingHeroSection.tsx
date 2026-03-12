@@ -11,7 +11,7 @@ function ShoppingHeroSection({ allShoes }: { allShoes: Shoe[] }) {
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 text-[18vw] font-black leading-none select-none pointer-events-none text-secondary/[0.04]"
+                className="absolute right-0 top-1/2 -translate-y-1/2 text-[18vw] font-black leading-none select-none pointer-events-none text-secondary/5"
             >
                 SHOP
             </motion.span>
