@@ -40,17 +40,17 @@ function FilterdData({ allShoes }: FilterdDataProps) {
 
                     {/* Search */}
                     <div className="relative">
-                        <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none" />
+                        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none" />
                         <input
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs py-3 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-36 md:w-100"
+                            className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/30 text-xs md:text-sm py-3 pl-8 pr-7 outline-none focus:border-secondary/50 transition-colors w-36 md:w-100"
                             type="text"
                             placeholder="Search shoes..."
                         />
                         {search && (
-                            <button onClick={() => setSearch("")} className="absolute right-2 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors">
-                                <X size={12} />
+                            <button onClick={() => setSearch("")} className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors">
+                                <X size={20} />
                             </button>
                         )}
                     </div>
