@@ -89,8 +89,8 @@ function HomeHeroSection() {
                         className="flex gap-10 pt-4 border-t border-white/10"
                     >
                         {[
-                            { value: "500+", label: "Styles" },
-                            { value: "50+", label: "Brands" },
+                            { value: "20+", label: "Styles" },
+                            { value: "5+", label: "Brands" },
                             { value: "4.9★", label: "Rated" },
                         ].map((stat, i) => (
                             <motion.div
