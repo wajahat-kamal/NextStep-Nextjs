@@ -9,7 +9,7 @@ export const store = configureStore({
 
 store.subscribe(() => {
     const state = store.getState();
-    localStorage.setItem("cartItems", JSON.parse(state.cart.cartItems))
+    localStorage.setItem("cartItems", JSON.stringify(state.cart.cartItems))
 })
 
 export type RootState = ReturnType<typeof store.getState>
