@@ -18,8 +18,6 @@ import LinkButton from '../reusable/LinkButton'
 //     )
 // }
 
-
-
 function Testimonials() {
     return (
         <section id='testimonials' className="px-6 md:px-24 py-18 ">

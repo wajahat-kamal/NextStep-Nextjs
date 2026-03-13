@@ -4,7 +4,7 @@ interface HeaderProps {
     para: string,
     heading1: string,
     heading2: string,
-    Button?: React.ReactNode
+    Button: React.ReactNode
 }
 
 export default function Header({ para, heading1, heading2, Button }: HeaderProps) {
@@ -26,7 +26,6 @@ export default function Header({ para, heading1, heading2, Button }: HeaderProps
             <div>
                 {Button}
             </div>
-
         </div>
     )
 }

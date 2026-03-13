@@ -5,6 +5,7 @@ import fs from "node:fs/promises"
 import path from "node:path"
 import { categories } from "@/data/categoriesData"
 import Header from "../reusable/Header"
+import LinkButton from "../reusable/LinkButton"
 
 
 async function Categories() {
@@ -15,7 +16,7 @@ async function Categories() {
     return (
         <section className="bg-bgColor px-6 md:px-24 py-24">
 
-            <Header para="Browse By" heading1="Shop By" heading2="Category" button="All Shoes" />
+            <Header para="Browse By" heading1="Shop By" heading2="Category" Button={<LinkButton text="All Shoes"/>} />
 
             {/* Category Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

@@ -2,6 +2,7 @@ import { Shoe } from '@/types/Shoe'
 import ShoeCard from '../reusable/ShoeCard'
 import Header from '../reusable/Header'
 import getData from '@/lib/getData'
+import LinkButton from '../reusable/LinkButton'
 
 async function FeaturedShoes() {
     const data: Shoe[] = await getData()
@@ -10,7 +11,7 @@ async function FeaturedShoes() {
     return (
         <section className="px-6 md:px-24 py-18 bg-bgColor">
 
-            <Header para='New Arrivals' heading1='Featured' heading2='Collection' button='View All' />
+            <Header para='New Arrivals' heading1='Featured' heading2='Collection' Button={<LinkButton text='View All'/>} />
 
             {/* Cards Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
