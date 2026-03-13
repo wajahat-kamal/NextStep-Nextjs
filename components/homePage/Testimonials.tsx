@@ -2,6 +2,7 @@ import { ArrowUpRight, Star } from 'lucide-react'
 import React from 'react'
 import Header from '../reusable/Header'
 import Link from 'next/link'
+import LinkButton from '../reusable/LinkButton'
 
 // function StarRating({ rating }: { rating: number }) {
 //     return (
@@ -17,24 +18,14 @@ import Link from 'next/link'
 //     )
 // }
 
-function LinkButton({ text }: { text: string }) {
-    return (
-        <Link
-            href="/shopping"
-            className="flex items-center gap-1 text-[10px] md:text-xs uppercase tracking-wider font-semibold px-2 py-2 md:px-6 md:py-3 transition-all duration-300 shrink-0 border border-secondary/50 text-secondary hover:bg-secondary hover:text-primary"
-        >
-            {text}
-            <ArrowUpRight size={12} />
-        </Link>
-    )
-}
+
 
 function Testimonials() {
     return (
         <section id='testimonials' className="px-6 md:px-24 py-18 ">
 
             {/* Header */}
-            <Header para='Reviews' heading1='What Our' heading2='Customers Say' Button={<LinkButton text='view all' />} />
+            <Header para='Reviews' heading1='What Our' heading2='Customers Say' Button={<LinkButton text='View all' />} />
 
         </section>
     )
