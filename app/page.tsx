@@ -3,6 +3,7 @@ import FeaturedShoes from "@/components/homePage/FeaturedShoes";
 import Categories from "@/components/homePage/Categories";
 import BrandStrip from "@/components/homePage/BrandStrip";
 import CTABanner from "@/components/reusable/CTABanner";
+import Testimonials from "@/components/homePage/Testimonials";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <FeaturedShoes/>
       <Categories/>
       <BrandStrip/>
+      <Testimonials/>
       <CTABanner/>
     </div>
   );
