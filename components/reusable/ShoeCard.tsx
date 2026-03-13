@@ -1,10 +1,8 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { ShoppingCart, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Shoe } from "@/types/Shoe";
-import { useDispatch } from "react-redux";
-import { addToCart } from "@/store/cart/cartSlice";
 import AddToCartButton from "./AddToCartButton";
 
 interface ShoeCardProps {
@@ -13,7 +11,6 @@ interface ShoeCardProps {
 }
 
 function ShoeCard({ shoe, height }: ShoeCardProps) {
-
 
     return (
         <div className={`group relative w-full ${height ? "h-60 md:h-80" : "h-90"} aspect-3/4 overflow-hidden cursor-pointer`}>
