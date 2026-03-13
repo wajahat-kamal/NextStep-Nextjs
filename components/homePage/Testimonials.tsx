@@ -1,8 +1,6 @@
-import { ArrowUpRight, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
 import React from 'react'
 import Header from '../reusable/Header'
-import Link from 'next/link'
-import LinkButton from '../reusable/LinkButton'
 
 function StarRating({ rating }: { rating: number }) {
     return (
@@ -20,9 +18,9 @@ function StarRating({ rating }: { rating: number }) {
 
 function StarButton() {
     return (
-        <div className="border border-secondary/20 px-6 py-4 flex items-center gap-4 self-start md:self-auto">
+        <div className="border border-secondary/20 px-4 py-3 flex items-center gap-2 self-start md:self-auto">
             <div>
-                <p className="text-4xl font-black text-secondary">4.9</p>
+                <p className="text-3xl font-black text-secondary">4.9</p>
                 <StarRating rating={5} />
                 <p className="text-[10px] text-white/30 uppercase tracking-widest mt-1">50K+ reviews</p>
             </div>
@@ -36,8 +34,7 @@ function StarButton() {
 
 function Testimonials() {
     return (
-        <section id='testimonials' className="px-6 md:px-24 py-18 ">
-
+        <section id='testimonials' className="px-6 md:px-24 py-10 ">
             {/* Header */}
             <Header para='Reviews' heading1='What Our' heading2='Customers Say' Button={<StarButton />} />
 
