@@ -1,6 +1,7 @@
-import { ArrowUpRight, Link, Star } from 'lucide-react'
+import { ArrowUpRight, Star } from 'lucide-react'
 import React from 'react'
 import Header from '../reusable/Header'
+import Link from 'next/link'
 
 // function StarRating({ rating }: { rating: number }) {
 //     return (
@@ -42,7 +43,7 @@ function Testimonials() {
 export default Testimonials
 
 
-            {/* <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+{/* <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
                 <div>
                     <p className="text-[10px] uppercase tracking-[0.3em] font-semibold mb-2 inline-block px-2 py-0.5 bg-secondary text-primary">
                         Reviews

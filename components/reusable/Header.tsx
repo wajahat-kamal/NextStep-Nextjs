@@ -1,5 +1,3 @@
-import { ArrowUpRight } from 'lucide-react'
-import Link from 'next/link'
 import React, { FC } from 'react'
 
 interface HeaderProps {
