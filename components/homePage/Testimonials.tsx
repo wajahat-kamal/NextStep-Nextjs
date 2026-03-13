@@ -49,7 +49,7 @@ function Testimonials() {
                 </div>
             </div>
 
-            <Header para='Reviews' heading1='What Our' heading2='Customers Say' Button={<LinkButton />} />
+            <Header para='Reviews' heading1='What Our' heading2='Customers Say' Button={<LinkButton text='view all'/>} />
 
         </section>
     )

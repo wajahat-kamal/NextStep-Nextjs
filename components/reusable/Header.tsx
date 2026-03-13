@@ -25,16 +25,8 @@ export default function Header({ para, heading1, heading2, Button }: HeaderProps
                 </h2>
             </div>
 
-            {/* <Button /> */}
+            <Button />
 
         </div>
     )
 }
-
-{/* <Link
-    href="/shopping"
-    className="flex items-center gap-1 text-[10px] md:text-xs uppercase tracking-wider font-semibold px-2 py-2 md:px-6 md:py-3 transition-all duration-300 shrink-0 border border-secondary/50 text-secondary hover:bg-secondary hover:text-primary"
->
-    {button}
-    <ArrowUpRight size={12} />
-</Link> */}
