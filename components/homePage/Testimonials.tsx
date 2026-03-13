@@ -1,8 +1,8 @@
-import { Star } from 'lucide-react'
+import { ArrowUpRight, Link, Star } from 'lucide-react'
 import React from 'react'
 import Header from '../reusable/Header'
 
-function StarRating({rating}: {rating: number}) {
+function StarRating({ rating }: { rating: number }) {
     return (
         <div className="flex gap-0.5">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -49,10 +49,22 @@ function Testimonials() {
                 </div>
             </div>
 
-            <Header para='Reviews' heading1='What Our' heading2='Customers Say' button='4.9'/>
+            <Header para='Reviews' heading1='What Our' heading2='Customers Say' Button={<LinkButton />} />
 
         </section>
     )
 }
 
 export default Testimonials
+
+export function LinkButton({ text }: { text: string }) {
+    return (
+        <Link
+            href="/shopping"
+            className="flex items-center gap-1 text-[10px] md:text-xs uppercase tracking-wider font-semibold px-2 py-2 md:px-6 md:py-3 transition-all duration-300 shrink-0 border border-secondary/50 text-secondary hover:bg-secondary hover:text-primary"
+        >
+            {text}
+            <ArrowUpRight size={12} />
+        </Link>
+    )
+}

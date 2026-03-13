@@ -6,7 +6,7 @@ interface HeaderProps {
     para: string,
     heading1: string,
     heading2: string,
-    button?: any
+    Button?: any
 }
 
 export default function Header({ para, heading1, heading2, Button }: HeaderProps) {
@@ -25,7 +25,7 @@ export default function Header({ para, heading1, heading2, Button }: HeaderProps
                 </h2>
             </div>
 
-            <Button />
+            {/* <Button /> */}
 
         </div>
     )
