@@ -11,8 +11,8 @@ export default function Home() {
       <HeroSection/>
       <FeaturedShoes/>
       <Categories/>
-      <BrandStrip/>
       <Testimonials/>
+      <BrandStrip/>
       <CTABanner/>
     </div>
   );

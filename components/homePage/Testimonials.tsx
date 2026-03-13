@@ -2,20 +2,21 @@ import { ArrowUpRight, Link, Star } from 'lucide-react'
 import React from 'react'
 import Header from '../reusable/Header'
 
-function StarRating({ rating }: { rating: number }) {
-    return (
-        <div className="flex gap-0.5">
-            {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                    key={i}
-                    size={13}
-                    className={i < rating ? "text-secondary fill-secondary" : "text-white/15"}
-                />
-            ))}
-        </div>
-    )
-}
-export function LinkButton({ text }: { text: string }) {
+// function StarRating({ rating }: { rating: number }) {
+//     return (
+//         <div className="flex gap-0.5">
+//             {Array.from({ length: 5 }).map((_, i) => (
+//                 <Star
+//                     key={i}
+//                     size={13}
+//                     className={i < rating ? "text-secondary fill-secondary" : "text-white/15"}
+//                 />
+//             ))}
+//         </div>
+//     )
+// }
+
+function LinkButton({ text }: { text: string }) {
     return (
         <Link
             href="/shopping"
@@ -29,9 +30,18 @@ export function LinkButton({ text }: { text: string }) {
 
 function Testimonials() {
     return (
-        <section id='testimonials' className="bg-primary px-6 md:px-24 py-24 border-t border-secondary/10">
+        <section id='testimonials' className="px-6 md:px-24 py-18 ">
 
             {/* Header */}
+            <Header para='Reviews' heading1='What Our' heading2='Customers Say' Button={<LinkButton text='view all' />} />
+
+        </section>
+    )
+}
+
+export default Testimonials
+
+
             {/* <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
                 <div>
                     <p className="text-[10px] uppercase tracking-[0.3em] font-semibold mb-2 inline-block px-2 py-0.5 bg-secondary text-primary">
@@ -57,12 +67,3 @@ function Testimonials() {
                     </p>
                 </div>
             </div> */}
-
-            <Header para='Reviews' heading1='What Our' heading2='Customers Say' Button={<LinkButton text='view all' />} />
-
-        </section>
-    )
-}
-
-export default Testimonials
-
