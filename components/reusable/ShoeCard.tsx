@@ -1,7 +1,10 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart, ArrowUpRight } from "lucide-react";
 import { Shoe } from "@/types/Shoe";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/store/cart/cartSlice";
 
 interface ShoeCardProps {
     shoe: Shoe;
@@ -9,6 +12,8 @@ interface ShoeCardProps {
 }
 
 function ShoeCard({ shoe, height }: ShoeCardProps) {
+
+    const dispatch = useDispatch()
 
     return (
         <div className={`group relative w-full ${height ? "h-60 md:h-80" : "h-90"} aspect-3/4 overflow-hidden cursor-pointer`}>
@@ -77,6 +82,7 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                             className="bg-secondary text-primary w-6 h-6 md:w-10 md:h-10 cursor-pointer flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
                             style={{ backgroundColor: "#FFD33C", color: "#021B41" }}
                             aria-label={`Add ${shoe.name} to cart`}
+                            onClick={() => dispatch(addToCart(shoe))}
                         >
                             <ShoppingCart className="md:w-7 md:h-7 h-4 w-4" />
                         </button>
