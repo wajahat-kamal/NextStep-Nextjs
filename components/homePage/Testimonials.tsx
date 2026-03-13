@@ -17,7 +17,7 @@ function StarRating({rating}: {rating: number}) {
 
 function Testimonials() {
     return (
-        <section className="bg-primary px-6 md:px-24 py-24 border-t border-secondary/10">
+        <section id='testimonials' className="bg-primary px-6 md:px-24 py-24 border-t border-secondary/10">
 
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
