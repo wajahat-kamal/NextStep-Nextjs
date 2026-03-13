@@ -1,5 +1,6 @@
 import { Star } from 'lucide-react'
 import React from 'react'
+import Header from '../reusable/Header'
 
 function StarRating({rating}: {rating: number}) {
     return (
@@ -47,6 +48,8 @@ function Testimonials() {
                     </p>
                 </div>
             </div>
+
+            <Header para='Reviews' heading1='What Our' heading2='Customers Say' button='4.9'/>
 
         </section>
     )
