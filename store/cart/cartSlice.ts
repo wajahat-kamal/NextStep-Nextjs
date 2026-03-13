@@ -2,8 +2,12 @@ import { Shoe } from "@/types/Shoe";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
+interface CartItemType extends Shoe {
+    quantity: number
+}
+
 interface CartState {
-    cartItems: Shoe[],
+    cartItems: CartItemType[],
     isOpen: boolean
 }
 
@@ -20,7 +24,10 @@ const cartSlice = createSlice({
             state.isOpen = !state.isOpen
         },
         addToCart: (state, action) => {
-            
+            const item = state.cartItems.find((item) => item.id === action.payload.id)
+            if (item) {
+                item
+            }
         }
     }
 })
