@@ -43,7 +43,7 @@ function Testimonials() {
                 {testimonials.map((t, i) => (
                     <div
                         key={t.id}
-                        className="relative flex flex-col gap-4 p-6 border transition-all duration-300 hover:-translate-y-1 group border-secondary/10 bg-white/2 hover:border-secondary/25"
+                        className="relative flex flex-col gap-4 p-4 border transition-all duration-300 hover:-translate-y-1 group border-secondary/10 bg-white/2 hover:border-secondary/25"
                     >
                         {/* Quote icon */}
                         <Quote
