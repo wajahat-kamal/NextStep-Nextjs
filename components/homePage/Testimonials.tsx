@@ -21,7 +21,7 @@ function Testimonials() {
         <section id='testimonials' className="bg-primary px-6 md:px-24 py-24 border-t border-secondary/10">
 
             {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+            {/* <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
                 <div>
                     <p className="text-[10px] uppercase tracking-[0.3em] font-semibold mb-2 inline-block px-2 py-0.5 bg-secondary text-primary">
                         Reviews
@@ -34,8 +34,6 @@ function Testimonials() {
                         <br /> Say.
                     </h2>
                 </div>
-
-                {/* Overall rating */}
                 <div className="border border-secondary/20 px-6 py-4 flex items-center gap-4 self-start md:self-auto">
                     <div>
                         <p className="text-4xl font-black text-secondary">4.9</p>
@@ -47,7 +45,7 @@ function Testimonials() {
                         Trusted by thousands across Pakistan
                     </p>
                 </div>
-            </div>
+            </div> */}
 
             <Header para='Reviews' heading1='What Our' heading2='Customers Say' Button={<LinkButton text='view all'/>} />
 
