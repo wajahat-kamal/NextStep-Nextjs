@@ -1,7 +1,7 @@
 import { Star } from 'lucide-react'
 import React from 'react'
 
-function StarRating(rating: number) {
+function StarRating({rating}: {rating: number}) {
     return (
         <div className="flex gap-0.5">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -38,7 +38,7 @@ function Testimonials() {
                 <div className="border border-secondary/20 px-6 py-4 flex items-center gap-4 self-start md:self-auto">
                     <div>
                         <p className="text-4xl font-black text-secondary">4.9</p>
-                        {/* <StarRating rating={5} /> */}
+                        <StarRating rating={5} />
                         <p className="text-[10px] text-white/30 uppercase tracking-widest mt-1">50K+ reviews</p>
                     </div>
                     <div className="w-px h-12 bg-secondary/15" />
