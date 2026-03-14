@@ -19,6 +19,7 @@ function Cart() {
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0)
 
   const checkoutHandler = () => {
+    dispatch(closeCart())
     toast.success("🎉 Checkout completed successfully!", {
       position: "top-right",
       autoClose: 2000,
