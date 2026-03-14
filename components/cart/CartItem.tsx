@@ -29,7 +29,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
             <div className="flex-1 ml-2">
                 <p className="text-xs text-white leading-snug line-clamp-1">{item.name}</p>
 
-                <div className="flex items-center justify-start gap-8 mt-1 text-xs text-zinc-400">
+                <div className="flex items-center justify-between pr-4 gap-8 mt-1 text-xs text-zinc-400">
                     {/* Price */}
                     <span className="text-white font-semibold text-sm">
                         ${item.price * item.quantity}
