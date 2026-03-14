@@ -1,4 +1,5 @@
 import type { Shoe } from "@/types/Shoe";
+import { CartState } from "@/types/Store";
 import { createSlice } from "@reduxjs/toolkit";
 
 const loadCartItems = () => {
@@ -9,15 +10,6 @@ const loadCartItems = () => {
     } catch (error) {
         return []
     }
-}
-
-export interface CartItemType extends Shoe {
-    quantity: number
-}
-
-interface CartState {
-    cartItems: CartItemType[],
-    isOpen: boolean
 }
 
 const initialState: CartState = {
