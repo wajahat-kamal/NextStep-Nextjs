@@ -11,7 +11,9 @@ import { X } from 'lucide-react';
 function Cart() {
 
   const dispatch = useDispatch()
+  const { isOpen } = useSelector((state: RootState) => state.cart)
 
+  if(!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm">
