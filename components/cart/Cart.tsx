@@ -1,11 +1,13 @@
 import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import cartImage from "@/assets/cart-image.png"
+import Image from 'next/image';
+import { RootState } from '@/store/store';
 
 function Cart() {
 
   const dispatch = useDispatch()
-  const { isOpen } = useSelector((state) => state.cart)
+  const { isOpen } = useSelector((state: RootState) => state.cart)
 
   if (!isOpen) return;
 
@@ -29,7 +31,8 @@ function Cart() {
             <Image
               src={cartImage}
               alt="Cart"
-              
+              width={10}
+              height={10}
               className="h-7 w-7 md:h-10 md:w-10 object-contain opacity-90 pointer-events-none"
               loading="lazy"
             />
