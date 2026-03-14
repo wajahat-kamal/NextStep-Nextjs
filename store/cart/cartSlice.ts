@@ -1,6 +1,5 @@
 import type { Shoe } from "@/types/Shoe";
-import { CartState } from "@/types/Store";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const loadCartItems = () => {
     try {
@@ -10,6 +9,15 @@ const loadCartItems = () => {
     } catch (error) {
         return []
     }
+}
+
+export interface CartItemType extends Shoe {
+    quantity: number
+}
+
+interface CartState {
+    cartItems: CartItemType[],
+    isOpen: boolean
 }
 
 const initialState: CartState = {
@@ -27,7 +35,7 @@ const cartSlice = createSlice({
         closeCart: (state) => {
             state.isOpen = false
         },
-        addToCart: (state, action) => {
+        addToCart: (state, action: PayloadAction<Shoe>) => {
             const item = state.cartItems.find((item) => item.id === action.payload.id)
             if (item) {
                 item.quantity += 1;
