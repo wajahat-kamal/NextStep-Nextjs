@@ -11,7 +11,7 @@ import { X } from 'lucide-react';
 function Cart() {
 
   const dispatch = useDispatch()
-  const { isOpen } = useSelector((state: RootState) => state.cart)
+  const { cartItems, isOpen } = useSelector((state: RootState) => state.cart)
 
   return (
     <AnimatePresence>
@@ -50,6 +50,12 @@ function Cart() {
                 <X />
               </button>
             </div>
+
+            {cartItems.length === 0 && (
+              <p className="text-sm text-zinc-200 text-center mt-20">
+                Your cart is empty
+              </p>
+            )}
 
           </motion.div>
         </div>
