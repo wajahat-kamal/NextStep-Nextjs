@@ -7,10 +7,10 @@ interface CartItemProps {
     item: CartItemType;
     // onIncrease: () => void;
     // onDecrease: () => void;
-    // onRemove: () => void;
+    onRemove: () => void;
 }
 // , onIncrease, onDecrease, onRemove
-const CartItem: React.FC<CartItemProps> = ({ item }) => {
+const CartItem: React.FC<CartItemProps> = ({ item, onRemove }) => {
     return (
         <div className="flex items-center gap-3 py-4 border-b border-secondary/10 group">
 
@@ -52,7 +52,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
 
                 {/* Remove */}
                 <button
-                    // onClick={onRemove}
+                    onClick={onRemove}
                     className="text-white/20 hover:text-red-400 transition-colors duration-200"
                     aria-label="Remove item"
                 >
