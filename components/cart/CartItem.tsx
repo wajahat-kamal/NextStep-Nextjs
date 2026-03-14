@@ -53,10 +53,10 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove }) => {
                 {/* Remove */}
                 <button
                     onClick={onRemove}
-                    className="text-white/20 hover:text-red-400 transition-colors duration-200"
+                    className="text-white/20 hover:text-red-400 transition-colors duration-200 cursor-pointer"
                     aria-label="Remove item"
                 >
-                    <Trash2 size={13} />
+                    <Trash2 size={18} />
                 </button>
 
                 {/* Quantity Controls */}
