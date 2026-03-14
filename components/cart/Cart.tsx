@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { closeCart } from '@/store/cart/cartSlice';
 import { X } from 'lucide-react';
 import { toast } from 'react-toastify';
+import CartItem from './CartItem';
 
 function Cart() {
 
@@ -72,12 +73,11 @@ function Cart() {
               </p>
             )}
 
-            {/* <div className="space-y-4">
+            <div className="space-y-4">
               {cartItems.map((item) => (
                 <CartItem key={item.id} item={item} />
               ))}
-            </div> */}
-
+            </div>
 
             {cartItems.length > 0 && (
               <div className="absolute bottom-6 left-6 right-6 space-y-3">
