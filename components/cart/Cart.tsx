@@ -45,17 +45,24 @@ function Cart() {
               </div>
               <button
                 onClick={() => dispatch(closeCart())}
-                className="text-zinc-400 hover:text-white transition cursor-pointer"
+                className="text-zinc-300 hover:text-white transition cursor-pointer"
               >
                 <X />
               </button>
             </div>
 
             {cartItems.length === 0 && (
-              <p className="text-sm text-zinc-200 text-center mt-20">
+              <p className="text-sm text-zinc-300 text-center mt-20">
                 Your cart is empty
               </p>
             )}
+
+            <div className="space-y-4">
+              {cartItems.map((item) => (
+                <CartItem key={item.id} item={item} />
+              ))}
+            </div>
+
 
           </motion.div>
         </div>
