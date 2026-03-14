@@ -106,7 +106,7 @@ function Cart() {
 
             {/* Footer */}
             {cartItems.length > 0 && (
-              <div className="px-5 py-5 border-t border-secondary/10 shrink-0 space-y-4">
+              <div className="px-4 py-2 border-t border-secondary/10 shrink-0 space-y-1">
 
                 {/* Total */}
                 <div className="flex items-center justify-between">
