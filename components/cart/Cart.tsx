@@ -44,7 +44,7 @@ function Cart() {
             transition={{ duration: 0.3, ease: "easeIn" }}
             className="absolute right-0 top-0 h-full w-80
               bg-primary border-l border-white/10
-              p-6 shadow-2xl"
+              py-6 px-2 shadow-2xl"
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
