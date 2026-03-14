@@ -1,4 +1,6 @@
 import { CartItemType } from "@/store/cart/cartSlice";
+import { Minus, Plus } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 interface CartItemProps {
@@ -8,15 +10,15 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
     return (
         <div
-            key={item.id}
             className="flex items-center justify-between
             bg-white/5 border border-white/10
             rounded-lg p-2 hover:bg-white/10 transition-colors"
         >
             {/* Product Image */}
-            <div className="w-12 h-12 flex-shrink-0 rounded-md overflow-hidden border border-white/10">
-                <img
-                    src={item.image}
+            <div className="w-12 h-12 shrink-0 rounded-md overflow-hidden border border-white/10">
+                <Image
+                    fill
+                    src={item.imageUrl}
                     alt={item.name}
                     className="w-full h-full object-cover"
                 />
