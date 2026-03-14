@@ -37,7 +37,7 @@ function Navbar() {
                         </li>
                     ))}
                 </ul>
-                <button className='border-l border-zinc-500/60'>
+                <button className='border-l border-zinc-500/60' onClick={() => dispatch(toggleCart())}>
                     <Image className='ml-4 cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage} />
                 </button>
             </div>

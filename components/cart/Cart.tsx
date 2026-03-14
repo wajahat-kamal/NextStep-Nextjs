@@ -38,14 +38,14 @@ function Cart() {
                   alt="Cart"
                   width={10}
                   height={10}
-                  className="h-7 w-7 md:h-10 md:w-10 object-contain opacity-90 pointer-events-none"
+                  className="h-7 w-7 object-contain opacity-90 pointer-events-none"
                   loading="lazy"
                 />
                 <h3>Your Cart</h3>
               </div>
               <button
                 onClick={() => dispatch(closeCart())}
-                className="text-zinc-400 hover:text-white transition"
+                className="text-zinc-400 hover:text-white transition cursor-pointer"
               >
                 <X />
               </button>
