@@ -9,7 +9,7 @@ interface CartItemProps {
     onDecrease: () => void;
     onRemove: () => void;
 }
-// , onIncrease, onDecrease, onRemove
+
 const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecrease }) => {
     return (
         <div className="flex items-center gap-3 py-4 border-b border-secondary/10 group">
