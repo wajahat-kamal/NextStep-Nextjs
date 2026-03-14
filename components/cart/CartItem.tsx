@@ -6,11 +6,11 @@ import React from "react";
 interface CartItemProps {
     item: CartItemType;
     onIncrease: () => void;
-    // onDecrease: () => void;
+    onDecrease: () => void;
     onRemove: () => void;
 }
 // , onIncrease, onDecrease, onRemove
-const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease }) => {
+const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecrease }) => {
     return (
         <div className="flex items-center gap-3 py-4 border-b border-secondary/10 group">
 
@@ -62,7 +62,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease }) => {
                 {/* Quantity Controls */}
                 <div className="flex items-center border border-secondary/20">
                     <button
-                        // onClick={onDecrease}
+                        onClick={onDecrease}
                         className="text-white/50 hover:text-white hover:bg-secondary/10 transition-colors p-1.5"
                         aria-label="Decrease quantity"
                     >

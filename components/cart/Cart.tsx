@@ -5,8 +5,7 @@ import cartImage from "@/assets/cart-image.png"
 import Image from 'next/image';
 import { RootState } from '@/store/store';
 import { motion, AnimatePresence } from 'motion/react';
-// import { closeCart, , increaseQuantity, decreaseQuantity } from '@/store/cart/cartSlice';
-import { checkOut, closeCart, increaseQuantity, removeItem } from '@/store/cart/cartSlice';
+import { checkOut, closeCart, decreaseQuantity, increaseQuantity, removeItem } from '@/store/cart/cartSlice';
 import { ShoppingBag, X } from 'lucide-react';
 import { toast } from 'react-toastify';
 import CartItem from './CartItem';
@@ -98,7 +97,7 @@ function Cart() {
                     key={item.id}
                     item={item}
                   onIncrease={() => dispatch(increaseQuantity(item.id))}
-                  // onDecrease={() => dispatch(decreaseQuantity(item.id))}
+                  onDecrease={() => dispatch(decreaseQuantity(item.id))}
                   onRemove={() => dispatch(removeItem(item.id))}
                   />
                 ))
