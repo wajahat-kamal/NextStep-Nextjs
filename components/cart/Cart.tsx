@@ -83,7 +83,7 @@ function Cart() {
               <div className="absolute bottom-6 left-6 right-6 space-y-3">
                 <button
                   onClick={checkoutHandler}
-                  className="w-full bg-(--primary) text-white py-2 rounded-xl
+                  className="w-full bg-secondary text-black cursor-pointer py-2 
                 hover:opacity-90 transition"
                 >
                   Checkout
