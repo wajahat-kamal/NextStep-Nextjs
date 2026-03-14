@@ -52,7 +52,12 @@ const cartSlice = createSlice({
                 item.quantity += 1;
             }
         },
-        decreaseQuantity: (state, action: PayloadAction<number>) => { },
+        decreaseQuantity: (state, action: PayloadAction<number>) => {
+            const item = state.cartItems.find((item) => item.id === action.payload)
+            if (item) {
+                item.quantity -= 1;
+            }
+        },
         checkOut: (state) => {
             state.cartItems = []
             state.isOpen = false
