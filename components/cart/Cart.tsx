@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { RootState } from '@/store/store';
 import { motion, AnimatePresence } from 'motion/react';
 // import { closeCart, , increaseQuantity, decreaseQuantity } from '@/store/cart/cartSlice';
-import { closeCart, removeItem } from '@/store/cart/cartSlice';
+import { checkOut, closeCart, removeItem } from '@/store/cart/cartSlice';
 import { ShoppingBag, X } from 'lucide-react';
 import { toast } from 'react-toastify';
 import CartItem from './CartItem';
@@ -19,7 +19,7 @@ function Cart() {
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0)
 
   const checkoutHandler = () => {
-    dispatch(closeCart())
+    dispatch(checkOut())
     toast.success("🎉 Checkout completed successfully!", {
       position: "top-right",
       autoClose: 2000,

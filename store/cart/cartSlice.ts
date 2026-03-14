@@ -48,7 +48,10 @@ const cartSlice = createSlice({
         },
         increaseQuantity: (state, action: PayloadAction<number>) => {},
         decreaseQuantity: (state, action: PayloadAction<number>) => {},
-        checkOut: (state) => {}
+        checkOut: (state) => {
+            state.cartItems = []
+            state.isOpen = false
+        }
     }
 })
 
