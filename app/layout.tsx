@@ -5,6 +5,7 @@ import Navbar from "@/components/reusable/Navbar";
 import Footer from "@/components/reusable/Footer";
 import StoreProvider from "@/lib/StoreProvider";
 import Cart from "../components/cart/Cart";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <StoreProvider>
+          <ToastContainer/>
           <Navbar />
           {children}
           <Cart/>

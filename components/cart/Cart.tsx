@@ -7,11 +7,26 @@ import { RootState } from '@/store/store';
 import { motion, AnimatePresence } from 'motion/react';
 import { closeCart } from '@/store/cart/cartSlice';
 import { X } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 function Cart() {
 
   const dispatch = useDispatch()
   const { cartItems, isOpen } = useSelector((state: RootState) => state.cart)
+
+  const checkoutHandler = () => {
+    // dispatch(checkout());
+
+    toast.success("🎉 Checkout completed successfully!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "dark",
+    });
+  };
 
   return (
     <AnimatePresence>
@@ -57,13 +72,31 @@ function Cart() {
               </p>
             )}
 
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               {cartItems.map((item) => (
                 <CartItem key={item.id} item={item} />
               ))}
-            </div>
+            </div> */}
 
 
+            {cartItems.length > 0 && (
+              <div className="absolute bottom-6 left-6 right-6 space-y-3">
+                <button
+                  onClick={checkoutHandler}
+                  className="w-full bg-(--primary) text-white py-2 rounded-xl
+                hover:opacity-90 transition"
+                >
+                  Checkout
+                </button>
+
+                <button
+                  onClick={() => dispatch(closeCart())}
+                  className="w-full text-sm text-zinc-400 hover:text-white transition"
+                >
+                  Continue Shopping
+                </button>
+              </div>
+            )}
           </motion.div>
         </div>
       )}
