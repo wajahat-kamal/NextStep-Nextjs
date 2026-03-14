@@ -7,9 +7,12 @@ import cartImage from "@/assets/cart-image.png"
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from "motion/react"
 import { navLinks } from '@/data/linksData'
+import { useDispatch } from 'react-redux'
+import { openCart } from '@/store/cart/cartSlice'
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
+    const dispatch = useDispatch()
     return (
         <nav className='absolute top-1 right-0 w-full h-20 z-30 flex flex-row justify-between items-center px-4 md:px-24'>
             <Link
@@ -39,7 +42,7 @@ function Navbar() {
                 </button>
             </div>
             <div className='md:hidden flex justify-center items-center flex-row gap-2'>
-                <button>
+                <button onClick={() => dispatch(openCart())}>
                     <Image className='cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage} />
                 </button>
                 <button

@@ -1,20 +1,22 @@
+"use client"
 import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import cartImage from "@/assets/cart-image.png"
 import Image from 'next/image';
 import { RootState } from '@/store/store';
+import { motion } from 'motion/react';
+import { closeCart } from '@/store/cart/cartSlice';
+import { X } from 'lucide-react';
 
 function Cart() {
 
   const dispatch = useDispatch()
-  const { isOpen } = useSelector((state: RootState) => state.cart)
 
-  if (!isOpen) return;
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm">
       {/* Overlay click close */}
-      <div className="absolute inset-0" onClick={() => dispatch(isOpen())} />
+      <div className="absolute inset-0" onClick={() => dispatch(closeCart())} />
 
       {/* Drawer */}
       <motion.div
@@ -39,7 +41,7 @@ function Cart() {
             <h3>Your Cart</h3>
           </div>
           <button
-            onClick={() => dispatch(isOpen())}
+            onClick={() => dispatch(closeCart())}
             className="text-zinc-400 hover:text-white transition"
           >
             <X />
