@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/reusable/Navbar";
 import Footer from "@/components/reusable/Footer";
+import StoreProvider from "@/lib/StoreProvider";
+import Cart from "../components/cart/Cart";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +33,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <Navbar/>
-        {children}
-        <Footer/>
+        <StoreProvider>
+          <ToastContainer/>
+          <Navbar />
+          {children}
+          <Cart/>
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

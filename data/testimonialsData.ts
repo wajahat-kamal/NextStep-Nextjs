@@ -1,0 +1,38 @@
+export const testimonials = [
+    {
+        id: 1,
+        name: "Ahmed Raza",
+        location: "Karachi, PK",
+        rating: 5,
+        review: "Best shoe store I've found online. The Nike React Miler I ordered arrived quickly and fit perfectly. Quality is exactly as described — highly recommend NextStep!",
+        purchased: "Nike React Miler",
+        initial: "A",
+    },
+    {
+        id: 2,
+        name: "Sana Malik",
+        location: "Lahore, PK",
+        rating: 5,
+        review: "Amazing collection and super easy to navigate. Found the perfect formal shoes for my husband within minutes. Will definitely be coming back for more.",
+        purchased: "Hush Puppies Beck",
+        initial: "S",
+    },
+    {
+        id: 3,
+        name: "Bilal Khan",
+        location: "Islamabad, PK",
+        rating: 4,
+        review: "Great prices and fast delivery. The Adidas Stan Smith looks even better in person. NextStep is now my go-to for all things footwear.",
+        purchased: "Adidas Stan Smith",
+        initial: "B",
+    },
+    {
+        id: 4,
+        name: "Fatima Zahra",
+        location: "Faisalabad, PK",
+        rating: 5,
+        review: "I ordered kids shoes and they were exactly what I was looking for. The size guide was accurate and my son absolutely loves them. 10/10 experience!",
+        purchased: "Nike Air Force 1",
+        initial: "F",
+    },
+]

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ShoppingCart, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Shoe } from "@/types/Shoe";
+import AddToCartButton from "./AddToCartButton";
 
 interface ShoeCardProps {
     shoe: Shoe;
@@ -73,13 +74,7 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                             <span className="text-[10px] md:text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>USD</span>
                         </div>
 
-                        <button
-                            className="bg-secondary text-primary w-6 h-6 md:w-10 md:h-10 cursor-pointer flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
-                            style={{ backgroundColor: "#FFD33C", color: "#021B41" }}
-                            aria-label={`Add ${shoe.name} to cart`}
-                        >
-                            <ShoppingCart className="md:w-7 md:h-7 h-4 w-4" />
-                        </button>
+                        <AddToCartButton shoe={shoe} />
                     </div>
 
                     {/* View Details — slides in on hover */}

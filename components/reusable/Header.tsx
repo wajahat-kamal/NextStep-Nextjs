@@ -1,8 +1,13 @@
-import { ArrowUpRight } from 'lucide-react'
-import Link from 'next/link'
-import React from 'react'
+import React, { FC } from 'react'
 
-export default function Header({ para, heading1, heading2, button }: { para: string, heading1: string, heading2: string, button: string }) {
+interface HeaderProps {
+    para: string,
+    heading1: string,
+    heading2: string,
+    Button: React.ReactNode
+}
+
+export default function Header({ para, heading1, heading2, Button }: HeaderProps) {
     return (
         <div className="flex flex-row justify-between items-center mb-8 gap-4">
             <div>
@@ -18,13 +23,9 @@ export default function Header({ para, heading1, heading2, button }: { para: str
                 </h2>
             </div>
 
-            <Link
-                href="/shopping"
-                className="flex items-center gap-1 text-[10px] md:text-xs uppercase tracking-wider font-semibold px-2 py-2 md:px-6 md:py-3 transition-all duration-300 shrink-0 border border-secondary/50 text-secondary hover:bg-secondary hover:text-primary"
-            >
-                {button}
-                <ArrowUpRight size={12} />
-            </Link>
+            <div>
+                {Button}
+            </div>
         </div>
     )
 }
