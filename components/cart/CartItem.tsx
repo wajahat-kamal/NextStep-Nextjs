@@ -1,16 +1,26 @@
-import { CartItemType } from "@/store/cart/cartSlice";
+import { CartItemType, closeCart } from "@/store/cart/cartSlice";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 interface CartItemProps {
     item: CartItemType;
-    // onIncrease: () => void;
-    // onDecrease: () => void;
+    onIncrease: () => void;
+    onDecrease: () => void;
     onRemove: () => void;
 }
-// , onIncrease, onDecrease, onRemove
-const CartItem: React.FC<CartItemProps> = ({ item, onRemove }) => {
+
+const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecrease }) => {
+    const router = useRouter()
+    const dispatch = useDispatch()
+
+    const slug = (slug: string): void => {
+        dispatch(closeCart())
+        router.push(`/shopping/${slug}`)
+    }
+    
     return (
         <div className="flex items-center gap-3 py-4 border-b border-secondary/10 group">
 
@@ -26,7 +36,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove }) => {
             </div>
 
             {/* Info */}
-            <div className="flex-1 min-w-0">
+            <div onClick={() => slug(item.slug)} className="flex-1 min-w-0 cursor-pointer">
 
                 {/* Brand */}
                 <p className="text-[9px] uppercase tracking-widest text-secondary/60 font-bold mb-0.5">
@@ -62,7 +72,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove }) => {
                 {/* Quantity Controls */}
                 <div className="flex items-center border border-secondary/20">
                     <button
-                        // onClick={onDecrease}
+                        onClick={onDecrease}
                         className="text-white/50 hover:text-white hover:bg-secondary/10 transition-colors p-1.5"
                         aria-label="Decrease quantity"
                     >
@@ -72,7 +82,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove }) => {
                         {item.quantity}
                     </span>
                     <button
-                        // onClick={onIncrease}
+                        onClick={onIncrease}
                         className="text-white/50 hover:text-white hover:bg-secondary/10 transition-colors p-1.5"
                         aria-label="Increase quantity"
                     >

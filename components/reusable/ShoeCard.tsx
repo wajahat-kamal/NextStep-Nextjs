@@ -12,7 +12,7 @@ interface ShoeCardProps {
 function ShoeCard({ shoe, height }: ShoeCardProps) {
 
     return (
-        <div className={`group relative w-full ${height ? "h-60 md:h-80" : "h-90"} aspect-3/4 overflow-hidden cursor-pointer`}>
+        <div className={`group relative w-full ${height ? "h-60 md:h-80" : "h-70 md:h-90"} aspect-3/4 overflow-hidden cursor-pointer`}>
 
             <div className="absolute inset-0 bg-[#F6F6F6]" />
 

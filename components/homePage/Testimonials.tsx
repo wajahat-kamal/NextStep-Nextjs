@@ -9,8 +9,7 @@ function StarRating({ rating }: { rating: number }) {
             {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                     key={i}
-                    size={13}
-                    className={i < rating ? "text-secondary fill-secondary" : "text-white/15"}
+                    className={`w-2 h-2 md:w-4 md:h-4 ${i < rating ? "text-secondary fill-secondary" : "text-white/15"}`}
                 />
             ))}
         </div>
@@ -19,14 +18,14 @@ function StarRating({ rating }: { rating: number }) {
 
 function StarButton() {
     return (
-        <div className="border border-secondary/20 px-4 py-3 flex items-center gap-2 self-start md:self-auto">
+        <div className="border border-secondary/20 px-2 py-1 md:px-4 md:py-3 flex items-center gap-2 self-start md:self-auto">
             <div>
-                <p className="text-3xl font-black text-secondary">4.9</p>
+                <p className="text-md md:text-3xl font-black text-secondary">4.9</p>
                 <StarRating rating={5} />
-                <p className="text-[10px] text-white/30 uppercase tracking-widest mt-1">50K+ reviews</p>
+                <p className="text-[6px] md:text-[10px] text-white/30 uppercase tracking-widest mt-1">50K+ reviews</p>
             </div>
-            <div className="w-px h-14 bg-secondary/15" />
-            <p className="text-[10px] text-white/40 max-w-[100px] leading-relaxed">
+            <div className="hidden md:block w-px h-10 md:h-14 bg-secondary/15" />
+            <p className="hidden md:block text-[10px] text-white/40 max-w-[100px] leading-relaxed">
                 Trusted by thousands across Pakistan
             </p>
         </div>

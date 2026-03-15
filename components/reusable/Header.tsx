@@ -9,12 +9,12 @@ interface HeaderProps {
 
 export default function Header({ para, heading1, heading2, Button }: HeaderProps) {
     return (
-        <div className="flex flex-row justify-between items-center mb-8 gap-4">
+        <div className="flex flex-row justify-between items-center mb-8 md:gap-4 gap-2">
             <div>
                 <p className="text-[10px] uppercase tracking-[0.3em] font-semibold mb-1 inline-block px-2 py-0.5 text-primary bg-secondary">
                     {para}
                 </p>
-                <h2 className="text-xl sm:text-3xl md:text-5xl font-black text-white leading-tight">
+                <h2 className="text-lg sm:text-3xl md:text-5xl font-black text-white leading-tight">
                     {heading1}{" "}
                     <span className="text-transparent"
                         style={{ WebkitTextStroke: "1.5px rgba(255,211,60,0.5)" }}>
