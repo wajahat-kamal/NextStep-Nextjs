@@ -15,7 +15,7 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecrease }) => {
     const router = useRouter()
     const dispatch = useDispatch()
-    const slug = (slug: string) => {
+    const slug = (slug: string): void => {
         dispatch(closeCart())
         router.push(`/shopping/${slug}`)
     }
@@ -34,7 +34,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecre
             </div>
 
             {/* Info */}
-            <div className="flex-1 min-w-0 cursor-pointer">
+            <div onClick={slug(item.slug)} className="flex-1 min-w-0 cursor-pointer">
 
                 {/* Brand */}
                 <p className="text-[9px] uppercase tracking-widest text-secondary/60 font-bold mb-0.5">
