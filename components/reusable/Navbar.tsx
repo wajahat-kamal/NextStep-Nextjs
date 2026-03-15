@@ -82,15 +82,15 @@ function Navbar() {
                         exit={{ opacity: 0, x: 200 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         id="mobile-menu"
-                        className="fixed top-0 right-0 z-50 h-screen bg-primary w-48 md:hidden"
+                        className="fixed top-0 right-0 z-50 h-screen bg-primary w-60 md:hidden"
                     >
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="self-end text-white mb-4 w-full absolute top-7 left-37"
+                            className="self-end text-white mb-4 w-full absolute top-7 left-50"
                         >
                             <X size={30} />
                         </button>
-                        <div className="flex flex-col gap-2 px-4 pt-16">
+                        <div className="flex flex-col gap-3 px-4 pt-16">
                             {navLinks.map(({ name, href }) => (
                                 <Link
                                     key={name}
