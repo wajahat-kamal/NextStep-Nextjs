@@ -18,14 +18,14 @@ function StarRating({ rating }: { rating: number }) {
 
 function StarButton() {
     return (
-        <div className="border border-secondary/20 px-4 py-3 flex items-center gap-2 self-start md:self-auto">
+        <div className="border border-secondary/20 px-2 py-1 md:px-4 md:py-3 flex items-center gap-2 self-start md:self-auto">
             <div>
                 <p className="text-md md:text-3xl font-black text-secondary">4.9</p>
                 <StarRating rating={5} />
                 <p className="text-[6px] md:text-[10px] text-white/30 uppercase tracking-widest mt-1">50K+ reviews</p>
             </div>
             <div className="w-px h-10 md:h-14 bg-secondary/15" />
-            <p className="text-[6px] md:text-[10px] text-white/40 max-w-[100px] leading-relaxed">
+            <p className="text-[6px] md:text-[10px] text-white/40 leading-relaxed">
                 Trusted by thousands across Pakistan
             </p>
         </div>
