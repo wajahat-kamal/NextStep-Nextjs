@@ -1,6 +1,7 @@
 import { CartItemType } from "@/store/cart/cartSlice";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface CartItemProps {
@@ -26,7 +27,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecre
             </div>
 
             {/* Info */}
-            <div className="flex-1 min-w-0">
+            <Link href={`/shopping/${item.slug}`} className="flex-1 min-w-0 cursor-pointer">
 
                 {/* Brand */}
                 <p className="text-[9px] uppercase tracking-widest text-secondary/60 font-bold mb-0.5">
@@ -45,7 +46,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecre
                         ${item.price} × {item.quantity}
                     </span>
                 </p>
-            </div>
+            </Link>
 
             {/* Right side — quantity + remove */}
             <div className="flex flex-col items-end gap-2 shrink-0">
