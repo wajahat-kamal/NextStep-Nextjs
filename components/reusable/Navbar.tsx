@@ -11,10 +11,19 @@ import { useDispatch } from 'react-redux'
 import { openCart } from '@/store/cart/cartSlice'
 
 function Navbar() {
+
     const [isOpen, setIsOpen] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 20)
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
     return (
-        <nav className='absolute top-1 right-0 w-full h-20 z-30 flex flex-row justify-between items-center px-4 md:px-24'>
+        <nav className={`fixed top-1 right-0 w-full h-20 z-30 flex flex-row justify-between items-center px-4 md:px-24  ${scrolled ? "bg-primary shadow-lg" : "bg-transparent"}`}>
             <Link
                 href="/"
                 aria-label="Homepage"
