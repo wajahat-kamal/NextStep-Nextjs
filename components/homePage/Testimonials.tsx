@@ -24,8 +24,8 @@ function StarButton() {
                 <StarRating rating={5} />
                 <p className="text-[6px] md:text-[10px] text-white/30 uppercase tracking-widest mt-1">50K+ reviews</p>
             </div>
-            <div className="w-px h-10 md:h-14 bg-secondary/15" />
-            <p className="text-[6px] md:text-[10px] text-white/40 leading-relaxed">
+            <div className="hidden md:block w-px h-10 md:h-14 bg-secondary/15" />
+            <p className="hidden md:block text-[10px] text-white/40 max-w-[100px] leading-relaxed">
                 Trusted by thousands across Pakistan
             </p>
         </div>
