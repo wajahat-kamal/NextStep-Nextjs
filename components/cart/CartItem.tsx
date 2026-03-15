@@ -15,10 +15,12 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecrease }) => {
     const router = useRouter()
     const dispatch = useDispatch()
+
     const slug = (slug: string): void => {
         dispatch(closeCart())
         router.push(`/shopping/${slug}`)
     }
+    
     return (
         <div className="flex items-center gap-3 py-4 border-b border-secondary/10 group">
 
@@ -34,7 +36,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecre
             </div>
 
             {/* Info */}
-            <div onClick={slug(item.slug)} className="flex-1 min-w-0 cursor-pointer">
+            <div onClick={() => slug(item.slug)} className="flex-1 min-w-0 cursor-pointer">
 
                 {/* Brand */}
                 <p className="text-[9px] uppercase tracking-widest text-secondary/60 font-bold mb-0.5">
