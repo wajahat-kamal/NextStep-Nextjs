@@ -1,8 +1,9 @@
-import { CartItemType } from "@/store/cart/cartSlice";
+import { CartItemType, closeCart } from "@/store/cart/cartSlice";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 interface CartItemProps {
     item: CartItemType;
@@ -12,6 +13,12 @@ interface CartItemProps {
 }
 
 const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecrease }) => {
+    const router = useRouter()
+    const dispatch = useDispatch()
+    const slug = (slug: string) => {
+        dispatch(closeCart())
+        router.push(`/shopping/${slug}`)
+    }
     return (
         <div className="flex items-center gap-3 py-4 border-b border-secondary/10 group">
 
@@ -27,7 +34,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecre
             </div>
 
             {/* Info */}
-            <Link href={`/shopping/${item.slug}`} className="flex-1 min-w-0 cursor-pointer">
+            <div className="flex-1 min-w-0 cursor-pointer">
 
                 {/* Brand */}
                 <p className="text-[9px] uppercase tracking-widest text-secondary/60 font-bold mb-0.5">
@@ -46,7 +53,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecre
                         ${item.price} × {item.quantity}
                     </span>
                 </p>
-            </Link>
+            </div>
 
             {/* Right side — quantity + remove */}
             <div className="flex flex-col items-end gap-2 shrink-0">
