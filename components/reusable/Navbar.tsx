@@ -23,7 +23,7 @@ function Navbar() {
     }, [])
 
     return (
-        <nav className={`fixed top-1 right-0 w-full h-20 z-30 flex flex-row justify-between items-center px-4 md:px-24  ${scrolled ? "bg-primary shadow-lg" : "bg-transparent"}`}>
+        <nav className={`fixed top-0 right-0 w-full h-20 z-30 flex flex-row justify-between items-center px-4 md:px-24 transition-all duration-300 ${scrolled ? "bg-primary shadow-lg" : "bg-transparent"}`}>
             <Link
                 href="/"
                 aria-label="Homepage"
