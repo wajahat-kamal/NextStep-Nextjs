@@ -33,7 +33,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
         <div className="min-h-screen bg-bgColor">
 
             {/* Filter Bar — single line */}
-            <section className="sticky top-19.5 z-30 bg-bgColor border-b border-secondary/10 px-4 md:px-16 py-4">
+            <section className="sticky top-19.5 z-30 bg-bgColor border-b border-secondary/10 px-4 md:px-16 md:py-4 py-2">
                 <div className="flex flex-wrap justify-between items-center gap-2">
 
                     {/* Search */}
