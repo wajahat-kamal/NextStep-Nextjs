@@ -42,8 +42,8 @@ function ContactRightInfo() {
                         Thanks for reaching out. We'll get back to you within 24 hours.
                     </p>
                     <button
-                        onClick={() => { setSubmitted(false); setForm({ name: "", email: "", message: "" }) }}
                         className="text-[10px] uppercase tracking-widest text-secondary border border-secondary/30 px-6 py-2.5 hover:bg-secondary hover:text-primary transition-colors mt-2"
+                        onClick={() => { setSubmitted(false); setForm({ name: "", email: "", message: "" }) }}
                     >
                         Send Another
                     </button>
