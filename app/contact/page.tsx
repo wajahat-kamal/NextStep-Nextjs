@@ -6,24 +6,6 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import ContactHeroSection from "@/components/contactPage/ContactHeroSection"
 
-const contactInfo = [
-    {
-        icon: <MapPin size={18} />,
-        label: "Address",
-        value: "Shop 12, Zamzama Boulevard, Karachi, Pakistan",
-    },
-    {
-        icon: <Phone size={18} />,
-        label: "Phone",
-        value: "+92 300 1234567",
-    },
-    {
-        icon: <Mail size={18} />,
-        label: "Email",
-        value: "hello@nextstep.pk",
-    },
-]
-
 export default function ContactPage() {
     const [form, setForm] = useState({ name: "", email: "", message: "" })
     const [submitted, setSubmitted] = useState(false)
@@ -51,50 +33,7 @@ export default function ContactPage() {
             <section className="px-6 md:px-24 py-16 grid md:grid-cols-2 gap-16 items-start">
 
                 {/* Left — Info */}
-                <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="flex flex-col gap-8"
-                >
-
-                    {/* Contact info cards */}
-                    <div className="flex flex-col gap-4">
-                        {contactInfo.map((info) => (
-                            <div
-                                key={info.label}
-                                className="flex items-start gap-4 border border-secondary/15 px-5 py-4 hover:border-secondary/35 transition-colors duration-300 group"
-                            >
-                                <span className="text-secondary/60 group-hover:text-secondary transition-colors duration-300 mt-0.5 shrink-0">
-                                    {info.icon}
-                                </span>
-                                <div>
-                                    <p className="text-[10px] uppercase tracking-widest text-white/30 mb-1">{info.label}</p>
-                                    <p className="text-sm text-white font-medium">{info.value}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Business hours */}
-                    <div className="border-t border-secondary/10 pt-6">
-                        <p className="text-[10px] uppercase tracking-widest text-secondary/50 mb-3">Business Hours</p>
-                        <div className="space-y-1.5 text-sm text-white/50">
-                            <div className="flex justify-between max-w-xs">
-                                <span>Monday – Friday</span>
-                                <span className="text-white/70">9:00 AM – 7:00 PM</span>
-                            </div>
-                            <div className="flex justify-between max-w-xs">
-                                <span>Saturday</span>
-                                <span className="text-white/70">10:00 AM – 5:00 PM</span>
-                            </div>
-                            <div className="flex justify-between max-w-xs">
-                                <span>Sunday</span>
-                                <span className="text-white/40">Closed</span>
-                            </div>
-                        </div>
-                    </div>
-                </motion.div>
+                
 
                 {/* Right — Form */}
                 <motion.div
