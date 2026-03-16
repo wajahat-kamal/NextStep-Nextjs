@@ -26,7 +26,7 @@ function ContactRightInfo() {
                 email: form.email,
                 message: form.message,
                 subject: "New Contact Message From NextStep",
-                from_name: form.name,
+                from_name: "New Contact Message From NextStep",
             })
             if (response.data.success) {
                 setLoading(false)
