@@ -32,11 +32,7 @@ export default function ContactPage() {
             <ContactHeroSection />
             {/* Main Content */}
             <section className="px-6 md:px-24 py-16 grid md:grid-cols-2 gap-16 items-start">
-
-                {/* Left — Info */}
                 <ContactLeftInfo/>
-
-                {/* Right — Form */}
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}

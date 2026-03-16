@@ -10,25 +10,6 @@ function ContactLeftInfo() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col gap-8"
         >
-
-            {/* Contact info cards */}
-            <div className="flex flex-col gap-4">
-                {contactInfo.map((info) => (
-                    <div
-                        key={info.label}
-                        className="flex items-start gap-4 border border-secondary/15 px-5 py-4 hover:border-secondary/35 transition-colors duration-300 group"
-                    >
-                        <span className="text-secondary/60 group-hover:text-secondary transition-colors duration-300 mt-0.5 shrink-0">
-                            <info.icon size={18}/>
-                        </span>
-                        <div>
-                            <p className="text-[10px] uppercase tracking-widest text-white/30 mb-1">{info.label}</p>
-                            <p className="text-sm text-white font-medium">{info.value}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
             {/* Business hours */}
             <div className="border-t border-secondary/10 pt-6">
                 <p className="text-[10px] uppercase tracking-widest text-secondary/50 mb-3">Business Hours</p>
@@ -47,6 +28,25 @@ function ContactLeftInfo() {
                     </div>
                 </div>
             </div>
+
+            {/* Contact info cards */}
+            <div className="flex flex-col gap-4">
+                {contactInfo.map((info) => (
+                    <div
+                        key={info.label}
+                        className="flex items-start gap-4 border border-secondary/15 px-5 py-4 hover:border-secondary/35 transition-colors duration-300 group"
+                    >
+                        <span className="text-secondary/60 group-hover:text-secondary transition-colors duration-300 mt-0.5 shrink-0">
+                            <info.icon size={18} />
+                        </span>
+                        <div>
+                            <p className="text-[10px] uppercase tracking-widest text-white/30 mb-1">{info.label}</p>
+                            <p className="text-sm text-white font-medium">{info.value}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
         </motion.div>
     )
 }
