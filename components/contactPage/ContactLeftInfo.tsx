@@ -19,7 +19,7 @@ function ContactLeftInfo() {
                         className="flex items-start gap-4 border border-secondary/15 px-5 py-4 hover:border-secondary/35 transition-colors duration-300 group"
                     >
                         <span className="text-secondary/60 group-hover:text-secondary transition-colors duration-300 mt-0.5 shrink-0">
-                            {info.icon}
+                            <info.icon size={18}/>
                         </span>
                         <div>
                             <p className="text-[10px] uppercase tracking-widest text-white/30 mb-1">{info.label}</p>
