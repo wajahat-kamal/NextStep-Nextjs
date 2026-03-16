@@ -4,6 +4,7 @@ import { motion } from "motion/react"
 import { Mail, MapPin, Phone, ArrowUpRight, CheckCircle } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
+import ContactHeroSection from "@/components/contactPage/ContactHeroSection"
 
 const contactInfo = [
     {
@@ -45,9 +46,7 @@ export default function ContactPage() {
     return (
         <main className="min-h-screen bg-bgColor">
 
-            {/* Hero */}
-            
-
+            <ContactHeroSection />
             {/* Main Content */}
             <section className="px-6 md:px-24 py-16 grid md:grid-cols-2 gap-16 items-start">
 
