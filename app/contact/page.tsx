@@ -3,6 +3,11 @@ import ContactHeroSection from "@/components/contactPage/ContactHeroSection"
 import ContactLeftInfo from "@/components/contactPage/ContactLeftInfo"
 import ContactRightInfo from "@/components/contactPage/ContactRightInfo"
 
+export const metadata = {
+    title: "Contact | NextStep",
+    description: "Get in touch with NextStep"
+}
+
 export default function ContactPage() {
 
     return (
