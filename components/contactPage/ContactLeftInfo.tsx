@@ -12,9 +12,9 @@ function ContactLeftInfo() {
             className="flex flex-col gap-8"
         >
             {/* Business hours */}
-            <div className="border-t border-secondary/10 pt-6">
-                <p className="text-[10px] uppercase tracking-widest text-secondary/50 mb-3">Business Hours</p>
-                <div className="space-y-1.5 text-sm text-white/50">
+            <div className="border-t border-secondary/10 pt-3">
+                <p className="text-[10px] uppercase tracking-widest text-secondary/50 mb-2">Business Hours</p>
+                <div className="space-y-0.5 text-sm text-white/50">
                     <div className="flex justify-between max-w-xs">
                         <span>Monday – Friday</span>
                         <span className="text-white/70">9:00 AM – 7:00 PM</span>
