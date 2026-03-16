@@ -7,13 +7,16 @@ import cartImage from "@/assets/cart-image.png"
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from "motion/react"
 import { navLinks } from '@/data/linksData'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { openCart } from '@/store/cart/cartSlice'
+import { RootState } from '@/store/store'
 
 function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
+
+    const { cartItems } = useSelector((state: RootState) => state.cart)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -23,7 +26,7 @@ function Navbar() {
     }, [])
 
     return (
-        <nav className={`fixed top-0 right-0 w-full h-20 z-30 flex flex-row justify-between items-center px-4 md:px-24 transition-all duration-300 ${scrolled ? "bg-primary shadow-lg" : "bg-transparent"}`}>
+        <nav className={`fixed top-0 right-0 w-full h-20 z-30 flex flex-row justify-between items-center px-4 md:px-24 transition-all duration-300 ${scrolled ? "bg-bgColor shadow-lg" : "bg-transparent"}`}>
             <Link
                 href="/"
                 aria-label="Homepage"
@@ -33,12 +36,12 @@ function Navbar() {
                 <span>NextStep</span>
             </Link>
             <div className='hidden md:flex flex-row justify-center items-center gap-4'>
-                <ul className='flex gap-8'>
+                <ul className='flex gap-6'>
                     {navLinks.map(({ name, href }) => (
                         <li key={name}>
                             <Link
                                 href={href}
-                                className="relative font-mono text-md font-medium text-white transition-colors group"
+                                className="relative font-mono text-sm font-medium text-white transition-colors group"
                             >
                                 {name}
                                 <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full" />
@@ -46,8 +49,14 @@ function Navbar() {
                         </li>
                     ))}
                 </ul>
-                <button className='border-l border-zinc-500/60' onClick={() => dispatch(openCart())}>
+                <button className='relative border-l border-zinc-500/60' onClick={() => dispatch(openCart())}>
                     <Image className='ml-4 cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage} />
+                    {cartItems.length > 0 && (
+                        <span className="absolute -top-2 -right-2 min-w-[20px] h-5 px-1
+                        bg-red-500 text-xs font-medium text-white flex items-center justify-center rounded-full">
+                            {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+                        </span>
+                    )}
                 </button>
             </div>
             <div className='md:hidden flex justify-center items-center flex-row gap-2'>
@@ -82,15 +91,15 @@ function Navbar() {
                         exit={{ opacity: 0, x: 200 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         id="mobile-menu"
-                        className="fixed top-0 right-0 z-50 h-screen bg-primary w-48 md:hidden"
+                        className="fixed top-0 right-0 z-50 h-screen bg-primary w-60 md:hidden"
                     >
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="self-end text-white mb-4 w-full absolute top-7 left-37"
+                            className="self-end text-white mb-4 w-full absolute top-7 left-50"
                         >
                             <X size={30} />
                         </button>
-                        <div className="flex flex-col gap-2 px-4 pt-16">
+                        <div className="flex flex-col gap-3 px-4 pt-16">
                             {navLinks.map(({ name, href }) => (
                                 <Link
                                     key={name}
