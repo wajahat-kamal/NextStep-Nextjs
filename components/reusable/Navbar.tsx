@@ -54,7 +54,7 @@ function Navbar() {
                     {cartItems.length > 0 && (
                         <span className="absolute -top-2 -right-2 min-w-[20px] h-5 px-1
                         bg-red-500 text-xs font-medium text-white flex items-center justify-center rounded-full">
-                            {cartItems.length}
+                            {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
                         </span>
                     )}
                 </button>
