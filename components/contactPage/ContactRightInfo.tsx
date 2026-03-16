@@ -21,7 +21,7 @@ function ContactRightInfo() {
         setLoading(true)
         try {
             const response = await axios.post("https://api.web3forms.com/submit", {
-                access_key: process.env.WEB3FORM_KEY,
+                access_key: process.env.NEXT_PUBLIC_WEB3FORM_KEY,
                 name: form.name,
                 email: form.email,
                 message: form.message,
