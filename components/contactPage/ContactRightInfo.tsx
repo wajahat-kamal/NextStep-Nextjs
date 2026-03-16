@@ -95,9 +95,9 @@ function ContactRightInfo() {
 
                     {/* Submit */}
                     <button
-                        type="submit"
-                        disabled={loading}
                         className="flex items-center justify-center gap-2 bg-secondary hover:bg-secondary/80 text-primary font-bold text-sm uppercase tracking-widest py-4 transition-colors duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                        type='submit'
+                        disabled={loading}
                     >
                         {loading ? "Sending..." : (
                             <>
