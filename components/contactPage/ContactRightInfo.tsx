@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState } from "react"
 import { motion } from "motion/react"
-import { Mail, MapPin, Phone, ArrowUpRight, CheckCircle } from "lucide-react"
+import { ArrowUpRight, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 function ContactRightInfo() {
