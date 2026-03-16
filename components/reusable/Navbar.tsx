@@ -7,13 +7,16 @@ import cartImage from "@/assets/cart-image.png"
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from "motion/react"
 import { navLinks } from '@/data/linksData'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { openCart } from '@/store/cart/cartSlice'
+import { RootState } from '@/store/store'
 
 function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
+
+    const { cartItems } = useSelector((state: RootState) => state.cart)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -46,8 +49,14 @@ function Navbar() {
                         </li>
                     ))}
                 </ul>
-                <button className='border-l border-zinc-500/60' onClick={() => dispatch(openCart())}>
+                <button className='relative border-l border-zinc-500/60' onClick={() => dispatch(openCart())}>
                     <Image className='ml-4 cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage} />
+                    {cartItems.length > 0 && (
+                        <span className="absolute -top-2 -right-2 min-w-[20px] h-5 px-1
+                        bg-red-500 text-xs font-medium text-white flex items-center justify-center rounded-full">
+                            {cartItems.length}
+                        </span>
+                    )}
                 </button>
             </div>
             <div className='md:hidden flex justify-center items-center flex-row gap-2'>
