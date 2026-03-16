@@ -94,12 +94,6 @@ export default function ContactPage() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="flex flex-col gap-8"
                 >
-                    <div>
-                        <p className="text-white/50 text-base leading-relaxed max-w-sm">
-                            Have a question about an order, need sizing advice, or just want to say hello?
-                            Drop us a message and we'll get back to you within 24 hours.
-                        </p>
-                    </div>
 
                     {/* Contact info cards */}
                     <div className="flex flex-col gap-4">
