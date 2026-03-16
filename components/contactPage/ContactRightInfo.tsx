@@ -3,7 +3,6 @@ import React from 'react'
 import { useState } from "react"
 import { motion } from "motion/react"
 import { ArrowUpRight, CheckCircle } from "lucide-react"
-import Link from "next/link"
 
 function ContactRightInfo() {
     const [form, setForm] = useState({ name: "", email: "", message: "" })
@@ -15,13 +14,13 @@ function ContactRightInfo() {
     }
 
     const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
-        if (!form.name || !form.email || !form.message) return
+        e.preventDefault();
+        if (!form.name ||!form.email || !form.message) return;
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
             setSubmitted(true)
-        }, 1200)
+        }, 1200);
     }
     return (
         <motion.div
