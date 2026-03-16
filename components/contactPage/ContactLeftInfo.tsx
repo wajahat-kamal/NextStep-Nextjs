@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from "motion/react"
+import { contactInfo } from '@/data/contactInfo'
 
 function ContactLeftInfo() {
     return (
