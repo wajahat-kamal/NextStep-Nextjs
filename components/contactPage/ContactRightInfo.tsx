@@ -3,6 +3,7 @@ import React from 'react'
 import { useState } from "react"
 import { motion } from "motion/react"
 import { ArrowUpRight, CheckCircle } from "lucide-react"
+import axios from "axios"
 
 function ContactRightInfo() {
     const [form, setForm] = useState({ name: "", email: "", message: "" })
@@ -13,14 +14,22 @@ function ContactRightInfo() {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
         if (!form.name ||!form.email || !form.message) return;
         setLoading(true)
-        setTimeout(() => {
-            setLoading(false)
-            setSubmitted(true)
-        }, 1200);
+        try {
+            const response = await axios.post("https://api.web3forms.com/submit", {
+                access_key: process.env.WEB3FORM_KEY,
+                name: form.name,
+                email: form.email,
+                message: form.message,
+                subject: "New Contact Message From NextStep",
+                from_name: form.name,
+              })
+        } catch (error) {
+            
+        }
     }
     return (
         <motion.div
