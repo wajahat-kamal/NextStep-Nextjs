@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion } from "motion/react"
 import { ArrowUpRight, CheckCircle } from "lucide-react"
 import axios from "axios"
+import { toast } from 'react-toastify'
 
 function ContactRightInfo() {
     const [form, setForm] = useState({ name: "", email: "", message: "" })
@@ -16,7 +17,7 @@ function ContactRightInfo() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        if (!form.name ||!form.email || !form.message) return;
+        if (!form.name || !form.email || !form.message) return;
         setLoading(true)
         try {
             const response = await axios.post("https://api.web3forms.com/submit", {
@@ -26,9 +27,16 @@ function ContactRightInfo() {
                 message: form.message,
                 subject: "New Contact Message From NextStep",
                 from_name: form.name,
-              })
+            })
+            if (response.data.success) {
+                setLoading(false)
+                setSubmitted(true)
+                toast.success("Message sent successfully!")
+            } else {
+                toast.error(response.data.message || "Message not sent");
+            }
         } catch (error) {
-            
+            toast.error("Network error. Please try again.");
         }
     }
     return (
