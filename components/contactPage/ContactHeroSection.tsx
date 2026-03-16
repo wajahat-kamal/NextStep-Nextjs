@@ -3,14 +3,14 @@ import { motion } from "motion/react"
 
 function ContactHeroSection() {
     return (
-        <section className="relative overflow-hidden px-6 md:px-24 pt-36 pb-16">
+        <section className="relative overflow-hidden px-6 md:px-24 pt-32 pb-10">
 
             {/* Ghost text */}
             <motion.span
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 text-[16vw] font-black leading-none select-none pointer-events-none text-secondary/[0.04]"
+                className="absolute right-0 top-1/2 -translate-y-1/2 text-[16vw] font-black leading-none select-none pointer-events-none text-secondary/4"
             >
                 CONTACT
             </motion.span>
