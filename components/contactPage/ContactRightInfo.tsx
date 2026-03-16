@@ -1,6 +1,28 @@
+"use client"
 import React from 'react'
+import { useState } from "react"
+import { motion } from "motion/react"
+import { Mail, MapPin, Phone, ArrowUpRight, CheckCircle } from "lucide-react"
+import Link from "next/link"
 
 function ContactRightInfo() {
+    const [form, setForm] = useState({ name: "", email: "", message: "" })
+    const [submitted, setSubmitted] = useState(false)
+    const [loading, setLoading] = useState(false)
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setForm({ ...form, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        if (!form.name || !form.email || !form.message) return
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+            setSubmitted(true)
+        }, 1200)
+    }
     return (
         <motion.div
             initial={{ opacity: 0, x: 20 }}
