@@ -3,7 +3,7 @@ import { Shoe } from '@/types/Shoe'
 import { motion } from 'motion/react'
 import Stats from '../reusable/Stats'
 
-function ShoppingHeroSection({ allShoes }: { allShoes: Shoe[] }) {
+function ShoppingHeroSection() {
     return (
         <header className="relative bg-bgColor overflow-hidden px-6 md:px-24 pt-36 pb-16">
 
@@ -50,11 +50,11 @@ function ShoppingHeroSection({ allShoes }: { allShoes: Shoe[] }) {
                 className="flex flex-col md:flex-row md:items-end justify-between gap-6"
             >
                 <p className="text-white/50 text-sm md:text-base max-w-md leading-relaxed">
-                    Explore {allShoes.length}+ styles from the world's top brands —
+                    Explore 20+ styles from the world's top brands —
                     built for performance, comfort, and everyday style.
                 </p>
 
-            <Stats/>
+                <Stats />
             </motion.div>
 
             {/* Bottom divider */}

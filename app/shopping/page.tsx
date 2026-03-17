@@ -1,8 +1,8 @@
-import FilterdData from '@/components/shopping/FilterdData';
 import { Metadata } from 'next';
 import { Shoe } from '@/types/Shoe';
 import ShoppingHeroSection from '@/components/shopping/ShoppingHeroSection';
 import getData from '@/lib/getData';
+import SearchParamsHandler from '@/components/shopping/SearchParamsHandler';
 
 export const metadata: Metadata = {
     title: "Shopping | NextStep",
@@ -14,8 +14,8 @@ export default async function ShoppingPage() {
 
     return (
         <div className="min-h-screen">
-            <ShoppingHeroSection allShoes={allShoes}/>
-            <FilterdData allShoes={allShoes} />
+            <ShoppingHeroSection />
+            <SearchParamsHandler allShoes={allShoes}/>
         </div>
     )
 }

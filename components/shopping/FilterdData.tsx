@@ -6,13 +6,14 @@ import { Search, X } from 'lucide-react';
 import { categories, genders } from '@/data/shoppinPageData';
 
 interface FilterdDataProps {
-    allShoes: Shoe[]
+    allShoes: Shoe[],
+    searchCategory?: string | null
 }
 
-function FilterdData({ allShoes }: FilterdDataProps) {
+function FilterdData({ allShoes, searchCategory }: FilterdDataProps) {
     const [search, setSearch] = useState("")
     const [gender, setGender] = useState("All")
-    const [category, setCategory] = useState("All")
+    const [category, setCategory] = useState(searchCategory || "All")
 
     const visibleShoeCards = allShoes.filter((shoe) => {
         const searchMatch = search === "" || shoe.name.toLowerCase().includes(search.toLowerCase())
