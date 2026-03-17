@@ -7,4 +7,5 @@ export interface Shoe {
     category: string;
     gender: string;
     slug: string;
+    quantity: number;
 }

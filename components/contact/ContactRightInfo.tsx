@@ -75,7 +75,7 @@ function ContactRightInfo() {
                             name="name"
                             value={form.name}
                             onChange={handleChange}
-                            placeholder="Ahmed Raza"
+                            placeholder="Wajahat Kamal"
                             required
                             className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/20 text-sm px-4 py-3 outline-none focus:border-secondary/50 transition-colors"
                         />
@@ -89,7 +89,7 @@ function ContactRightInfo() {
                             name="email"
                             value={form.email}
                             onChange={handleChange}
-                            placeholder="ahmed@email.com"
+                            placeholder="wajahat@gmail.com"
                             required
                             className="bg-white/5 border border-secondary/15 text-white placeholder:text-white/20 text-sm px-4 py-3 outline-none focus:border-secondary/50 transition-colors"
                         />

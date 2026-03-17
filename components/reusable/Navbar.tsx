@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from "motion/react"
 import { navLinks } from '@/data/linksData'
 import { useDispatch, useSelector } from 'react-redux'
-import { openCart } from '@/store/cart/cartSlice'
+import { toggleCart } from '@/store/cart/cartSlice'
 import { RootState } from '@/store/store'
 
 function Navbar() {
@@ -49,7 +49,7 @@ function Navbar() {
                         </li>
                     ))}
                 </ul>
-                <button className='relative border-l border-zinc-500/60' onClick={() => dispatch(openCart())}>
+                <button className='relative border-l border-zinc-500/60' onClick={() => dispatch(toggleCart())}>
                     <Image className='ml-4 cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage} />
                     {cartItems.length > 0 && (
                         <span className="absolute -top-2 -right-2 min-w-[20px] h-5 px-1
@@ -60,7 +60,7 @@ function Navbar() {
                 </button>
             </div>
             <div className='md:hidden flex justify-center items-center flex-row gap-2'>
-                <button onClick={() => dispatch(openCart())}>
+                <button onClick={() => dispatch(toggleCart())}>
                     <Image className='cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage} />
                 </button>
                 <button

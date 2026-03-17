@@ -1,8 +1,8 @@
-import AboutHeroSection from "@/components/aboutPage/AboutHeroSection";
-import AboutOurMission from "@/components/aboutPage/OurMission";
-import AboutStats from "@/components/aboutPage/AboutStats";
-import AboutTeam from "@/components/aboutPage/Team";
-import AboutValues from "@/components/aboutPage/Values";
+import AboutHeroSection from "@/components/about/AboutHero";
+import AboutOurMission from "@/components/about/OurMission";
+import AboutStats from "@/components/about/AboutStats";
+import AboutTeam from "@/components/about/Team";
+import AboutValues from "@/components/about/Values";
 import CTABanner from "@/components/reusable/CTABanner";
 import type { Metadata } from "next";
 

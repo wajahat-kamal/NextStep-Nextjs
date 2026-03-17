@@ -5,7 +5,7 @@ import cartImage from "@/assets/cart-image.png"
 import Image from 'next/image';
 import { RootState } from '@/store/store';
 import { motion, AnimatePresence } from 'motion/react';
-import { checkOut, closeCart, decreaseQuantity, increaseQuantity, removeItem } from '@/store/cart/cartSlice';
+import { checkOut, decreaseQuantity, increaseQuantity, removeItem, toggleCart } from '@/store/cart/cartSlice';
 import { ShoppingBag, X } from 'lucide-react';
 import { toast } from 'react-toastify';
 import CartItem from './CartItem';
@@ -42,7 +42,7 @@ function Cart() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={() => dispatch(closeCart())}
+            onClick={() => dispatch(toggleCart())}
           />
 
           {/* Drawer */}
@@ -71,7 +71,7 @@ function Cart() {
                 )}
               </div>
               <button
-                onClick={() => dispatch(closeCart())}
+                onClick={() => dispatch(toggleCart())}
                 className="text-white/40 hover:text-white transition-colors cursor-pointer"
               >
                 <X size={20} />
@@ -85,7 +85,7 @@ function Cart() {
                   <ShoppingBag size={48} className="text-white/10" />
                   <p className="text-white/40 text-sm font-medium">Your cart is empty</p>
                   <button
-                    onClick={() => dispatch(closeCart())}
+                    onClick={() => dispatch(toggleCart())}
                     className="text-[10px] uppercase tracking-widest text-secondary border border-secondary/30 px-5 py-2 hover:bg-secondary hover:text-primary transition-colors cursor-pointer"
                   >
                     Start Shopping
@@ -127,7 +127,7 @@ function Cart() {
 
                 {/* Continue */}
                 <button
-                  onClick={() => dispatch(closeCart())}
+                  onClick={() => dispatch(toggleCart())}
                   className="w-full text-[10px] uppercase tracking-widest text-white/30 hover:text-white transition-colors cursor-pointer"
                 >
                   Continue Shopping
