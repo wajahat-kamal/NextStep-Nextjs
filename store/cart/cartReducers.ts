@@ -31,3 +31,8 @@ export const decreaseItemQuantity = (state, action: PayloadAction<number>) => {
         item.quantity--;
     }
 }
+
+export const checkout = (state) => {
+    state.cartItems = []
+    state.isOpen = false
+}

@@ -1,6 +1,6 @@
 import type { Shoe } from "@/types/Shoe";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { addCartItem, cartToggle, decreaseItemQuantity, increaseItemQuantity, removeCartItem } from "./cartReducers";
+import { addCartItem, cartToggle, checkout, decreaseItemQuantity, increaseItemQuantity, removeCartItem } from "./cartReducers";
 
 const loadCartItems = () => {
     try {
@@ -34,11 +34,8 @@ const cartSlice = createSlice({
         addToCart: addCartItem,
         removeItem: removeCartItem,
         increaseQuantity: increaseItemQuantity,
-        decreaseQuantity:  decreaseItemQuantity,
-        checkOut: (state) => {
-            state.cartItems = []
-            state.isOpen = false
-        }
+        decreaseQuantity: decreaseItemQuantity,
+        checkOut: checkout
     }
 })
 
