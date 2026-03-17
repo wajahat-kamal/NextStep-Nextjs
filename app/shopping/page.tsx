@@ -1,7 +1,7 @@
-import FilterdData from '@/components/shoppingPage/FilterdData';
+import FilterdData from '@/components/shopping/FilterdData';
 import { Metadata } from 'next';
 import { Shoe } from '@/types/Shoe';
-import ShoppingHeroSection from '@/components/shoppingPage/ShoppingHeroSection';
+import ShoppingHeroSection from '@/components/shopping/ShoppingHeroSection';
 import getData from '@/lib/getData';
 
 export const metadata: Metadata = {

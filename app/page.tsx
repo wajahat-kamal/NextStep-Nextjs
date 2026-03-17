@@ -1,9 +1,9 @@
-import HeroSection from "@/components/homePage/HomeHeroSection";
-import FeaturedShoes from "@/components/homePage/FeaturedShoes";
-import Categories from "@/components/homePage/Categories";
-import BrandStrip from "@/components/homePage/BrandStrip";
+import HeroSection from "@/components/home/HomeHeroSection";
+import FeaturedShoes from "@/components/home/FeaturedShoes";
+import Categories from "@/components/home/Categories";
+import BrandStrip from "@/components/home/BrandStrip";
 import CTABanner from "@/components/reusable/CTABanner";
-import Testimonials from "@/components/homePage/Testimonials";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   return (

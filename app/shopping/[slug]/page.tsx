@@ -5,7 +5,7 @@ import { ArrowLeft, ShoppingCart, Tag, Users } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import getData from '@/lib/getData';
-import ShoeDetailPageButtons from '@/components/reusable/ShoeDetailPageButtons';
+import ShoeDetailPageButtons from '@/components/shoe-detail/ShoeDetailPageButtons';
 
 interface Props {
   params: Promise<{ slug: string }>

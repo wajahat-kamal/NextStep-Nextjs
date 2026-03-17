@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
-import ContactHeroSection from "@/components/contactPage/ContactHeroSection"
-import ContactLeftInfo from "@/components/contactPage/ContactLeftInfo"
-import ContactRightInfo from "@/components/contactPage/ContactRightInfo"
+import ContactHeroSection from "@/components/contact/ContactHero"
+import ContactLeftInfo from "@/components/contact/ContactLeftInfo"
+import ContactRightInfo from "@/components/contact/ContactRightInfo"
 
 export const metadata: Metadata = {
     title: "Contact | NextStep",
