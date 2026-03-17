@@ -13,3 +13,7 @@ export const addCartItem = (state, action: PayloadAction<Shoe>) => {
         state.cartItems.push({ ...action.payload, quantity: 1 });
     }
 }
+
+export const removeCartItem = (state, action: PayloadAction<number>) => {
+    const item = state.cartItems.filter((item: Shoe) => item.id !== action.payload)
+}
