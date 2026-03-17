@@ -1,5 +1,5 @@
 import { toggleCart } from "@/store/cart/cartSlice";
-import type { CartItemType } from "@/store/cart/cartSlice"
+import { Shoe } from "@/types/Shoe";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -7,7 +7,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 interface CartItemProps {
-    item: CartItemType;
+    item: Shoe;
     onIncrease: () => void;
     onDecrease: () => void;
     onRemove: () => void;
