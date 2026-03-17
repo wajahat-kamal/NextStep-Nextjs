@@ -60,8 +60,14 @@ function Navbar() {
                 </button>
             </div>
             <div className='md:hidden flex justify-center items-center flex-row gap-2'>
-                <button onClick={() => dispatch(toggleCart())}>
+                <button className='relative' onClick={() => dispatch(toggleCart())}>
                     <Image className='cursor-pointer' width={30} height={30} alt='Cart Icon' src={cartImage} />
+                    {cartItems.length > 0 && (
+                        <span className="absolute -top-2 -right-2 min-w-[20px] h-5 px-1
+                        bg-red-500 text-xs font-medium text-white flex items-center justify-center rounded-full">
+                            {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+                        </span>
+                    )}
                 </button>
                 <button
                     onClick={() => setIsOpen(true)}

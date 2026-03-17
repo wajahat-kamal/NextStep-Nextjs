@@ -36,7 +36,7 @@ async function CardDetailPage({ params }: Props) {
     <div className="min-h-screen bg-bgColor">
 
       {/* Back button */}
-      <div className="px-6 md:px-22 pt-24 pb-2">
+      <div className="px-4 md:px-22 pt-24 pb-1">
         <Link
           href="/shopping"
           className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/40 hover:text-secondary transition-colors duration-200"
