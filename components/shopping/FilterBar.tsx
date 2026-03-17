@@ -60,7 +60,7 @@ function FilterBar({
                         <button
                             key={value}
                             onClick={() => setCategory(value)}
-                            className={`text-[10px] uppercase tracking-wider font-semibold md:text-xs p-1.5 md:px-3 md:py-2 transition-all duration-200 cursor-pointer ${category === value
+                            className={`text-[10px] uppercase tracking-wider font-semibold md:text-sm px-3 py-2 transition-all duration-200 cursor-pointer ${category === value
                                 ? "bg-secondary text-primary"
                                 : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
                                 }`}
