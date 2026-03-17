@@ -3,6 +3,7 @@ import Image from 'next/image'
 import bgImage from "@/assets/main-bg-image.jpg"
 import { motion } from 'motion/react'
 import Stats from '../reusable/Stats'
+import Link from 'next/link'
 
 function HomeHeroSection() {
     return (
@@ -64,22 +65,20 @@ function HomeHeroSection() {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.6 }}
-                        className="flex items-center gap-4 mb-4"
+                        className="flex items-center gap-3 mb-4"
                     >
-                        <motion.button
-                            whileHover={{ scale: 1.04 }}
-                            whileTap={{ scale: 0.97 }}
-                            className="bg-secondary hover:bg-secondary/80 text-primary cursor-pointer font-semibold p-4 md:px-8 md:py-4 text-xs md:text-sm uppercase tracking-widest transition-colors duration-300"
+                        <Link
+                            href='/shopping'
+                            className="bg-secondary hover:bg-secondary/80 text-primary cursor-pointer text-center font-semibold py-2.5 px-3 md:px-8 md:py-4 text-xs md:text-sm uppercase tracking-widest transition-colors duration-300"
                         >
                             Shop Now
-                        </motion.button>
-                        <motion.button
-                            whileHover={{ scale: 1.04 }}
-                            whileTap={{ scale: 0.97 }}
-                            className="border border-white/40 hover:border-secondary hover:text-secondary cursor-pointer text-white p-4 md:px-8 md:py-4 text-xs md:text-sm uppercase tracking-widest transition-colors duration-300"
+                        </Link>
+                        <Link
+                            href="/shopping"
+                            className="border border-white/40 hover:border-secondary hover:text-secondary cursor-pointer text-white text-center py-2.5 px-3 md:px-8 md:py-4 text-xs md:text-sm uppercase tracking-widest transition-colors duration-300"
                         >
                             Explore Collection
-                        </motion.button>
+                        </Link>
                     </motion.div>
 
                     <Stats/>
