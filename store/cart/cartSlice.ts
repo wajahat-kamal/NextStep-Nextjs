@@ -1,6 +1,6 @@
 import type { Shoe } from "@/types/Shoe";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { addCartItem, cartToggle, removeCartItem } from "./cartReducers";
+import { addCartItem, cartToggle, increaseItemQuantity, removeCartItem } from "./cartReducers";
 
 const loadCartItems = () => {
     try {
@@ -33,12 +33,7 @@ const cartSlice = createSlice({
         toggleCart: cartToggle,
         addToCart: addCartItem,
         removeItem: removeCartItem,
-        increaseQuantity: (state, action: PayloadAction<number>) => {
-            const item = state.cartItems.find((item) => item.id === action.payload)
-            if (item) {
-                item.quantity += 1;
-            }
-        },
+        increaseQuantity: increaseItemQuantity,
         decreaseQuantity: (state, action: PayloadAction<number>) => {
             const item = state.cartItems.find((item) => item.id === action.payload)
             if (item && item.quantity > 1) {

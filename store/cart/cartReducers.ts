@@ -15,5 +15,12 @@ export const addCartItem = (state, action: PayloadAction<Shoe>) => {
 }
 
 export const removeCartItem = (state, action: PayloadAction<number>) => {
-    const item = state.cartItems.filter((item: Shoe) => item.id !== action.payload)
+    state.cartItems = state.cartItems.filter((item: Shoe) => item.id !== action.payload)
+}
+
+export const increaseItemQuantity = (state, action: PayloadAction<number>) => {
+    const item = state.cartItems.find((item: Shoe) => item.id === action.payload)
+    if (item) {
+        item.quantity++;
+    }
 }
