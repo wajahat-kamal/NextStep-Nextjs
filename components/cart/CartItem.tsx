@@ -1,4 +1,5 @@
-import { CartItemType, closeCart } from "@/store/cart/cartSlice";
+import { toggleCart } from "@/store/cart/cartSlice";
+import type { CartItemType } from "@/store/cart/cartSlice"
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -17,10 +18,10 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove, onIncrease, onDecre
     const dispatch = useDispatch()
 
     const slug = (slug: string): void => {
-        dispatch(closeCart())
+        dispatch(toggleCart())
         router.push(`/shopping/${slug}`)
     }
-    
+
     return (
         <div className="flex items-center gap-3 py-4 border-b border-secondary/10 group">
 
