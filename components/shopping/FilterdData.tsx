@@ -1,19 +1,30 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ShoeCard from '@/components/reusable/ShoeCard';
 import { Shoe } from '@/types/Shoe';
 import { Search, X } from 'lucide-react';
 import { categories, genders } from '@/data/shoppinPageData';
+import { useSearchParams } from 'next/navigation';
 
 interface FilterdDataProps {
-    allShoes: Shoe[],
-    searchCategory?: string | null
+    allShoes: Shoe[]
 }
 
-function FilterdData({ allShoes, searchCategory }: FilterdDataProps) {
+function FilterdData({ allShoes }: FilterdDataProps) {
+
+    const searchParams = useSearchParams()
+    const searchCategory: string | null = searchParams.get("category")
+
     const [search, setSearch] = useState("")
     const [gender, setGender] = useState("All")
     const [category, setCategory] = useState(searchCategory || "All")
+
+    useEffect(() => {
+        if (searchCategory) {
+            setCategory(searchCategory)
+        }
+    }, [searchCategory])
+
 
     const visibleShoeCards = allShoes.filter((shoe) => {
         const searchMatch = search === "" || shoe.name.toLowerCase().includes(search.toLowerCase())
@@ -25,7 +36,7 @@ function FilterdData({ allShoes, searchCategory }: FilterdDataProps) {
     const clearAll = () => {
         setSearch("")
         setGender("All")
-        setCategory("All")
+        setCategory(searchCategory || "All")
     }
 
     const hasActiveFilters = search !== "" || gender !== "All" || category !== "All"
