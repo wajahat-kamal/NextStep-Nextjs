@@ -1,12 +1,17 @@
 import { Shoe } from "@/types/Shoe";
 import { PayloadAction } from "@reduxjs/toolkit";
 
-export const cartToggle = (state) => {
+export interface CartState {
+    cartItems: Shoe[];
+    isOpen: boolean;
+}
+
+export const cartToggle = (state: CartState) => {
     state.isOpen = !state.isOpen
 }
 
-export const addCartItem = (state, action: PayloadAction<Shoe>) => {
-    const item = state.cartItems.find((item: Shoe) => item.id === action.payload.id)
+export const addCartItem = (state: CartState, action: PayloadAction<Shoe>) => {
+    const item = state.cartItems.find((item) => item.id === action.payload.id)
     if (item) {
         item.quantity += 1;
     } else {
@@ -14,25 +19,21 @@ export const addCartItem = (state, action: PayloadAction<Shoe>) => {
     }
 }
 
-export const removeCartItem = (state, action: PayloadAction<number>) => {
-    state.cartItems = state.cartItems.filter((item: Shoe) => item.id !== action.payload)
+export const removeCartItem = (state: CartState, action: PayloadAction<number>) => {
+    state.cartItems = state.cartItems.filter((item) => item.id !== action.payload)
 }
 
-export const increaseItemQuantity = (state, action: PayloadAction<number>) => {
-    const item = state.cartItems.find((item: Shoe) => item.id === action.payload)
-    if (item) {
-        item.quantity++;
-    }
+export const increaseItemQuantity = (state: CartState, action: PayloadAction<number>) => {
+    const item = state.cartItems.find((item) => item.id === action.payload)
+    if (item) item.quantity++;
 }
 
-export const decreaseItemQuantity = (state, action: PayloadAction<number>) => {
-    const item = state.cartItems.find((item: Shoe) => item.id === action.payload)
-    if (item && item.quantity > 1) {
-        item.quantity--;
-    }
+export const decreaseItemQuantity = (state: CartState, action: PayloadAction<number>) => {
+    const item = state.cartItems.find((item) => item.id === action.payload)
+    if (item && item.quantity > 1) item.quantity--;
 }
 
-export const checkout = (state) => {
+export const checkout = (state: CartState) => {
     state.cartItems = []
     state.isOpen = false
 }
