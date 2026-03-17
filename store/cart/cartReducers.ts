@@ -24,3 +24,10 @@ export const increaseItemQuantity = (state, action: PayloadAction<number>) => {
         item.quantity++;
     }
 }
+
+export const decreaseItemQuantity = (state, action: PayloadAction<number>) => {
+    const item = state.cartItems.find((item: Shoe) => item.id === action.payload)
+    if (item && item.quantity > 1) {
+        item.quantity--;
+    }
+}
