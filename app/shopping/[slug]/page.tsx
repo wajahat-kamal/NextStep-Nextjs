@@ -5,6 +5,7 @@ import { ArrowLeft, ShoppingCart, Tag, Users } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import getData from '@/lib/getData';
+import ShoeDetailPageButtons from '@/components/reusable/ShoeDetailPageButtons';
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -111,15 +112,7 @@ async function CardDetailPage({ params }: Props) {
           <div className="h-px bg-secondary/10" />
 
           {/* Actions */}
-          <div className="flex flex-col sm:flex-row gap-3">
-            <button className="flex-1 flex items-center justify-center gap-2 bg-secondary hover:bg-secondary/80 text-primary font-bold text-sm uppercase tracking-widest py-4 px-8 transition-colors duration-300 cursor-pointer">
-              <ShoppingCart size={16} />
-              Add to Cart
-            </button>
-            <button className="flex-1 flex items-center justify-center gap-2 border border-secondary/30 hover:border-secondary text-secondary text-sm uppercase tracking-widest py-4 px-8 transition-colors duration-300 cursor-pointer">
-              Buy Now
-            </button>
-          </div>
+          <ShoeDetailPageButtons shoe={shoe} />
 
           {/* Bottom note */}
           <p className="text-[10px] text-white/20 uppercase tracking-widest">
