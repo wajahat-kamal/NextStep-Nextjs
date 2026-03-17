@@ -9,7 +9,7 @@ interface HeaderProps {
 
 export default function Header({ para, heading1, heading2, Button }: HeaderProps) {
     return (
-        <div className="flex flex-row justify-between items-center mb-8 md:gap-4 gap-2">
+        <div className="flex flex-row justify-between items-center mb-4 md:gap-4 gap-2">
             <div>
                 <p className="text-[10px] uppercase tracking-[0.3em] font-semibold mb-1 inline-block px-2 py-0.5 text-primary bg-secondary">
                     {para}

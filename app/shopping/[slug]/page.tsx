@@ -30,7 +30,7 @@ async function CardDetailPage({ params }: Props) {
 
   if (!shoe) return notFound()
 
-  const relatedShoes = allShoes.filter((shoe) => shoe.category === shoe.category)
+  const relatedShoes = allShoes.filter((s) => s.category === shoe.category)
 
   return (
     <div className="min-h-screen bg-bgColor">
@@ -48,7 +48,7 @@ async function CardDetailPage({ params }: Props) {
 
       {/* Main Content */}
       <MainContent shoe={shoe} />
-
+      {/* Related Shoes */}
       <RelatedShoes relatedShoes={relatedShoes} />
     </div>
   )
