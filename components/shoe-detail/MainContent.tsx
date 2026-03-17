@@ -6,12 +6,12 @@ import ShoeDetailPageButtons from './ShoeDetailPageButtons'
 
 function MainContent({shoe}: {shoe: Shoe}) {
     return (
-        <section className="px-6 md:px-24 py-4 grid md:grid-cols-2 gap-12 lg:gap-0 items-center">
+        <section className="px-4 md:px-24 py-4 grid md:grid-cols-2 gap-4 lg:gap-0 items-center">
 
             {/* Image Side */}
             <div className="relative">
                 {/* Image container */}
-                <div className="h-120 relative w-[85%] aspect-square bg-white/5 border border-secondary/10 overflow-hidden">
+                <div className="h-70 md:h-120 relative w-[97%] md:w-[85%] aspect-square bg-white/5 border border-secondary/10 overflow-hidden">
 
                     <span className="absolute top-4 left-4.5 z-10 text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 bg-secondary text-primary">
                         {shoe.category}
@@ -33,7 +33,7 @@ function MainContent({shoe}: {shoe: Shoe}) {
             </div>
 
             {/* Info Side */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col md:gap-4 gap-2">
 
                 {/* Brand */}
                 <div>
@@ -43,7 +43,7 @@ function MainContent({shoe}: {shoe: Shoe}) {
                 </div>
 
                 {/* Name */}
-                <h1 className="text-3xl md:text-5xl font-black text-white leading-tight">
+                <h1 className="text-2xl md:text-5xl font-black text-white leading-tight">
                     {shoe.name}
                 </h1>
 
@@ -66,7 +66,7 @@ function MainContent({shoe}: {shoe: Shoe}) {
                 <div>
                     <p className="text-[10px] uppercase tracking-widest text-white/30 mb-1">Price</p>
                     <div className="flex items-baseline gap-2">
-                        <span className="text-5xl font-black text-white">${shoe.price}</span>
+                        <span className="text-2xl md:text-5xl font-black text-white">${shoe.price}</span>
                         <span className="text-sm text-white/30">USD</span>
                     </div>
                 </div>
