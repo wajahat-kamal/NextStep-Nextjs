@@ -25,6 +25,12 @@ function FilterdData({ allShoes }: FilterdDataProps) {
         return searchMatch && genderMatch && categoryMatch
     })
 
+    const clearAll = () => {
+        setSearch("")
+        setGender("All")
+        setCategory("All")
+    }
+
     return (
         <div className="min-h-screen bg-bgColor">
 
@@ -37,6 +43,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                 category={category}
                 setCategory={setCategory}
                 visibleCount={visibleShoeCards.length}
+                clearAll={clearAll}
             />
 
             {/* Grid */}

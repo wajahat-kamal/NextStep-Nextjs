@@ -12,7 +12,6 @@ interface FilterBarProps {
     setCategory: (value: string) => void
     visibleCount: number
     clearAll: () => void
-    hasActiveFilters: boolean
 }
 
 function FilterBar({
@@ -23,13 +22,8 @@ function FilterBar({
     category,
     setCategory,
     visibleCount,
+    clearAll
 }: FilterBarProps) {
-
-    const clearAll = () => {
-        setSearch("")
-        setGender("All")
-        setCategory("All")
-    }
 
     const hasActiveFilters = search !== "" || gender !== "All" || category !== "All"
 
@@ -67,8 +61,8 @@ function FilterBar({
                             key={value}
                             onClick={() => setCategory(value)}
                             className={`text-[10px] uppercase tracking-wider font-semibold md:text-xs p-1.5 md:px-3 md:py-2 transition-all duration-200 cursor-pointer ${category === value
-                                    ? "bg-secondary text-primary"
-                                    : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
+                                ? "bg-secondary text-primary"
+                                : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
                                 }`}
                         >
                             {value}
@@ -85,8 +79,8 @@ function FilterBar({
                             key={value}
                             onClick={() => setGender(value)}
                             className={`text-[10px] uppercase tracking-wider font-semibold md:text-sm px-3 py-2 transition-all duration-200 cursor-pointer ${gender === value
-                                    ? "bg-secondary text-primary"
-                                    : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
+                                ? "bg-secondary text-primary"
+                                : "text-white/50 border border-white/10 hover:border-secondary/40 hover:text-white"
                                 }`}
                         >
                             {value}
