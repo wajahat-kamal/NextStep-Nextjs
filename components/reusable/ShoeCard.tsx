@@ -23,9 +23,6 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                     fill
                     className="object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-110"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    // onError={(e) => {
-                    //     e.currentTarget.src = "/placeholder-shoe.png"
-                    // }}
                 />
             </div>
 
