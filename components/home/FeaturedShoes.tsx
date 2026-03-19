@@ -16,7 +16,7 @@ async function FeaturedShoes() {
             {/* Cards Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {featuredShoes.map((shoe: Shoe) => (
-                    <ShoeCard key={shoe.id} shoe={shoe} height={false} />
+                    <ShoeCard key={shoe.id} shoe={shoe} smallHeight={false} />
                 ))}
             </div>
 
