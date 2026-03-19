@@ -16,12 +16,12 @@ function ShoeCard({ shoe, smallHeight }: ShoeCardProps) {
 
             <div className="absolute inset-0 bg-[#F6F6F6]" />
 
-            <div className="absolute inset-0 md:bottom-[35%] bottom-[45%]">
+            <div className="absolute inset-0 sm:bottom-[35%] bottom-[40%]">
                 <Image
                     src={shoe.imageUrl}
                     alt={shoe.name}
                     fill
-                    className="object-cover md:object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="object-cover sm:object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-110"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
             </div>
