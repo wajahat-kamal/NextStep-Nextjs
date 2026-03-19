@@ -47,7 +47,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
             />
 
             {/* Grid */}
-            <main className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 p-4 md:p-10 lg:p-16 md:pt-6">
+            <main className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 p-4 md:p-10 lg:p-16 md:pt-6">
                 {visibleShoeCards.length > 0 ? (
                     <Suspense fallback={<div className="flex justify-center items-center py-32">
                         <div className="w-8 h-8 rounded-full border-2 border-secondary/20 border-t-secondary animate-spin" />

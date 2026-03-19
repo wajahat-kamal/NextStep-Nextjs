@@ -12,16 +12,16 @@ interface ShoeCardProps {
 function ShoeCard({ shoe, smallHeight }: ShoeCardProps) {
 
     return (
-        <div className={`group relative w-full ${smallHeight ? "h-45 md:h-60" : "h-70 md:h-90"} aspect-3/4 overflow-hidden cursor-pointer`}>
+        <div className={`group relative w-full ${smallHeight ? "h-50 md:h-65" : "h-70 md:h-90"} aspect-3/4 overflow-hidden cursor-pointer`}>
 
             <div className="absolute inset-0 bg-[#F6F6F6]" />
 
-            <div className="absolute inset-0 sm:bottom-[35%] bottom-[40%]">
+            <div className="absolute inset-0 sm:bottom-[25%] bottom-[40%]">
                 <Image
                     src={shoe.imageUrl}
                     alt={shoe.name}
                     fill
-                    className="object-cover sm:object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="object-cover p-6 transition-transform duration-700 ease-out group-hover:scale-110"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
             </div>
