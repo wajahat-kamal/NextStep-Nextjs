@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import ShoeCard from '@/components/reusable/ShoeCard';
 import { Shoe } from '@/types/Shoe';
 import { useSearchParams } from 'next/navigation';
@@ -49,9 +49,13 @@ function FilterdData({ allShoes }: FilterdDataProps) {
             {/* Grid */}
             <main className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 p-4 md:p-16 md:pt-6">
                 {visibleShoeCards.length > 0 ? (
-                    visibleShoeCards.map((shoe) => (
-                        <ShoeCard key={shoe.id} shoe={shoe} height={true} />
-                    ))
+                    <Suspense fallback={<div className="flex justify-center items-center py-32">
+                        <div className="w-8 h-8 rounded-full border-2 border-secondary/20 border-t-secondary animate-spin" />
+                    </div>}>
+                        {visibleShoeCards.map((shoe) => (
+                            <ShoeCard key={shoe.id} shoe={shoe} smallHeight={true} />
+                        ))}
+                    </Suspense>
                 ) : (
                     <div className="col-span-full flex flex-col items-center justify-center py-32 gap-4">
                         <p className="text-5xl">👟</p>
@@ -66,7 +70,7 @@ function FilterdData({ allShoes }: FilterdDataProps) {
                     </div>
                 )}
             </main>
-        </div>
+        </div >
     )
 }
 

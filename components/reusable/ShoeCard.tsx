@@ -6,22 +6,22 @@ import AddToCartButton from "./AddToCartButton";
 
 interface ShoeCardProps {
     shoe: Shoe;
-    height: boolean
+    smallHeight: boolean
 }
 
-function ShoeCard({ shoe, height }: ShoeCardProps) {
+function ShoeCard({ shoe, smallHeight }: ShoeCardProps) {
 
     return (
-        <div className={`group relative w-full ${height ? "h-60 md:h-80" : "h-70 md:h-90"} aspect-3/4 overflow-hidden cursor-pointer`}>
+        <div className={`group relative w-full ${smallHeight ? "h-45 md:h-60" : "h-70 md:h-90"} aspect-3/4 overflow-hidden cursor-pointer`}>
 
             <div className="absolute inset-0 bg-[#F6F6F6]" />
 
-            <div className="absolute inset-0 bottom-[35%]">
+            <div className="absolute inset-0 md:bottom-[35%] bottom-[45%]">
                 <Image
                     src={shoe.imageUrl}
                     alt={shoe.name}
                     fill
-                    className="object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="object-cover md:object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-110"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
             </div>
@@ -43,7 +43,7 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
 
             {/* Bottom Overlay — always visible, expands on hover */}
             <div
-                className={`absolute bottom-0 left-0 right-0 z-10 transition-all duration-500 ease-out ${height ? "pt-4" : "pt-16"}`}
+                className={`absolute bottom-0 left-0 right-0 z-10 transition-all duration-500 ease-out ${smallHeight ? "pt-4" : "pt-16"}`}
                 style={{
                     background: "linear-gradient(to top, rgba(2,27,65,0.98) 0%, rgba(2,27,65,0.85) 60%, transparent 100%)",
                 }}
@@ -60,15 +60,15 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                     </div>
 
                     {/* Name */}
-                    <h3 className="text-sm md:text-base font-bold text-white leading-snug line-clamp-1">
+                    <h3 className="text-xs md:text-base font-bold text-white leading-snug line-clamp-1">
                         {shoe.name}
                     </h3>
 
                     {/* Price Row */}
                     <div className="flex items-center justify-between">
                         <div className="flex items-baseline gap-1">
-                            <span className="text-xl md:text-2xl font-black text-white">${shoe.price}</span>
-                            <span className="text-[10px] md:text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>USD</span>
+                            <span className="text-sm md:text-2xl font-black text-white">${shoe.price}</span>
+                            <span className="text-[8px] md:text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>USD</span>
                         </div>
 
                         <AddToCartButton shoe={shoe} />
@@ -78,7 +78,7 @@ function ShoeCard({ shoe, height }: ShoeCardProps) {
                     <div className="overflow-hidden transition-all duration-500 md:max-h-0 md:group-hover:max-h-16">
                         <Link
                             href={`/shopping/${shoe.slug}`}
-                            className="flex items-center justify-center gap-1 md:gap-2 w-full py-1.5 md:py-2.5 text-[10px] md:text-xs uppercase tracking-widest text-secondary border border-secondary/30 hover:bg-secondary hover:text-primary font-semibold transition-colors duration-200 md:mt-1"
+                            className="flex items-center justify-center gap-1 md:gap-2 w-full py-1 md:py-2.5 text-[8px] md:text-xs uppercase tracking-widest text-secondary border border-secondary/30 hover:bg-secondary hover:text-primary font-semibold transition-colors duration-200 md:mt-1"
                         >
                             View Details
                             <ArrowUpRight size={13} />
