@@ -1,18 +1,14 @@
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { Shoe } from "@/types/Shoe"
-import fs from "node:fs/promises"
-import path from "node:path"
 import { categories } from "@/data/categoriesData"
 import Header from "../reusable/Header"
 import LinkButton from "../reusable/LinkButton"
-
+import getData from "@/lib/getData"
 
 async function Categories() {
-    const filePath = path.join(process.cwd(), "data", "ShoeData.json")
-    const rawData = await fs.readFile(filePath, "utf8")
-    const allShoes: Shoe[] = JSON.parse(rawData)
-
+    const allShoes: Shoe[] = await getData()
+    
     return (
         <section className="bg-bgColor px-6 md:px-24 py-24">
 
